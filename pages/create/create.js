@@ -44,8 +44,8 @@ Page({
   this.setData({holiday})
 
 
-  wx.switchTab({
-    url: `/pages/index/index`
+  wx.navigateTo({
+    url: `/pages/trips/trips`
   })
   },
   /**

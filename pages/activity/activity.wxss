@@ -1,0 +1,13 @@
+#timeline {
+  width: 35vw;
+  margin: 0 0;
+}
+
+.container {
+  width: 35vw;
+  padding: 0 0;
+}
+
+.viewport {
+  margin: 5px 10px;
+}

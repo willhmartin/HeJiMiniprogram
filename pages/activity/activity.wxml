@@ -1,0 +1,13 @@
+
+<view class="viewport">
+  <view>Monday, 12/12</view>
+  <view class="container">
+<van-steps id="timeline"
+  steps="{{ steps }}"
+  active="{{ active }}"
+  direction="vertical"
+  active-color="green"
+/>
+
+</view>
+</view>

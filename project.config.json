@@ -33,7 +33,6 @@
     "useIsolateContext": true,
     "useCompilerModule": true,
     "userConfirmedUseCompilerModuleSwitch": false,
-    "userConfirmedBundleSwitch": false,
     "packNpmManually": false,
     "packNpmRelationList": [],
     "minifyWXSS": true
@@ -74,8 +73,15 @@
           "scene": null
         },
         {
-          "name": "index",
-          "pathName": "pages/index/index",
+          "name": "Trips",
+          "pathName": "pages/trips/trips",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "activity",
+          "pathName": "pages/activity/activity",
+          "query": "",
           "scene": null
         }
       ]
