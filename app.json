@@ -3,7 +3,10 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/landing/landing",
-    "pages/create/create"
+    "pages/create/create",
+    "pages/createbudget/createbudget",
+    "pages/mybudget/mybudget"
+
   ],
   "window":{
     "backgroundTextStyle":"light",

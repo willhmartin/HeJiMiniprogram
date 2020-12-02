@@ -74,8 +74,21 @@
           "scene": null
         },
         {
-          "name": "index",
+          "name": "Trip Created Page",
           "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "Create Budget Page",
+          "pathName": "pages/createbudget/createbudget",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "My Budget Page",
+          "pathName": "pages/mybudget/mybudget",
+          "query": "",
           "scene": null
         }
       ]
