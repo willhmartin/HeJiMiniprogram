@@ -1,0 +1,70 @@
+.container {
+  padding: 70rpx 0;
+  height: 100vh;
+  background-color: #3B7EC9;
+  background: url("https://fsa.zobj.net/crop.php?r=LJp6ePC5qZ89Oz5rnXN1hyQ1_x7soEDrv6kdTrdwEzK4KzjOyvrG3twGbRLcq8Qp4DqyPCiNYBRoi-lQbmZCypGZO-G72wkCtDm30434wV6L68bNnzEhCK4nRyKuZ8f4uVocG2uGK0C48cDkpjGFjKAftTO5Hhim229XsXa5hQywuvLHphzI-fq4lNLgD_j9I7tdluBHoh6j9VxM");
+  position: relative;
+}
+
+.title {
+  font-family: 'Indie Flower';
+  color: white;
+  font-size: 80rpx;
+  font-weight: bold;
+}
+
+.section {
+  padding: 5px 5px;
+  border: 2px solid white;
+  color: white;
+  height: 60rpx;
+  border-radius: 5px;
+  margin-bottom: 15rpx;
+}
+
+.btn-submit {
+  background-color: #EBC71B;
+  color: white;
+  margin-bottom: 15rpx;
+  background: linear-gradient(180deg, #BA9BA0, #CD8A56)
+ 
+}
+
+#sub {
+  width: 250rpx;
+}
+
+#reset {
+  width: 250rpx;
+}
+
+.btn-reset {
+  background-color: #EBC71B;
+  color: white;
+  background: linear-gradient(180deg, #BA9BA0, #CD8A56)
+}
+
+.btn-reset:hover {
+  background-color: #EBC71B;
+  color: white;
+  background: linear-gradient(180deg, #BA9BA0, #CD8A56)
+}
+
+
+.btn-area {
+  /* position: absolute; */
+  bottom: 50rpx;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+  height: 80vh;
+  flex-direction: column;
+}
+
+/* .form-fields {
+  display: flex;
+} */

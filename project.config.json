@@ -40,7 +40,7 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.14.0",
-  "appid": "wx3666176ad1323ec3",
+  "appid": "wx8ed4cf3ec206d8c0",
   "projectname": "HeJiMiniprogram",
   "debugOptions": {
     "hidedInDevtools": []
@@ -50,23 +50,35 @@
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
   "condition": {
-    "search": {
-      "list": []
-    },
-    "conversation": {
+    "plugin": {
       "list": []
     },
     "game": {
-      "list": []
-    },
-    "plugin": {
       "list": []
     },
     "gamePlugin": {
       "list": []
     },
     "miniprogram": {
-      "list": []
+      "list": [
+        {
+          "name": "landing",
+          "pathName": "pages/landing/landing",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "create",
+          "pathName": "pages/create/create",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "index",
+          "pathName": "pages/index/index",
+          "scene": null
+        }
+      ]
     }
   }
 }

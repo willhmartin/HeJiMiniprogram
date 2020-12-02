@@ -1,0 +1,50 @@
+.container {
+  padding: 70rpx 0;
+  height: 100vh;
+  background-color: #3B7EC9;
+  background: url("https://fsa.zobj.net/crop.php?r=LJp6ePC5qZ89Oz5rnXN1hyQ1_x7soEDrv6kdTrdwEzK4KzjOyvrG3twGbRLcq8Qp4DqyPCiNYBRoi-lQbmZCypGZO-G72wkCtDm30434wV6L68bNnzEhCK4nRyKuZ8f4uVocG2uGK0C48cDkpjGFjKAftTO5Hhim229XsXa5hQywuvLHphzI-fq4lNLgD_j9I7tdluBHoh6j9VxM");
+}
+
+.title {
+  font-family: 'Indie Flower';
+  color: white;
+  font-size: 80rpx;
+  font-weight: bold;
+}
+
+.title-card {
+  width: 50%;
+  text-align: center;
+}
+
+#btn-create {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, #BA9BA0, #CD8A56)
+}
+
+.plus {
+  height: 74px;
+  font-family: 'Indie Flower';
+  color: white;
+}
+
+.blurb {
+  color: white;
+  background-color: rgba(90, 89, 89, 0.6);
+  /* opacity: 0.8; */
+  padding: 10px 10px;
+  width: 85vw;
+  border-radius: 5px;
+  font-weight: lighter;
+}
+
+#copy {
+  opacity: 1 !important;
+}

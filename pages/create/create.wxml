@@ -1,0 +1,38 @@
+<view class="container">
+  <view class="title-card">
+    <text class="title">Create Trip</text>
+  </view>
+  <form  bindsubmit="formSubmit" bindreset="formReset">
+    <view class="form">
+    <view>
+    <view class="section">
+      <input  bindinput="titleInput" maxlength="10" placeholder="Holiday Title:"/>
+    </view>
+    <view class="section">
+      <input  bindinput="locationInput" maxlength="10" placeholder="Location:"/>
+    </view>
+    <view id="date" class="section">
+        <picker mode="date" value="{{date}}" start="2015-09-01" end="2021-09-01" bindchange="setStartDate">
+          <view class="picker">
+            <!-- Start Date | {{startDate}} -->
+            {{startDate ? startDate : 'Start Date:'}}
+          </view>
+        </picker>
+    </view>
+    <view id="date" class="section">
+        <picker mode="date" value="{{date}}" start="2015-09-01" end="2021-09-01" bindchange="setEndDate">
+          <view class="picker">
+            {{endDate ? endDate : 'End Date:'}}
+          </view>
+        </picker>
+    </view>
+  </view>
+
+    <view class="btn-area">
+      <button id="sub" class="btn-submit" form-type="submit">Submit</button>
+      <button id="reset" class="btn-reset" form-type="reset">Reset</button>
+    </view> 
+  </view>
+  </form>
+                                                                                                    
+</view>
