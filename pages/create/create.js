@@ -12,7 +12,7 @@ Page({
   titleInput: function(e) {
     this.setData({
       name: e.detail.value
-    })
+    }) 
   },
 
   locationInput: function(e) {
@@ -51,8 +51,8 @@ Page({
     }
   })
 
-  wx.switchTab({
-    url: `/pages/index/index`
+  wx.navigateTo({
+    url: `/pages/trips/trips`
   })
   },
   /**
