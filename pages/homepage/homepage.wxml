@@ -1,0 +1,14 @@
+<view class="container">
+  <view class="title">Today in Sanya</view>
+  <view class="countdown" wx:if="{{start_date < Date.new}}"></view>
+</view>
+
+
+
+
+<!-- if current_date < trip.start_date
+
+render countdown
+
+else
+render all activities where activity_date === current_date -->

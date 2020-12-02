@@ -1,0 +1,7 @@
+.container {
+  padding: 70rpx 0;
+  height: 100vh;
+  background-color: #3B7EC9;
+  background: url("https://fsa.zobj.net/crop.php?r=LJp6ePC5qZ89Oz5rnXN1hyQ1_x7soEDrv6kdTrdwEzK4KzjOyvrG3twGbRLcq8Qp4DqyPCiNYBRoi-lQbmZCypGZO-G72wkCtDm30434wV6L68bNnzEhCK4nRyKuZ8f4uVocG2uGK0C48cDkpjGFjKAftTO5Hhim229XsXa5hQywuvLHphzI-fq4lNLgD_j9I7tdluBHoh6j9VxM");
+  position: relative;
+}

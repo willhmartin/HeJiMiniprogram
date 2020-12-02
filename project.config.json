@@ -4,7 +4,7 @@
     "ignore": []
   },
   "setting": {
-    "urlCheck": true,
+    "urlCheck": false,
     "es6": true,
     "enhance": false,
     "postcss": true,
@@ -74,13 +74,19 @@
         },
         {
 
+          
           "name": "Trips",
           "pathName": "pages/trips/trips",
+
 
           "query": "",
           "scene": null
         },
         {
+
+          "name": "homepage",
+          "pathName": "pages/homepage/homepage",
+
 
           "name": "activity",
           "pathName": "pages/activity/activity",
@@ -95,6 +101,7 @@
           "pathName": "pages/mybudget/mybudget",
 
           "query": "",
+
           "scene": null
         }
       ]
