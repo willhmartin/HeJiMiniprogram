@@ -1,7 +1,9 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/landing/landing",
+    "pages/create/create"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -9,6 +11,24 @@
     "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle":"black"
   },
-  "style": "v2",
+  
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/landing/landing",
+        "iconPath": "/images/home.png",
+        "selectedIconPath": "/images/home.png"   
+      },
+      {
+          "pagePath": "pages/index/index",
+          "iconPath": "/images/user.png",
+          "selectedIconPath": "/images/user.png"   
+      }
+      
+     
+    ]
+},
+"style": "v2",
   "sitemapLocation": "sitemap.json"
+
 }

@@ -1,4 +1,6 @@
 /**app.wxss**/
+@import "/fonts/indie.wxss";
+
 .container {
   height: 100%;
   display: flex;

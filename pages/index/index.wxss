@@ -1,21 +1,22 @@
-/**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.container {
+  padding: 70rpx 0;
+  height: 100vh;
+  background-color: #3B7EC9;
+  background: url("https://fsa.zobj.net/crop.php?r=LJp6ePC5qZ89Oz5rnXN1hyQ1_x7soEDrv6kdTrdwEzK4KzjOyvrG3twGbRLcq8Qp4DqyPCiNYBRoi-lQbmZCypGZO-G72wkCtDm30434wV6L68bNnzEhCK4nRyKuZ8f4uVocG2uGK0C48cDkpjGFjKAftTO5Hhim229XsXa5hQywuvLHphzI-fq4lNLgD_j9I7tdluBHoh6j9VxM");
+  position: relative;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.holiday-card {
+  color: white;
+  font-size: 30rpx;
+  background: linear-gradient(180deg, #BA9BA0, #CD8A56);
+  padding: 10rpx 10rpx;
+  border-radius: 5px;
+  width: 80vw;
 }
 
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 200px;
+.title {
+  font-size: 70rpx;
+  text-decoration: underline;
+  margin-bottom: 10px;
 }

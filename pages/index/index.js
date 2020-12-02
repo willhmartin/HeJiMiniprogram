@@ -1,6 +1,8 @@
 //index.js
 //获取应用实例
 const app = getApp()
+const globalData = getApp().globalData
+
 
 Page({
   data: {
@@ -16,6 +18,20 @@ Page({
     })
   },
   onLoad: function () {
+    
+  },
+  getUserInfo: function(e) {
+    console.log(e)
+    app.globalData.userInfo = e.detail.userInfo
+    this.setData({
+      userInfo: e.detail.userInfo,
+      hasUserInfo: true
+    })
+  },
+  onShow: function () {
+    this.setData({
+      holidays: globalData.holidays
+    })
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -42,13 +58,6 @@ Page({
         }
       })
     }
-  },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
   }
 })
+
