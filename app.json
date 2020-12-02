@@ -4,8 +4,11 @@
     "pages/logs/logs",
     "pages/landing/landing",
     "pages/create/create",
-    "pages/activity/activity"
-  
+    "pages/activity/activity",
+    "pages/createbudget/createbudget",
+    "pages/mybudget/mybudget"
+
+
   ],
   "window":{
     "backgroundTextStyle":"light",

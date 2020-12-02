@@ -1,58 +1,60 @@
-// pages/create/create.js
+// pages/budget/budget.js
 const globalData = getApp().globalData
-
 Page({
-
   /**
    * Page initial data
    */
   data: {
-
+    focus: false,
+    inputValue: ''
   },
-  titleInput: function(e) {
+  bindButtonTap: function() {
     this.setData({
-      name: e.detail.value
-    }) 
-  },
-
-  locationInput: function(e) {
-    this.setData({
-      location: e.detail.value
+      focus: true
     })
   },
-
-  setStartDate: function(e) {
-    console.log(e)
-    this.setData({startDate:e.detail.value}) 
+  bindKeyInput: function(e) {
+    this.setData({
+      inputValue: e.detail.value
+    })
   },
-
-  setEndDate: function(e) {
-    console.log(e)
-    this.setData({endDate:e.detail.value}) 
+  bindReplaceInput: function(e) {
+    var value = e.detail.value
+    var pos = e.detail.cursor
+    if(pos != -1){
+      //The cursor is in the center
+      var left = e.detail.value.slice(0,pos)
+      //Calculate the position of the cursor
+      pos = left.replace(/11/g,'2').length
+    }
+    return {
+      value: value.replace(/11/g,'2'),
+      cursor: pos
+    }
   },
-   
   formSubmit: function(e) {
-    console.log('form triggers a submit event, carrying the following data: ', e.detail.value)
-    const holiday = {
-      name: this.data.name,
-      location: this.data.location,
-      startDate: this.data.startDate,
-      endDate: this.data.endDate
+    console.log('Form triggers submit event, carrying this data: ', e.detail.value)
+    const budget = {
+      amount: this.data.inputValue
   }
-  console.log(holiday)
-  globalData.holidays.push(holiday)
-  this.setData({holiday})
+  globalData.monies.push(budget)
+  console.log(budget)
+  this.setData({budget})
+
+  // globalData.budget.push(amount)
+  // this.setData({amount})
 
 
   wx.navigateTo({
-    url: `/pages/trips/trips`
+    url: `/pages/mybudget/mybudget`
   })
   },
+
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    
+
   },
 
   /**
@@ -66,8 +68,8 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-    
   },
+   
 
   /**
    * Lifecycle function--Called when page hide

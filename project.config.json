@@ -73,14 +73,27 @@
           "scene": null
         },
         {
+
           "name": "Trips",
           "pathName": "pages/trips/trips",
+
           "query": "",
           "scene": null
         },
         {
+
           "name": "activity",
           "pathName": "pages/activity/activity",
+
+          "name": "Create Budget Page",
+          "pathName": "pages/createbudget/createbudget",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "My Budget Page",
+          "pathName": "pages/mybudget/mybudget",
+
           "query": "",
           "scene": null
         }
