@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/landing/landing",
-    "pages/create/create"
+    "pages/create/create",
+    "pages/homepage/homepage"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -15,16 +16,15 @@
   "tabBar": {
     "list": [
       {
-        "pagePath": "pages/landing/landing",
+        "pagePath": "pages/homepage/homepage",
         "iconPath": "/images/home.png",
-        "selectedIconPath": "/images/home.png"   
+        "selectedIconPath": "/images/home.png"  
       },
       {
           "pagePath": "pages/index/index",
           "iconPath": "/images/user.png",
           "selectedIconPath": "/images/user.png"   
-      }
-      
+      } 
      
     ]
 },

@@ -34,15 +34,22 @@ Page({
   formSubmit: function(e) {
     console.log('form triggers a submit event, carrying the following data: ', e.detail.value)
     const holiday = {
-      name: this.data.name,
+      title: this.data.name,
       location: this.data.location,
-      startDate: this.data.startDate,
-      endDate: this.data.endDate
+      start_date: this.data.startDate,
+      end_date: this.data.endDate
   }
   console.log(holiday)
   globalData.holidays.push(holiday)
   this.setData({holiday})
-
+  wx.request({
+    url: `http://localhost:3000/api/v1/users/4/trips`,
+    method: 'POST',
+    data: holiday,
+    success(res) {
+      console.log('works?', res)
+    }
+  })
 
   wx.switchTab({
     url: `/pages/index/index`
