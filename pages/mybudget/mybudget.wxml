@@ -1,33 +1,33 @@
 <view class="background">
   <view class="container">
-
+    <button id="update-budget" bindtap=""><text class="budget-btn">Update</text></button>
   <!-- name -->
     <view class='header'>My Budget</view>
-
     <!-- image -->
     <image class="avatar-large" alt="avatar-large" mode="aspectFill" src="{{service.ebae.avatar}}"></image>
 <!-- data-id="{{service}}" -->
 <view class='total-budget'>
   <view class="title">${{budget[0].amount}}</view>
 </view>
-    <view class="payments">Payment Cards Here</view>
+    <view class="payments">--Payment Cards Here--</view>
 
   <view class="card-grid">
     <!-- <view class="card-overview" style="margin-bottom: 30rpx;" wx:for="{{services}}" wx:for-item="service"> -->
-      <view class="card-product" bindtap="onClick" data-id="{{service.id}}">
+      <view class="card-product" bindtap="onClick" data-id="{{payment.id}}">
          <view class="card-image">
-          <image src="{{service.ebae.avatar}}" style="height: 100%; width: 100%;" mode="aspectFill" />
+          <image src="{{user.avatar}}" style="height: 100%; width: 100%;" mode="aspectFill" />
 </view> 
         <view class="card-product-infos">
-          <view id="h1">Bill Title</view>
-          <view class="h2">"Bill Note"</view>
-          <view id="p">$$$</view>
+          <view id="h1">{{payment[0].category}}</view>
+          <view class="h2">{{payment[0].amount}}</view>
+          <view id="p">{{payment[0].note}}</view>
         </view>
       <!-- </view> -->
         </view>
         </view>
     </view>
-  <button id="btn-create" bindtap="goToCreatePayment"><text class="plus">+</text></button>
+    <view class="submit-payment">Submit a Payment</view>
+  <button id="btn-create" bindtap="goToPayment"><text class="plus">+</text></button>
 </view>
-
+ 
 

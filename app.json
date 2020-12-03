@@ -1,18 +1,14 @@
 {
   "pages":[
-    "pages/trips/trips",
-    "pages/logs/logs",
-    "pages/landing/landing",
-    "pages/create/create",
-
-    "pages/homepage/homepage"
-
     "pages/activity/activity",
+    "pages/create/create",
     "pages/createbudget/createbudget",
-    "pages/mybudget/mybudget"
-
-
-
+    "pages/homepage/homepage",
+    "pages/landing/landing",
+    "pages/logs/logs",
+    "pages/mybudget/mybudget",
+    "pages/trips/trips",
+    "pages/payment/payment"
   ],
   "window":{
     "backgroundTextStyle":"light",

@@ -18,6 +18,7 @@ Page({
       inputValue: e.detail.value
     })
   },
+  
   bindReplaceInput: function(e) {
     var value = e.detail.value
     var pos = e.detail.cursor
