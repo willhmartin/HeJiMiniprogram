@@ -19,36 +19,42 @@ Page({
     })
   },
   
-  bindReplaceInput: function(e) {
-    var value = e.detail.value
-    var pos = e.detail.cursor
-    if(pos != -1){
-      //The cursor is in the center
-      var left = e.detail.value.slice(0,pos)
-      //Calculate the position of the cursor
-      pos = left.replace(/11/g,'2').length
-    }
-    return {
-      value: value.replace(/11/g,'2'),
-      cursor: pos
-    }
-  },
+  // bindReplaceInput: function(e) {
+  //   var value = e.detail.value
+  //   var pos = e.detail.cursor
+  //   if(pos != -1){
+  //     //The cursor is in the center
+  //     var left = e.detail.value.slice(0,pos)
+  //     //Calculate the position of the cursor
+  //     pos = left.replace(/11/g,'2').length
+  //   }
+  //   return {
+  //     value: value.replace(/11/g,'2'),
+  //     cursor: pos
+  //   }
+  // },
   formSubmit: function(e) {
     console.log('Form triggers submit event, carrying this data: ', e.detail.value)
+
     const budget = {
       amount: this.data.inputValue
   }
   globalData.monies.push(budget)
-  console.log(budget)
+  console.log("BUDGET!!!",budget)
   this.setData({budget})
 
-  // globalData.budget.push(amount)
-  // this.setData({amount})
-
+  wx.request({ 
+    url: `http://localhost:3000/api/v1/trips/23/budgets`,
+    method: 'POST',
+    data: budget,
+    success(res) {
+      console.log('WORKS???', res)
 
   wx.navigateTo({
-    url: `/pages/mybudget/mybudget`
+    url: `/pages/mybudget/mybudget?budget=${budget}`
   })
+}
+})
   },
 
   /**

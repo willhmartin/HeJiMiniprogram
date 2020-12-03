@@ -1,7 +1,7 @@
 // pages/create/create.js
 const globalData = getApp().globalData
 
-Page({
+Page({ 
 
   /**
    * Page initial data

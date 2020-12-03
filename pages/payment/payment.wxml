@@ -16,6 +16,14 @@
       <view class="section__title">Note</view>
       <input  bindinput="bindNoteInput" placeholder="Note"/>
 
+      <view id="date" class="option">
+        <picker mode="date" value="{{date}}" start="2020-12-01" end="2025-12-01" bindchange="setDate">
+          <view class="picker">
+            Date  {{date}} 
+          </view>
+        </picker>
+      </view>
+
     </view>
   <view class="btn-area">
     <button id="sub" class="btn-submit" form-type="submit">Submit</button>
