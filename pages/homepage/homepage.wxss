@@ -1,7 +1,53 @@
 .container {
+  
   padding: 70rpx 0;
   height: 100vh;
   background-color: #3B7EC9;
   background: url("https://fsa.zobj.net/crop.php?r=LJp6ePC5qZ89Oz5rnXN1hyQ1_x7soEDrv6kdTrdwEzK4KzjOyvrG3twGbRLcq8Qp4DqyPCiNYBRoi-lQbmZCypGZO-G72wkCtDm30434wV6L68bNnzEhCK4nRyKuZ8f4uVocG2uGK0C48cDkpjGFjKAftTO5Hhim229XsXa5hQywuvLHphzI-fq4lNLgD_j9I7tdluBHoh6j9VxM");
   position: relative;
+}
+.card-title {
+  font-weight: bold;
+  color: #393e46;
+  border-radius: 5px;
+  margin-bottom: 5px;
+
+}
+.title {
+  font-family: 'Indie Flower';
+  color: white;
+  font-size: 80rpx;
+  font-weight: bold;
+}
+
+.text {
+  font-family: 'Indie Flower';
+  color: white;
+  font-size: 60rpx;
+  font-weight: bold;
+}
+
+
+.activity-card {
+  padding: 5px 5px;
+  width: 66vw;
+  height: 60rpx;
+  opacity: 0.9;
+  box-shadow: 7px 5px 16px 6px rgba(25,92,130,0.25);  
+  background-color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 15rpx;
+  border-radius: 10px;
+  padding-bottom: 40px;
+}
+
+.all-activities {
+  background-color: rgba(54, 125, 219, 0.6);
+  padding: 7px 30px;
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
 }

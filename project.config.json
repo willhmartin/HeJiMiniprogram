@@ -76,11 +76,13 @@
 
           "name": "Trips Page",
 
+
           "pathName": "pages/trips/trips",
           "query": "",
           "scene": null
         },
         {
+
 
           "name": "Homepage",
           "pathName": "pages/homepage/homepage",
@@ -103,6 +105,7 @@
         {
           "name": "My Budget Page",
           "pathName": "pages/mybudget/mybudget",
+
           "query": "",
 
           "scene": null
@@ -116,8 +119,13 @@
         {
           "name": "Payment Page",
           "pathName": "pages/payment/payment",
-          "query": "",
 
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "homepage",
+          "pathName": "pages/homepage/homepage",
           "scene": null
         }
       ]
