@@ -61,24 +61,40 @@
     "miniprogram": {
       "list": [
         {
-          "name": "landing",
+          "name": "Landing Page",
           "pathName": "pages/landing/landing",
           "query": "",
           "scene": null
         },
         {
-          "name": "create",
+          "name": "Create Page",
           "pathName": "pages/create/create",
           "query": "",
           "scene": null
         },
         {
-          "name": "Trips",
+
+          "name": "Trips Page",
+
           "pathName": "pages/trips/trips",
           "query": "",
           "scene": null
         },
         {
+
+          "name": "Homepage",
+          "pathName": "pages/homepage/homepage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "Activity Page",
+          "pathName": "pages/activity/activity",
+          "query": "",
+          "scene": null
+        },
+        {
+
           "name": "Create Budget Page",
           "pathName": "pages/createbudget/createbudget",
           "query": "",
@@ -88,6 +104,20 @@
           "name": "My Budget Page",
           "pathName": "pages/mybudget/mybudget",
           "query": "",
+
+          "scene": null
+        },
+        {
+          "name": "Logs Page",
+          "pathName": "pages/logs/logs",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "Payment Page",
+          "pathName": "pages/payment/payment",
+          "query": "",
+
           "scene": null
         }
       ]
