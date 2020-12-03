@@ -3,20 +3,23 @@ const app = getApp()
 const globalData = getApp().globalData
 
 Page({
-
-  /**
-   * Page initial data
-   */
   data: {
-
   },
-
+  goToPayment: function () {
+    console.log('clicked')
+    wx.navigateTo({
+      url: '/pages/payment/payment',
+    })
+  },
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function () {
     this.setData({
       budget: globalData.monies
+    }),
+    this.setData({
+      payment: globalData.payments
     })
     
   },
@@ -34,6 +37,9 @@ Page({
   onShow: function () {
     this.setData({
       budget: globalData.budget
+    }),
+    this.setData({
+      payment: globalData.payment
     })
     if (app.globalData.userInfo) {
       this.setData({
