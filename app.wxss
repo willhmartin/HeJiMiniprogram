@@ -1,5 +1,6 @@
 /**app.wxss**/
 @import "/fonts/indie.wxss";
+@import "/fonts/nunito.wxss";
 
 .container {
   height: 100%;
@@ -9,4 +10,4 @@
   justify-content: space-between;
   padding: 200rpx 0;
   box-sizing: border-box;
-} 
+}

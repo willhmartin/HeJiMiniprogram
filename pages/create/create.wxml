@@ -5,29 +5,39 @@
   <form  bindsubmit="formSubmit" bindreset="formReset">
     <view class="form">
     <view>
+      <!-- title -->
     <view class="section">
-      <input  bindinput="titleInput" maxlength="10" placeholder="Holiday Title:"/>
+      <view class="card-title">Title</view>
+      <input  bindinput="titleInput" maxlength="10" placeholder="" class="user-input"/>
     </view>
+
+    <!-- location -->
     <view class="section">
-      <input  bindinput="locationInput" maxlength="10" placeholder="Location:"/>
+      <view class="card-title">Location</view>
+      <input  bindinput="locationInput" maxlength="10" placeholder="" class="user-input"/>
     </view>
+    <!-- start date -->
     <view id="date" class="section">
-        <picker mode="date" value="{{date}}" start="2015-09-01" end="2021-09-01" bindchange="setStartDate">
+        <view class="card-title">Start Date</view>
+        <picker mode="date" value="{{date}}" start="2015-09-01" end="2021-09-01" bindchange="setStartDate" class="user-input">
           <view class="picker">
-            <!-- Start Date | {{startDate}} -->
-            {{startDate ? startDate : 'Start Date:'}}
+            {{startDate ? startDate : 'Select'}}
           </view>
         </picker>
     </view>
+
+    <!-- end date -->
     <view id="date" class="section">
-        <picker mode="date" value="{{date}}" start="2015-09-01" end="2021-09-01" bindchange="setEndDate">
+      <view class="card-title">End Date</view>
+        <picker mode="date" value="{{date}}" start="2015-09-01" end="2021-09-01" bindchange="setEndDate" class="user-input">
           <view class="picker">
-            {{endDate ? endDate : 'End Date:'}}
+            {{endDate ? endDate : 'Select'}}
           </view>
         </picker>
     </view>
   </view>
 
+  <!-- btn -->
     <view class="btn-area">
       <button id="sub" class="btn-submit" form-type="submit">Submit</button>
       <button id="reset" class="btn-reset" form-type="reset">Reset</button>
