@@ -33,9 +33,15 @@ App({
       }
     })
   },
+
+  
+
+
+
   globalData: {
     userInfo: null,
-    holidays: [],
-    monies: []
+    trips: [],
+    monies: [],
+    currentDate: [new Date().toJSON().slice(0,10)]
   }
 })

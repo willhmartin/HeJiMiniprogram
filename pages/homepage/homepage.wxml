@@ -1,7 +1,23 @@
+
 <view class="container">
   <view class="title">Today in Sanya</view>
-  <view class="countdown" wx:if="{{start_date < Date.new}}"></view>
+  <view class="countdown" ></view>
+  <view class="text">Today's Itinerary</view>
+  <view class="all-activities"  wx:if="{{activity.date !== dateNow}}">
+    <view class="activity-container" wx:for="{{activities}}" wx:for-item="activity">
+      <view class="activity-card" bindtap="onClick" data-id="{{service.id}}">
+        <view class="card-title">{{activity.content}}</view>
+        <view class="location">{{activity.location}}</view>
+        <image class="icon" src="https://openweathermap.org/img/w/{{activity.weather[0].icon}}.png"></image>
+      </view>
+    </view>
+  <view class="text" wx:if="{{trip2.start_date > dateNow}}">Not long until the holiday</view>
 </view>
+</view>
+
+<!-- <view class="weather"> 
+  <text>{{weatherData}}</text> 
+</view> -->
 
 
 
@@ -12,3 +28,7 @@ render countdown
 
 else
 render all activities where activity_date === current_date -->
+
+<!-- wx:if="{{start_date < Date.new}} -->
+
+<!-- getApp().globalData.trips[0].start_date > getApp().globalData.currentDate[0] -->
