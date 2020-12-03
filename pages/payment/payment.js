@@ -1,12 +1,67 @@
-// pages/payment/payment.js
+const globalData = getApp().globalData
+
 Page({
-
-  /**
-   * Page initial data
-   */
   data: {
+      focus: false
+      // inputValue1: ''
+      // inputValue2: ''
+    },
+    bindButtonTap: function(e) {
+      this.setData({
+        focus: true
+      })
+    },
+    bindAmountInput: function(e) {
+      this.setData({
+        inputValue1: e.detail.value
+      })
+    },
+    bindCatInput: function(e) {
+      console.log("CHECKING", e)
+      this.setData({
+        inputValue2: e.detail.value
+      })
+    },
+    bindNoteInput: function(e) {
+      console.log("CHECKING", e)
+      this.setData({
+        inputValue3: e.detail.value
+      })
+    },
+    setDate: function(e) {
+      console.log('IT WORKS?', e)
+      this.setData({
+        date: e.detail.value
+      })
+    },
+    formSubmit: function(e) {
+      console.log('Form triggers submit event, carrying this data: ', e.detail.value)
+      const payment = {
+        amount: this.data.inputValue1,
+        category: this.data.inputValue2,
+        content: this.data.inputValue3,
+        date: this.data.date
+    }
+    console.log('THIS IS WHAT I WANT', payment)
+    globalData.payments.push(payment)
+    console.log(payment, "Checking globalData", globalData)
+    this.setData({payment})
 
-  },
+    wx.request({ 
+      url: `http://localhost:3000/api/v1/trips/23/payments`,
+      method: 'POST',
+      data: payment,
+      success(res) {
+        console.log('WORKS???', res)
+        wx.navigateTo({
+          url: `/pages/mybudget/mybudget`
+        })
+      }
+    })
+
+    
+    },
+  
 
   /**
    * Lifecycle function--Called when page load

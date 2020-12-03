@@ -1,4 +1,3 @@
-//app.js
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -34,6 +33,7 @@ App({
     })
   },
 
+
   
 
 
@@ -43,5 +43,7 @@ App({
     trips: [],
     monies: [],
     currentDate: [new Date().toJSON().slice(0,10)]
+    holidays: [],
+    payments: []
   }
 })

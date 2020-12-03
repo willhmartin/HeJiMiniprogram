@@ -3,22 +3,29 @@ const app = getApp()
 const globalData = getApp().globalData
 
 Page({
-
-  /**
-   * Page initial data
-   */
   data: {
-
+    // budgetId: 1
   },
-
+  goToPayment: function () {
+    console.log('clicked')
+    wx.navigateTo({
+      url: '/pages/payment/payment',
+    })
+  },
   /**
    * Lifecycle function--Called when page load
    */
-  onLoad: function () {
+  onLoad: function (options) {
+    // this.setData({
+    //   budget: globalData.monies
+    // }),
+    let page = this
+    console.log(options)
+    const budget = options.amount
+    console.log(budget)
     this.setData({
-      budget: globalData.monies
-    })
-    
+      payment: globalData.payments
+      })
   },
 
   /**
@@ -32,9 +39,40 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
+    let page = this
+
+    wx.request({
+      url: `http://localhost:3000/api/v1/trips/23/payments`,
+      method: 'GET',
+      success(res) {
+        console.log('works?', res)
+        const payments = res.data.payments
+        console.log(payments)
+        page.setData({
+          payments: payments, 
+          total_payment: res.data.total_amount
+          // setting local data here to call in wxml
+        })
+      }
+    }),
+    wx.request({
+      url: `http://localhost:3000/api/v1/trips/23/budgets/${this.data.budget}`,
+      method: 'GET',
+      success(res) {
+        console.log('budget works?', res)
+        const budgets = res.data
+        console.log(budgets)
+        page.setData({budget: budgets})
+      }
+    })
+    
     this.setData({
       budget: globalData.budget
+    }),
+    this.setData({
+      payment: globalData.payment
     })
+
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -62,13 +100,7 @@ Page({
       })
     }
   },
-  // this.setData({
-  //   amounts: globalData.amounts
-  // })
-
-  /**
-   * Lifecycle function--Called when page hide
-   */
+  
   onHide: function () {
 
   },
