@@ -1,9 +1,11 @@
 <view class="container">
   <view class="title-card">
-    <text class="title">Where do you want to go?</text>
+    <text class="title">Holiday Plan</text>
   </view>
   <!-- <view class="btn-container"> -->
-    <view class="blurb"><span id="copy"> Welcome to HeJi. From here you can create your dream holiday at the click of a button. Collaborate with your friends and make sure everyone gets the holiday they deserve. Hit the "+" button to get started.</span>
+    <view class="blurb"><span id="copy">
+      <view> Welcome to HeJi</view>
+      From here you can create your dream holiday at the click of a button. Collaborate with your friends and make sure everyone gets the holiday they deserve. Hit the "+" button to get started.</span>
   </view>
     <button id="btn-create" bindtap="goToCreate"><text class="plus">+</text></button>
   <!-- </view> -->

@@ -1,4 +1,7 @@
 // pages/landing/landing.js
+const app = getApp()
+const AV = require('../../utils/av-weapp-min.js');
+
 Page({
 
   /**
