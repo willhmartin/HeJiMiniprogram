@@ -1,5 +1,20 @@
 
-<view class="viewport">
+
+<view class="container">
+  <view class="activity-container" wx:for="{{activities.activities}}" wx:for-item="activity">
+    <view class="activity-card">
+      <view>{{activity.content}}</view>
+      <view>{{activity.location}}</view>
+      <view>{{activity.time}}</view>
+    </view>
+  </view>
+</view>
+
+
+
+
+
+<!-- <view class="viewport">
   <view>Monday, 12/12</view>
   <view class="container">
 <van-steps id="timeline"
@@ -10,4 +25,4 @@
 />
 
 </view>
-</view>
+</view> -->

@@ -18,12 +18,13 @@ Page({
   onLoad: function (options) {
     let page = this
     wx.request({
-      url: `http://localhost:3000/api/v1/trips/32`,
+      url: `http://localhost:3000/api/v1/trips/37`,
       method: 'GET',
       success(res) {
         console.log('works?', res)
-        const activities = res.data.weather.list
-        // console.log(activities.weather[0].icon)
+        const activities = res.data
+        console.log(activities.weather.list[0].weather[0].icon)
+        console.log(activities)
         
         
         const utc = new Date().toJSON().slice(0,10);
@@ -41,26 +42,7 @@ Page({
    * Lifecycle function--Called when page is initially rendered
    */
   onReady: function() { 
-    var that = this; 
-    // 新建百度地图对象 
-    var BMap = new bmap.BMapWX({ 
-        ak: 'WgxDm56IA3eSDtfDeZwGAprVaG34aKjC' 
-    }); 
-    var fail = function(data) { 
-        console.log("checking baidu api", data) 
-    }; 
-    var success = function(data) { 
-        var weatherData = data.currentWeather[0]; 
-        weatherData = '城市：' + weatherData.currentCity + '\n' + 'PM2.5：' + weatherData.pm25 + '\n' +'日期：' + weatherData.date + '\n' + '温度：' + weatherData.temperature + '\n' +'天气：' + weatherData.weatherDesc + '\n' +'风力：' + weatherData.wind + '\n'; 
-        that.setData({ 
-            weatherData: weatherData 
-        }); 
-    } 
-    // 发起weather请求 
-    BMap.weather({ 
-        fail: fail, 
-        success: success 
-    }); 
+
 } ,
 
   /**
