@@ -42,7 +42,7 @@ App({
     userInfo: null,
     trips: [],
     monies: [],
-    currentDate: [new Date().toJSON().slice(0,10)]
+    currentDate: [new Date().toJSON().slice(0,10)],
     holidays: [],
     payments: []
   }

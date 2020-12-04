@@ -19,7 +19,7 @@
     /* flex-direction: column;
     justify-content: space-evenly; */
     align-items: center; 
-  background-color: #91C4E2;
+  background-color: #228CDB;
 }
 
 .title {
@@ -42,6 +42,18 @@
   text-align: center;
 }
 
-/* .submit {
- 
-} */
+#sub {
+  background-color: #ED6A5A;
+}
+.form-container {
+  color: black;
+  padding: 40px 60px 50px 60px;
+  border-radius: 10px;
+  font-weight: light;
+  text-align: center;
+  margin: 0 15px 0 15px;
+  border-style: solid;
+  margin-top: 15px;
+  background: white;
+  margin-bottom: 20px;
+}

@@ -73,17 +73,12 @@
           "scene": null
         },
         {
-
           "name": "Trips Page",
-
-
           "pathName": "pages/trips/trips",
           "query": "",
           "scene": null
         },
         {
-
-
           "name": "Homepage",
           "pathName": "pages/homepage/homepage",
           "query": "",
@@ -96,18 +91,15 @@
           "scene": null
         },
         {
-
           "name": "Create Budget Page",
           "pathName": "pages/createbudget/createbudget",
-          "query": "",
+          "query": "guest_id=12&trip_id=23",
           "scene": null
         },
         {
           "name": "My Budget Page",
           "pathName": "pages/mybudget/mybudget",
-
           "query": "",
-
           "scene": null
         },
         {
@@ -119,13 +111,13 @@
         {
           "name": "Payment Page",
           "pathName": "pages/payment/payment",
-
           "query": "",
           "scene": null
         },
         {
           "name": "homepage",
           "pathName": "pages/homepage/homepage",
+          "query": "",
           "scene": null
         }
       ]
