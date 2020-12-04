@@ -1,7 +1,7 @@
 <view class="container">
   <view class="header">
     <view >Your Activity</view>
-    <view class="p">Thursday, December 20th, 2020</view>
+    <view class="p">{{activity.date}}</view>
   </view>
 
 
