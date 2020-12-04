@@ -41,6 +41,12 @@ Page({
   /**
    * Lifecycle function--Called when page is initially rendered
    */
+  goToTrips: function() {
+    wx.navigateTo({
+      url: `/pages/trips/trips`
+    })
+  },
+
   onReady: function() { 
 
 } ,
