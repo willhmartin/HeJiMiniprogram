@@ -117,6 +117,7 @@
         {
           "name": "homepage",
           "pathName": "pages/homepage/homepage",
+          "query": "",
           "scene": null
         }
       ]

@@ -6,9 +6,9 @@
 
 
 
-<view class="container">
+
   <view class="activity-container" wx:for="{{activities.activities}}" wx:for-item="activity">
-    <view class="activity-card">
+    <view class="section">
       <view>{{activity.content}}</view>
       <view>{{activity.location}}</view>
       <view>{{activity.time}}</view>
