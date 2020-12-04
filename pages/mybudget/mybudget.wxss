@@ -1,3 +1,7 @@
+.background {
+  background-color: #228CDB;
+  height: 100%;
+}
 .container {
   justify-content: center;
   /* padding-top: 40px; */
@@ -61,10 +65,6 @@
 .all-the-btn{
   display:flex;
   justify-content: space-around;
-}
-.background {
-  background-color: #91C4E2;
-  height: 100%;
 }
 #btn-create {
   border-radius: 50%;

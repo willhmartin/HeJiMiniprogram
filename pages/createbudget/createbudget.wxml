@@ -1,21 +1,19 @@
 <view class="background">
   <view class="container"> 
-
-    <view class='header'>Set Your Budget</view>
-<form  bindsubmit="formSubmit" bindreset="formReset">
-  <view class="form">
-    <view class="section">
-      <view class="section__title">Trip Budget</view>
-      <input  bindinput="bindKeyInput" placeholder="Enter Amount Here"/>
-      <view class='p1'>Daily or Entirety of Trip?</view>
+  <view class='header'>Set Your Budget</view>
+  
+  <view class='form-container'>
+      <view class="form">
+        <view class="section">
+          <view class="section__title">Trip Budget</view>
+          <input value="{{inputValue}}" bindinput="bindKeyInput" placeholder="Enter Amount Here"/>
+          </view>
     </view>
-
+</view>
   <view class="btn-area">
-    <button id="sub" class="btn-submit" form-type="submit">Submit</button>
-    <button id="reset" class="btn-reset" form-type="reset">Reset</button>
-  </view> 
-  </view>
-</form>
+        <button id="sub" class="btn-submit" bindtap="submit">Submit</button>
+        <button id="reset" class="btn-reset" bindtap="reset">Reset</button>
+      </view> 
     
   </view>
 </view>

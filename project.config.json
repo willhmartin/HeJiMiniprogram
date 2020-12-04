@@ -93,7 +93,7 @@
         {
           "name": "Create Budget Page",
           "pathName": "pages/createbudget/createbudget",
-          "query": "",
+          "query": "guest_id=12&trip_id=23",
           "scene": null
         },
         {
@@ -117,6 +117,7 @@
         {
           "name": "homepage",
           "pathName": "pages/homepage/homepage",
+          "query": "",
           "scene": null
         }
       ]

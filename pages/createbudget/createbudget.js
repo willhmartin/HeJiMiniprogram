@@ -1,9 +1,7 @@
 // pages/budget/budget.js
 const globalData = getApp().globalData
 Page({
-  /**
-   * Page initial data
-   */
+
   data: {
     focus: false,
     inputValue: ''
@@ -18,29 +16,22 @@ Page({
       inputValue: e.detail.value
     })
   },
-  
-  // bindReplaceInput: function(e) {
-  //   var value = e.detail.value
-  //   var pos = e.detail.cursor
-  //   if(pos != -1){
-  //     //The cursor is in the center
-  //     var left = e.detail.value.slice(0,pos)
-  //     //Calculate the position of the cursor
-  //     pos = left.replace(/11/g,'2').length
-  //   }
-  //   return {
-  //     value: value.replace(/11/g,'2'),
-  //     cursor: pos
-  //   }
-  // },
-  formSubmit: function(e) {
-    console.log('Form triggers submit event, carrying this data: ', e.detail.value)
 
+  reset: function(){
+    this.setData({
+      inputValue: ''
+    })
+  },
+
+  submit: function(e) {
+    console.log("LINE 27--SUBMIT")
     const budget = {
-      amount: this.data.inputValue
+      amount: this.data.inputValue,
+      guest_id: 12,
+      trip_id: 23
   }
   globalData.monies.push(budget)
-  console.log("BUDGET!!!",budget)
+  console.log("LINE 34---",budget)
   this.setData({budget})
 
   wx.request({ 
@@ -48,10 +39,10 @@ Page({
     method: 'POST',
     data: budget,
     success(res) {
-      console.log('WORKS???', res)
+      console.log('LINE 42---', res)
 
   wx.navigateTo({
-    url: `/pages/mybudget/mybudget?budget=${budget}`
+    url: `/pages/mybudget/mybudget?id=${res.data.id}`
   })
 }
 })
@@ -61,7 +52,7 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+    console.log('options', options)
   },
 
   /**

@@ -4,6 +4,7 @@
     <view class="p">{{activity.date}}</view>
   </view>
 
+
   <!-- activity card -->
   <view class="activity-container" wx:for="{{activities.activities}}" wx:for-item="activity" wx:key="index">
     <view wx:if="{{activity.date != activities.activities[index-1].date}}">{{activity.date}}</view>
@@ -19,6 +20,7 @@
           <view >{{activity.location}}</view>
           <view >{{activity.time}}</view>
       </view>
+
     </view>
   </view>
 </view>

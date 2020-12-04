@@ -49,13 +49,17 @@
   color: white;
   font-weight: bolder;
 }
-/* vote btn*/
-/*  .btn {
+
+ .btn {
   position: absolute;
   left: 0;
   top: 0;
   height: 100%;
   width: 45px;
   background-color:#f6f6f6;
+} 
 
-} */
+.viewport {
+  margin: 5px 10px;
+} 
+
