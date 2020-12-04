@@ -34,10 +34,6 @@ App({
   },
 
 
-  
-
-
-
   globalData: {
     userInfo: null,
     trips: [],
