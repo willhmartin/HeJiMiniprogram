@@ -19,9 +19,8 @@ Page({
       })
     },
     radioChange: function(e) {
-      this.setData({item:this.data.items[e.detail.value]})
+      this.setData({inputValue4: e.detail.value})
       console.log('LINE 23---', e.detail.value)
-      const picked = e.detail.valie
   
     },
     bindCatInput: function(e) {
@@ -46,24 +45,26 @@ Page({
       console.log('LINE 43---', e.detail.value)
       const payment = {
         amount: this.data.inputValue1,
-        split: this.data.items,
+        split: this.data.inputValue4,
         category: this.data.inputValue2,
         content: this.data.inputValue3,
-        date: this.data.date
+        date: this.data.date,
     }
     console.log('LINE 52---', payment)
     globalData.payments.push(payment)
     console.log(payment, "Checking globalData", globalData)
     this.setData({payment})
-
+    let group_payment = this.data.inputValue4 == "true" ? "none" : this.data.guest_id
+    const trip_id = this.data.trip_id
+    // add ?guest_id=${group_payment} to the url in the post request
     wx.request({ 
-      url: `http://localhost:3000/api/v1/trips/23/payments`,
+      url: `http://localhost:3000/api/v1/trips/${trip_id}/payments?guest_id=${group_payment}`,
       method: 'POST',
       data: payment,
       success(res) {
         console.log('LINE 62---', res)
         wx.navigateTo({
-          url: `/pages/mybudget/mybudget`
+          url: `/pages/mybudget/mybudget?id=${res.data.id}`
         })
       }
     })
@@ -72,7 +73,9 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+    const guest_id = 13 // get it from options
+    const trip_id = 24 // get it from options
+    this.setData({guest_id, trip_id})
   },
 
   /**
