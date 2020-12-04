@@ -1,6 +1,6 @@
 <view class="background">
   <view class="container">
-    <button id="update-budget" bindtap=""><text class="budget-btn">Update</text></button>
+    <!-- <button id="update-budget" bindtap=""><text class="budget-btn">Update</text></button> -->
   <!-- name -->
     <view class='header'>My Budget</view>
     <!-- image -->

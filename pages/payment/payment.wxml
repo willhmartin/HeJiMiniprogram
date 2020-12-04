@@ -4,35 +4,41 @@
     <view class='header'>Submit a Payment</view>
 <!-- form -->
 <view class="form-box">
-<form  bindsubmit="formSubmit" bindreset="formReset">
   <view class="form">
     <view class="section">
       <view class="section__title">Amount</view>
       <input type="number" bindinput="bindAmountInput" placeholder="Enter Amount Here"/>
 
+  <view class="section__title">Split By Group?</view>
+    <radio-group class="radio-group" bindchange="radioChange">
+      <label class="radio" wx:for="{{items}}">
+        <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+      </label>
+    </radio-group>
+
       <view class="section__title">Category</view>
       <input  bindinput="bindCatInput" placeholder="Enter Category Here"/>
 
       <view class="section__title">Note</view>
-      <input  bindinput="bindNoteInput" placeholder="Note"/>
-
-      <view id="date" class="option">
+      <input  bindinput="bindNoteInput" placeholder="Note (Optional)"/>
+      
+      <view class="option">
         <picker mode="date" value="{{date}}" start="2020-12-01" end="2025-12-01" bindchange="setDate">
           <view class="picker">
             Date  {{date}} 
           </view>
         </picker>
       </view>
-
     </view>
-  <view class="btn-area">
-    <button id="sub" class="btn-submit" form-type="submit">Submit</button>
-    <button id="reset" class="btn-reset" form-type="reset">Reset</button>
-  </view> 
   </view>
-</form>
 </view>
 
 <!-- background and container end -->
+
+  <view class="btn-area">
+    <button id="sub" class="btn-submit" bindtap="submit">Submit</button>
+    <button id="reset" class="btn-reset" bindtap="reset">Reset</button>
+  </view> 
+
   </view>
 </view>

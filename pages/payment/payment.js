@@ -2,9 +2,11 @@ const globalData = getApp().globalData
 
 Page({
   data: {
-      focus: false
-      // inputValue1: ''
-      // inputValue2: ''
+      focus: false,
+      items: [
+        {name: true, value: 'Yes'},
+        {name: false, value: 'No'}
+      ]
     },
     bindButtonTap: function(e) {
       this.setData({
@@ -15,6 +17,12 @@ Page({
       this.setData({
         inputValue1: e.detail.value
       })
+    },
+    radioChange: function(e) {
+      this.setData({item:this.data.items[e.detail.value]})
+      console.log('LINE 23---', e.detail.value)
+      const picked = e.detail.valie
+  
     },
     bindCatInput: function(e) {
       console.log("CHECKING", e)
@@ -29,20 +37,21 @@ Page({
       })
     },
     setDate: function(e) {
-      console.log('IT WORKS?', e)
+      console.log('LINE 38---', e)
       this.setData({
         date: e.detail.value
       })
     },
-    formSubmit: function(e) {
-      console.log('Form triggers submit event, carrying this data: ', e.detail.value)
+    submit: function(e) {
+      console.log('LINE 43---', e.detail.value)
       const payment = {
         amount: this.data.inputValue1,
+        split: this.data.items,
         category: this.data.inputValue2,
         content: this.data.inputValue3,
         date: this.data.date
     }
-    console.log('THIS IS WHAT I WANT', payment)
+    console.log('LINE 52---', payment)
     globalData.payments.push(payment)
     console.log(payment, "Checking globalData", globalData)
     this.setData({payment})
@@ -52,17 +61,13 @@ Page({
       method: 'POST',
       data: payment,
       success(res) {
-        console.log('WORKS???', res)
+        console.log('LINE 62---', res)
         wx.navigateTo({
           url: `/pages/mybudget/mybudget`
         })
       }
     })
-
-    
     },
-  
-
   /**
    * Lifecycle function--Called when page load
    */
