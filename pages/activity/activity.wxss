@@ -1,3 +1,4 @@
+
 .container {
   background: url("http://lc-MaWCTEhx.cn-n1.lcfile.com/b872c43f3b46a9bb9d67.png/sky.png");
   padding: 70rpx 0;
@@ -11,6 +12,7 @@
   font-weight: bold;
   text-align: left;
   width: 350px;
+
 }
 
 .p {
@@ -50,4 +52,4 @@
 
 .viewport {
   margin: 5px 10px;
-}
+} */
