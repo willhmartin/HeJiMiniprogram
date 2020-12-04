@@ -17,7 +17,20 @@ Page({
       url: '../logs/logs'
     })
   },
-  onLoad: function () {
+  onLoad: function (options) {
+    let page = this
+    console.log(options)
+    const user_id = options.id
+    wx.request({
+      url: `http://localhost:3000/api/v1/users/${user_id}/trips`,
+      method: 'GET',
+      success(res) {
+        console.log('works', res)
+        const trips = res.data
+        page.setData({trips})
+      }
+
+    })
     
   },
   getUserInfo: function(e) {

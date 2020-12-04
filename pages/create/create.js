@@ -43,17 +43,20 @@ Page({
   globalData.holidays.push(holiday)
   this.setData({holiday})
   wx.request({
-    url: `http://localhost:3000/api/v1/users/4/trips`,
+    url: `http://localhost:3000/api/v1/users/19/trips`,
     method: 'POST',
     data: holiday,
     success(res) {
       console.log('works?', res)
+      const id = res.data.user_id;
+      console.log(id)
+      wx.navigateTo({
+        url: `/pages/trips/trips?id=${id}`
+      })
     }
   })
 
-  wx.navigateTo({
-    url: `/pages/trips/trips`
-  })
+  
   },
   /**
    * Lifecycle function--Called when page load

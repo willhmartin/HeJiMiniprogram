@@ -7,18 +7,24 @@
 }
 
 .holiday-card {
-  color: white;
+  color: black;
   font-size: 30rpx;
-  background: linear-gradient(180deg, #BA9BA0, #CD8A56);
   padding: 10rpx 10rpx;
   border-radius: 5px;
   width: 80vw;
+  padding: 20rpx 20rpx;
+  width: 300px;
+  box-shadow: 7px 5px 16px 6px rgba(25,92,130,0.25);
+  background-color: #f4f4f4;
+
 }
 
 .title {
-  font-size: 70rpx;
-  text-decoration: underline;
-  margin-bottom: 10px;
+  font-family: 'Nunito Sans', sans-serif;
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+  font-style: italic;
 }
 
 #btn-create {
@@ -30,5 +36,8 @@
   justify-content: center;
   font-size: 50px;
   margin: 0 auto;
-  background: linear-gradient(180deg, #BA9BA0, #CD8A56)
+  background: #ff4b5c;
+  /*height: 74px;*/
+  font-family:'Nunito Sans', sans-serif;
+  color: white;
 }

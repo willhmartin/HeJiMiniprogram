@@ -27,12 +27,13 @@
   justify-content: center;
   font-size: 50px;
   margin: 0 auto;
-  background: linear-gradient(180deg, #BA9BA0, #CD8A56)
-}
+  background: #ff4b5c;
+    /*color: linear-gradient(180deg, #BA9BA0, #CD8A56)
+*/}
 
 .plus {
   height: 74px;
-  font-family: 'Indie Flower';
+  font-family:'Nunito Sans', sans-serif;
   color: white;
 }
 
@@ -42,7 +43,9 @@
   /* opacity: 0.8; */
   padding: 10px 10px;
   width: 85vw;
+  margin-bottom: 220px;
   border-radius: 5px;
+  text-align: center;
   font-weight: lighter;
 }
 
