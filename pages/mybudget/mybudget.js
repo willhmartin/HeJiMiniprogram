@@ -44,7 +44,7 @@ Page({
     let page = this
 
     wx.request({
-      url: `http://localhost:3000/api/v1/trips/23/payments`,
+      url: `localhost:3000/api/v1/trips/23/payments`,
       method: 'GET',
       success(res) {
         console.log('LINE 50---', res)

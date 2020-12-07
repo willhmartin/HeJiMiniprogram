@@ -22,10 +22,12 @@ Page({
     console.log(options)
     const user_id = options.id
     wx.request({
+
       url: `http://localhost:3000/api/v1/users/${user_id}/trips`,
+
       method: 'GET',
       success(res) {
-        console.log('works', res)
+        console.log('LINE 30--', res)
         const trips = res.data
         page.setData({trips})
       }

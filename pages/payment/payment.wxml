@@ -8,7 +8,7 @@
 <!-- header -->
 <!-- <view class='header'>Enter Payment Details Here</view> -->
 <!-- form -->
-<view class="card-grid">
+<view class="card-grid"> 
   <view class="form">
 
    <view class="section">

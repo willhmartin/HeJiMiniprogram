@@ -46,7 +46,7 @@ class BMapWX {
    *
    * @param {Object} param 检索配置
    * 参数对象结构可以参考
-   * http://lbsyun.baidu.com/index.php?title=webapi/guide/webservice-placeapi
+   * https://lbsyun.baidu.com/index.php?title=webapi/guide/webservice-placeapi
    */
   search(param) {
     var that = this;
@@ -147,7 +147,7 @@ class BMapWX {
    *
    * @param {Object} param 检索配置
    * 参数对象结构可以参考
-   * http://lbsyun.baidu.com/index.php?title=webapi/place-suggestion-api
+   * https://lbsyun.baidu.com/index.php?title=webapi/place-suggestion-api
    */
   suggestion(param) {
     var that = this;
