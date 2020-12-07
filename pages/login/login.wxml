@@ -1,3 +1,15 @@
 <!--pages/login/login.wxml-->
 <text>pages/login/login.wxml</text>
-<button open-type="getUserInfo" bindgetuserinfo="getUserInfo">Login</button>
+
+
+
+<view class="userinfo">
+ 
+ <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="login-btn">Log In</button>
+
+ <block wx:else>
+     <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+     <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+   </block>
+
+ </view>
