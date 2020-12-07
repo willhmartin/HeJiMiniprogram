@@ -1,44 +1,57 @@
-// pages/activity/activity.js
+// pages/login/login.js
 const app = getApp()
-const AV = require('../../utils/av-weapp-min.js');
-
 Page({
 
   /**
    * Page initial data
    */
   data: {
-    steps: [
-      {
-        text: '12:00pm',
-        desc: '',
-      },
-      {
-        text: 'french',
-        desc: 'random',
-      }
-    ],
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
   },
 
   /**
    * Lifecycle function--Called when page load
    */
+  
+
   onLoad: function (options) {
-    let page = this
-    wx.request({
-
-      url: "http://localhost:3000/api/v1/trips/1",
-
-      method: 'GET',
-      success(res) {
-        console.log('works?', res)
-        const activities = res.data
-        page.setData({activities})
+    wx.getSetting({
+      success (res){
+        if (res.authSetting['scope.userInfo']) {
+          // User authorization is obtained. You can directly call the `getUserInfo` API to get the profile photo and alias.
+          wx.getUserInfo({
+            success: function(res) {
+              console.log(res.userInfo)
+            }
+          })
+        }
       }
-      
     })
   },
-  
+
+
+  getUserInfo: function (e) {
+    const userDetails = e.detail.userInfo
+    console.log(e.detail.userInfo)
+     const user = {
+      name: userDetails.nickName,
+      
+    }
+    console.log(user)
+    wx.request({
+      url: `http://localhost:3000/api/v1/users/${app.globalData.userId}`,
+      method: 'PUT',
+      data: user,
+      success(res) {
+        console.log('works?', res)
+      }
+    })
+
+    wx.reLaunch({
+
+      url: `/pages/landing/landing`
+    })
+  },
   /**
    * Lifecycle function--Called when page is initially rendered
    */
