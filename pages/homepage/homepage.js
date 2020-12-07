@@ -4,13 +4,15 @@ var bmap = require('../bmap-wx.js');
 const app = getApp()
 const globalData = getApp().globalData
 console.log('LINE 6--,', globalData)
+
 Page({
 
   /**
    * Page initial data
    */
   data: {
-
+    tempTripId: 49,
+    userId: 75
   },
 
   /**
@@ -18,15 +20,17 @@ Page({
    */
   onLoad: function (options) {
     let page = this
-    console.log('LINE 21--', options)
+    console.log('LINE 21--', globalData.tempTripId)
 
     wx.request({
 
+      url: `http://localhost:3000/api/v1/trips/${page.data.tempTripId}?user_id=${page.data.userId}`,
 
-      url: `http://localhost:3000/api/v1/trips/${globalData.tripID}`,
+
+      // url: `http://localhost:3000/api/v1/trips/${globalData.tempTripId}?user_id=${globalData.userId}`,
+
 
       // url: `http://localhost:3000/api/v1/trips/${app.globalData.tripID[0]}`,
-
 
       method: 'GET',
       success(res) {
@@ -43,7 +47,7 @@ Page({
         })
         page.setData({activities})
         globalData.currentDate.push(utc)
-      }
+      } 
     })
   },
 

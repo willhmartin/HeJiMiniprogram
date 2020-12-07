@@ -23,7 +23,7 @@
 .container {
   justify-content: center;
   /* border-top-left-radius: 50px;
-  border-top-right-radius: 50px; */
+  border-top-right-radius: 50px; */ 
 }
 .header {
   padding-top: 20px;
@@ -47,10 +47,6 @@
 .placeholder {
   font-weight: light;
 }
-/* .card-grid {
-  grid-template-columns: 1fr;
-  grid-gap: 7px;
-} */
 .title {
   color: black;
   /* background: #F7C326; */
