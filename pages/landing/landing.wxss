@@ -2,7 +2,7 @@
   padding: 70rpx 0;
   height: 100vh;
   background-color: #3B7EC9;
-  background: url("http://lc-MaWCTEhx.cn-n1.lcfile.com/d6556074a4bfbaf299c3.jpg/Tree.jpg");
+  background: url("https://lc-MaWCTEhx.cn-n1.lcfile.com/d6556074a4bfbaf299c3.jpg/Tree.jpg");
   background-position: center bottom;
   background-size: cover;
 }
@@ -10,7 +10,9 @@
 .title {
   font-family: 'Nunito Sans', sans-serif;
   color: white;
-  font-size: 80rpx;
+  font-size: 65px;
+  font-weight: bold;
+  font-style: italic;
 }
 
 .title-card {

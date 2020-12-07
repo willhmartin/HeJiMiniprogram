@@ -1,6 +1,6 @@
 
 .activity-page {
-  background: url("http://lc-MaWCTEhx.cn-n1.lcfile.com/b872c43f3b46a9bb9d67.png/sky.png");
+  background: url("https://lc-MaWCTEhx.cn-n1.lcfile.com/b872c43f3b46a9bb9d67.png/sky.png");
   flex-direction: column;
   display: flex;
   height: 100vh;
