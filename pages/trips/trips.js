@@ -40,6 +40,7 @@ Page({
     console.log(event.currentTarget)
     const id_for_trip = event.currentTarget.dataset.id
     console.log(id_for_trip)
+    globalData.tripID = []
     globalData.tripID.push(id_for_trip)
     wx.switchTab({
       url: `/pages/homepage/homepage`

@@ -4,6 +4,8 @@ var bmap = require('../bmap-wx.js');
 const app = getApp()
 const globalData = getApp().globalData
 console.log('LINE 6--,', globalData)
+const idLength = getApp().globalData.length - 1
+console.log(idLength)
 Page({
 
   /**
@@ -17,6 +19,53 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    // let page = this
+    // console.log('LINE 21--', options)
+
+    // wx.request({
+
+
+    //   url: `http://localhost:3000/api/v1/trips/${globalData.tripID}`,
+
+    //   // url: `http://localhost:3000/api/v1/trips/${app.globalData.tripID[0]}`,
+
+
+    //   method: 'GET',
+    //   success(res) {
+    //     console.log('LINE 28--', res)
+    //     const activities = res.data
+    //     console.log(activities.weather.list[0].weather[0].icon)
+    //     console.log(activities)
+        
+        
+    //     const utc = new Date().toJSON().slice(0,10);
+    //     console.log(utc)
+    //     page.setData({
+    //       dateNow: globalData.currentDate
+    //     })
+    //     page.setData({activities})
+    //     globalData.currentDate.push(utc)
+    //   }
+    // })
+  },
+
+  /**
+   * Lifecycle function--Called when page is initially rendered
+   */
+  goToTrips: function() {
+    wx.navigateTo({
+      url: `/pages/trips/trips?id=${globalData.userId}`
+    })
+  },
+
+  onReady: function() { 
+
+} ,
+
+  /**
+   * Lifecycle function--Called when page show
+   */
+  onShow: function (options) {
     let page = this
     console.log('LINE 21--', options)
 
@@ -45,26 +94,6 @@ Page({
         globalData.currentDate.push(utc)
       }
     })
-  },
-
-  /**
-   * Lifecycle function--Called when page is initially rendered
-   */
-  goToTrips: function() {
-    wx.navigateTo({
-      url: `/pages/trips/trips`
-    })
-  },
-
-  onReady: function() { 
-
-} ,
-
-  /**
-   * Lifecycle function--Called when page show
-   */
-  onShow: function () {
-
   },
 
   /**

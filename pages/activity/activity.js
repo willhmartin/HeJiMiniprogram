@@ -1,6 +1,7 @@
 // pages/activity/activity.js
 const app = getApp()
 const AV = require('../../utils/av-weapp-min.js');
+const globalData = getApp().globalData
 
 Page({
 
@@ -28,7 +29,7 @@ Page({
     wx.request({
 
 
-      url: "http://localhost:3000/api/v1/trips/1",
+      url: `http://localhost:3000/api/v1/trips/${globalData.tripID}`,
 
 
       method: 'GET',
@@ -52,7 +53,21 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
+    let page = this
+    wx.request({
 
+
+      url: `http://localhost:3000/api/v1/trips/${globalData.tripID}`,
+
+
+      method: 'GET',
+      success(res) {
+        console.log('works?', res)
+        const activities = res.data
+        page.setData({activities})
+      }
+      
+    })
   },
 
   /**
