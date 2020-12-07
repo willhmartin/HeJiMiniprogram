@@ -1,5 +1,5 @@
-<view class="header-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.picsum.photos/id/218/4752/3168.jpg?hmac=Orn41GOM38rjA-HLzG_hpWi1sfLgnsAAvpiB-uwjvf0);">
-  <view id="banner-title">Create Payment.</view>
+<view class="header-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://lc-MaWCTEhx.cn-n1.lcfile.com/1db39e9a4375d467309c.jpg/swiss.jpg);">
+  <view id="banner-title">Create Payment</view>
 
 
 <view class="background">

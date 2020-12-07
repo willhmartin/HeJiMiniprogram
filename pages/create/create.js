@@ -1,6 +1,6 @@
 // pages/create/create.js
 const globalData = getApp().globalData
-
+console.log(globalData)
 Page({ 
 
   /**
