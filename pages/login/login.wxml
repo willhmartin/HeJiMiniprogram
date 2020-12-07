@@ -1,9 +1,7 @@
 <!--pages/login/login.wxml-->
 <text>pages/login/login.wxml</text>
-<<<<<<< HEAD
-<button open-type="getUserInfo" bindgetuserinfo="getUserInfo">Login</button>
 
-=======
+
 
 
 
@@ -17,4 +15,4 @@
    </block>
 
  </view>
->>>>>>> e049648f6a873ff09ef1e1f9d39248e4b002ab3a
+
