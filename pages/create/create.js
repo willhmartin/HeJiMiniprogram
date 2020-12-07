@@ -44,7 +44,7 @@ Page({
   this.setData({holiday})
   wx.request({
 
-    url: `http://localhost:3000/api/v1/users/3/trips`,
+    url: `http://localhost:3000/api/v1/users/${globalData.userId}/trips`,
 
     method: 'POST',
     data: holiday,
