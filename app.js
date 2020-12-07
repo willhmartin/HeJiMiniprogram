@@ -5,6 +5,7 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
+
   const host = 'http://localhost:3000/'
   console.log('beginning login')
   wx.login({
@@ -22,6 +23,7 @@ App({
       console.log(res)
       this.globalData.userId = res.data.userId
     }
+
     })
     }
   })
