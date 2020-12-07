@@ -26,7 +26,7 @@ Page({
   onLoad: function (options) {
     let page = this
     wx.request({
-      url: "http://localhost:3000/api/v1/trips/15",
+      url: "http://localhost:3000/api/v1/trips/1",
       method: 'GET',
       success(res) {
         console.log('works?', res)

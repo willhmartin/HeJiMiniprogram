@@ -119,6 +119,12 @@
           "pathName": "pages/homepage/homepage",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "login page",
+          "pathName": "pages/login/login",
+          "query": "guest_id=12&trip_id=24",
+          "scene": null
         }
       ]
     }
