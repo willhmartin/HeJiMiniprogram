@@ -21,7 +21,7 @@ Page({
   onLoad: function (options) {
     let page = this
     page.getAuth()
-    console.log('LINE 21--', globalData.tripID, options.tripId)
+    console.log('LINE 24--', globalData.tripID, options.tripId)
     
     // console.log('LINE 21--', globalData.tempTripId)
     wx.request({
@@ -33,7 +33,7 @@ Page({
 
       method: 'GET',
       success(res) {
-        console.log('LINE 28--', res)
+        console.log('LINE 36--', res)
         const activities = res.data
         console.log(activities.weather.list[0].weather[0].icon)
         console.log(activities)
@@ -43,7 +43,7 @@ Page({
         console.log(utc)
         page.setData({
           dateNow: globalData.currentDate,
-          is_guest: res.data.is_guest
+          // is_guest: res.data.is_guest
         })
         page.setData({activities})
         globalData.currentDate.push(utc)
@@ -72,9 +72,10 @@ Page({
       method: 'POST',
       data: {trip_id: tripId, name: this.data.userInfo.nickName, user_id: this.data.userId},
       success(res){
-        console.log("checkoing post guest", res)
+        console.log("LINE 75- CHECKING POST", res)
         this.setData({
-          is_guest: true
+          is_guest: false
+          // is_guest: true
         })
       }
     })
@@ -84,13 +85,13 @@ Page({
     let page = this
     wx.getSetting({
       success(res){
-        console.log("checking from login", res, res.authSetting['scope.userInfo'])
+        console.log("CHECKING FROM LOGIN", res, res.authSetting['scope.userInfo'])
         let auth = res.authSetting
         if(auth['scope.userInfo']){
           globalData.hasUserInfo = true
           wx.getUserInfo({
             success: res=>{
-              console.log("chekcing get wx.getuserInfo", res.userInfo)
+              console.log("CHECK wx.getuserInfo", res.userInfo)
               page.setData({
                 userInfo: res.userInfo
               })
