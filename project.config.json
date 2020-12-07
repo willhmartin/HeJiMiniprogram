@@ -103,27 +103,26 @@
           "scene": null
         },
         {
-          "name": "Logs Page",
-          "pathName": "pages/logs/logs",
-          "query": "",
-          "scene": null
-        },
-        {
           "name": "Payment Page",
           "pathName": "pages/payment/payment",
           "query": "",
           "scene": null
         },
         {
-          "name": "homepage",
-          "pathName": "pages/homepage/homepage",
+          "name": "Login Page",
+          "pathName": "pages/login/login",
           "query": "",
           "scene": null
         },
         {
-          "name": "login page",
-          "pathName": "pages/login/login",
-          "query": "guest_id=12&trip_id=24",
+          "name": "activities",
+          "pathName": "pages/activities/activities",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "activities",
+          "pathName": "pages/activities/activities",
           "scene": null
         }
       ]

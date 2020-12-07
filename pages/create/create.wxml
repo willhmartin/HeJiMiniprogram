@@ -1,48 +1,49 @@
-<view class="container">
-  <view class="title-card">
-    <text class="title">Create Trip</text>
-  </view>
-  <form  bindsubmit="formSubmit" bindreset="formReset">
+<!-- banner image -->
+<view class="header-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://lc-MaWCTEhx.cn-n1.lcfile.com/0f0a85f3cd0da7c27a20.jpg/southafrica.jpg);">
+  <view id="banner-title">Create Trips</view>
+
+  
+<view class="background">
     <view class="form">
-    <view>
       <!-- title --> 
-    <view class="section">
-      <view class="card-title">Title</view>
-      <input  bindinput="titleInput" maxlength="20" placeholder="" class="user-input"/>
-    </view>
- 
-    <!-- location -->
-    <view class="section">
-      <view class="card-title">Location</view>
-      <input  bindinput="locationInput" maxlength="20" placeholder="" class="user-input"/>
-    </view>
+      <view class="section">
+        <view class="card-title">Title</view>
+        <input  bindinput="titleInput" maxlength="20" placeholder="" class="user-input"/>
+      </view>
+
+      <!-- location -->
+      <view class="section">
+        <view class="card-title">Location</view>
+        <input  bindinput="locationInput" maxlength="20" placeholder="" class="user-input"/>
+      </view>
+
     <!-- start date -->
-    <view id="date" class="section">
-        <view class="card-title">Start Date</view>
-        <picker mode="date" value="{{date}}" start="2015-09-01" end="2021-09-01" bindchange="setStartDate" class="user-input">
-          <view class="picker">
-            {{startDate ? startDate : 'Select'}}
-          </view>
-        </picker>
+      <view id="date" class="section">
+          <view class="card-title">Start Date</view>
+          <picker mode="date" value="{{date}}" start="2015-09-01" end="2021-09-01" bindchange="setStartDate" class="user-input">
+            <view class="picker">
+              {{startDate ? startDate : 'Select'}}
+            </view>
+          </picker>
+      </view>
+
+      <!-- end date -->
+      <view id="date" class="section">
+        <view class="card-title">End Date</view>
+          <picker mode="date" value="{{date}}" start="2015-09-01" end="2021-09-01" bindchange="setEndDate" class="user-input">
+            <view class="picker">
+              {{endDate ? endDate : 'Select'}}
+            </view>
+          </picker>
+      </view>
     </view>
 
-    <!-- end date -->
-    <view id="date" class="section">
-      <view class="card-title">End Date</view>
-        <picker mode="date" value="{{date}}" start="2015-09-01" end="2021-09-01" bindchange="setEndDate" class="user-input">
-          <view class="picker">
-            {{endDate ? endDate : 'Select'}}
-          </view>
-        </picker>
-    </view>
-  </view>
+    <!-- btn -->
+      <view class="btn-area">
+        <button bindtap="formSubmit" id="sub" class="btn-submit" form-type="submit">Submit</button>
+        <!-- <button bindtap="formReset" id="reset" class="btn-reset" form-type="reset">Reset</button> -->
+      </view> 
 
-  <!-- btn -->
-    <view class="btn-area">
-      <button id="sub" class="btn-submit" form-type="submit">Submit</button>
-      <button id="reset" class="btn-reset" form-type="reset">Reset</button>
-    </view> 
+
+    </view>                                                                                      
   </view>
-  </form>
-                                                                                                    
-</view>

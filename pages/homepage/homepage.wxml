@@ -1,5 +1,18 @@
 
-<view class="container">
+<view class="container"> 
+
+  <!-- "Join Trip" if new guest START-->
+  <view class="guestinfo">
+ 
+    <button wx:if="{{!is_guest && !getUserInfo}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="join-btn">Join Trip</button>
+    
+    <block wx:else>
+     <image bindtap="bindViewTap" class="userinfo-avatar" src="{{guestInfo.avatarUrl}}" mode="cover"></image>
+     <text class="guestinfo-nickname">{{guestInfo.nickName}}</text>
+   </block>
+
+ </view>
+  <!-- "Join Trip" if new guest END-->
   <button id="return-to-trips" bindtap="goToTrips">My Trips</button>
   <view class="title">Today in {{activities.trip.location}}</view>
   <view class="icon-container">

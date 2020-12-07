@@ -29,19 +29,25 @@ Page({
     wx.request({
 
 
+
       url: `http://localhost:3000/api/v1/trips/${globalData.tripID}`,
 
 
       method: 'GET',
       success(res) {
-        console.log('works?', res)
+        console.log('LINE 36--', res)
         const activities = res.data
         page.setData({activities})
       }
       
     })
   },
-  
+  goToActivity: function () {
+    console.log('clicked')
+    wx.navigateTo({
+      url: '/pages/activities/activities',
+    })
+  },
   /**
    * Lifecycle function--Called when page is initially rendered
    */
