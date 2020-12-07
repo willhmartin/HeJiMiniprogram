@@ -54,6 +54,14 @@ Page({
       hasUserInfo: true
     })
   },
+
+  goToCreate: function () {
+    console.log('clicked')
+    wx.navigateTo({
+      url: '/pages/create/create',
+    })
+  },
+
   onShow: function () {
     this.setData({
       holidays: globalData.holidays
