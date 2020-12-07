@@ -1,6 +1,7 @@
 // pages/activity/activity.js
 const app = getApp()
 const AV = require('../../utils/av-weapp-min.js');
+const globalData = getApp().globalData
 
 Page({
 
@@ -26,7 +27,12 @@ Page({
   onLoad: function (options) {
     let page = this
     wx.request({
-      url: "http://localhost:3000/api/v1/trips/29",
+
+
+
+      url: `http://localhost:3000/api/v1/trips/${globalData.tripID}`,
+
+
       method: 'GET',
       success(res) {
         console.log('LINE 36--', res)
@@ -36,7 +42,12 @@ Page({
       
     })
   },
-  
+  goToActivity: function () {
+    console.log('clicked')
+    wx.navigateTo({
+      url: '/pages/activities/activities',
+    })
+  },
   /**
    * Lifecycle function--Called when page is initially rendered
    */
@@ -48,7 +59,21 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
+    let page = this
+    wx.request({
 
+
+      url: `http://localhost:3000/api/v1/trips/${globalData.tripID}`,
+
+
+      method: 'GET',
+      success(res) {
+        console.log('works?', res)
+        const activities = res.data
+        page.setData({activities})
+      }
+      
+    })
   },
 
   /**

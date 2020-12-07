@@ -13,7 +13,7 @@
 
    <view class="section">
     <view class="section__title">Amount
-      <input type="number" bindinput="bindAmountInput" placeholder="Enter Amount Here"/>
+      <input type="number" class="user-input" bindinput="bindAmountInput" placeholder="Enter Amount Here"/>
     </view>
   </view>
 
@@ -29,18 +29,19 @@
 
   <view class="section">
     <view class="section__title">Category
-      <input  bindinput="bindCatInput" placeholder="Enter Category Here"/>
+      <input  bindinput="bindCatInput" class="user-input" placeholder="Enter Category Here"/>
     </view>
   </view>
 
   <view class="section">
     <view class="section__title">Note
-      <input  bindinput="bindNoteInput" placeholder="Note (Optional)"/>
+      <input  bindinput="bindNoteInput" class="user-input" placeholder="Note (Optional)"/>
     </view>
   </view>
 
   <view class="section">
     <view class="section__title">
+      <view class="">Date</view>
       <picker mode="date" value="{{date}}" start="2020-12-01" end="2025-12-01" bindchange="setDate">
         <view class="picker">
             Date  {{date}} 

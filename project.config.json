@@ -103,12 +103,6 @@
           "scene": null
         },
         {
-          "name": "Logs Page",
-          "pathName": "pages/logs/logs",
-          "query": "",
-          "scene": null
-        },
-        {
           "name": "Payment Page",
           "pathName": "pages/payment/payment",
           "query": "",
@@ -118,6 +112,23 @@
           "name": "Login Page",
           "pathName": "pages/login/login",
           "query": "",
+          "scene": null
+        },
+        {
+          "name": "activities",
+          "pathName": "pages/activities/activities",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "activities",
+          "pathName": "pages/activities/activities",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "activities",
+          "pathName": "pages/activities/activities",
           "scene": null
         }
       ]

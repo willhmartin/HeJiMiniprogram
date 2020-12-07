@@ -22,8 +22,8 @@ Page({
     console.log('LINE 22--', options)
     const user_id = options.user_id
     wx.request({
-
-      url: `http://localhost:3000/api/v1/users/${user_id}/trips`,
+        
+      url: `http://localhost:3000/api/v1/users/31/trips`,
       // url: `http://localhost:3000/api/v1/users/${user_id}/trips`,
       method: 'GET',
       success(res) { 
@@ -40,7 +40,10 @@ Page({
     console.log(event.currentTarget)
     const id_for_trip = event.currentTarget.dataset.id
     console.log(id_for_trip)
-    console.log("------------")
+
+    globalData.tripID = []
+
+
     globalData.tripID.push(id_for_trip)
     globalData.tempTripId = id_for_trip //can't pass options because of switchTab
     wx.switchTab({

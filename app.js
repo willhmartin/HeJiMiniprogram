@@ -1,5 +1,23 @@
 App({
   onLaunch: function () {
+
+//     const host = 'http://localhost:3000/'
+//     wx.login({
+//       success: (res) => {
+//         wx.request({
+//           url: host + 'login',
+//           method: 'POST',
+//           data: { code: res.code },
+//           success: (res) => {
+//             console.log('App.js Login', res);
+//             this.globalData.userId = res.data.userId
+//             wx.setStorageSync('user', res.data.userId)
+//           }
+//         })
+//       }
+//     })
+//   },
+
     let page = this
 
   const host = 'http://localhost:3000/'
@@ -16,8 +34,9 @@ App({
       },
     // insert next code here
     success: (res) => {
-      console.log(res)
+      console.log('App.js Login', res);
       page.globalData.userId = res.data.userId
+   wx.setStorageSync('user', res.data.userId)
     }
 
     })
@@ -39,6 +58,7 @@ App({
     }
   })
 },
+
 
   globalData: {
     hasUserInfo: false,
