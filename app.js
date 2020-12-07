@@ -9,6 +9,9 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        console.log("checking wx.login", res.code)
+        // send res.code to backend
+        // get user id back  and storage it in globaldata
       }
     })
     // 获取用户信息

@@ -5,12 +5,12 @@
   <form  bindsubmit="formSubmit" bindreset="formReset">
     <view class="form">
     <view>
-      <!-- title -->
+      <!-- title --> 
     <view class="section">
       <view class="card-title">Title</view>
       <input  bindinput="titleInput" maxlength="20" placeholder="" class="user-input"/>
     </view>
-
+ 
     <!-- location -->
     <view class="section">
       <view class="card-title">Location</view>
