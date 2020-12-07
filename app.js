@@ -1,10 +1,6 @@
 App({
   onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
+    let page = this
 
   const host = 'http://localhost:3000/'
   console.log('beginning login')
@@ -21,15 +17,31 @@ App({
     // insert next code here
     success: (res) => {
       console.log(res)
-      this.globalData.userId = res.data.userId
+      page.globalData.userId = res.data.userId
     }
 
     })
     }
   })
+
+  wx.getSetting({
+    success(res){
+      console.log("checking get setting", res, res.authSetting['scope.userInfo'])
+      let auth = res.authSetting
+      if(auth['scope.userInfo']){
+        page.globalData.hasUserInfo = true
+        wx.getUserInfo({
+          success: res=>{
+            page.globalData.userInfo = res.userInfo
+          }
+        })
+      }
+    }
+  })
 },
 
   globalData: {
+    hasUserInfo: false,
     userInfo: null,
     trips: [],
     monies: [],

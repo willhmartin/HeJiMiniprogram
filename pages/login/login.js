@@ -1,5 +1,6 @@
 // pages/login/login.js
 const app = getApp()
+const globalData = getApp().globalData
 Page({
 
   /**
@@ -15,18 +16,24 @@ Page({
   
 
   onLoad: function (options) {
+    let page = this
+    console.log("checking profile")
     wx.getSetting({
-      success (res){
-        if (res.authSetting['scope.userInfo']) {
-          // User authorization is obtained. You can directly call the `getUserInfo` API to get the profile photo and alias.
-          wx.getUserInfo({
-            success: function(res) {
-              console.log(res.userInfo)
-            }
+      success(res){
+        console.log("checking from login", res, res.authSetting['scope.userInfo'])
+        let auth = res.authSetting
+        if(auth['scope.userInfo']){
+          globalData.hasUserInfo = true
+          page.setData({
+            hasUserInfo: true
           })
         }
       }
     })
+    // console.log("checking profile", globalData)
+    // this.setData({
+    //   hasUserInfo: globalData.hasUserInfo
+    // })
   },
 
 
