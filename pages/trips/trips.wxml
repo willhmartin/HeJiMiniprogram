@@ -15,9 +15,9 @@
 <!-- <view class="title-card" wx:if="{{user.id_admin}}"> -->
   
   <view class="container">
-    <view class="title">Today in Sanya</view>
+    <view class="title">Your Upcoming Trips</view>
     <view class="holiday-overview"  wx:for="{{trips}}" wx:for-item="trip">
-      <view class="holiday-card">
+      <view class="holiday-card" bindtap="goToTrip" data-id="{{trip.id}}">
         <view class="title">{{trip.title}}</view>
         <view>📍  {{trip.location}}</view>
         <view>📅Start Date: {{trip.start_date}}</view>

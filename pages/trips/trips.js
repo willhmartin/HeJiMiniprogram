@@ -22,7 +22,9 @@ Page({
     console.log(options)
     const user_id = options.id
     wx.request({
-      url: `localhost:3000/api/v1/users/${user_id}/trips`,
+
+      url: `http://localhost:3000/api/v1/users/${user_id}/trips`,
+
       method: 'GET',
       success(res) {
         console.log('works', res)
@@ -33,6 +35,17 @@ Page({
     })
     
   },
+
+  goToTrip: function (event) {
+    console.log(event.currentTarget)
+    const id_for_trip = event.currentTarget.dataset.id
+    console.log(id_for_trip)
+    globalData.tripID.push(id_for_trip)
+    wx.switchTab({
+      url: `/pages/homepage/homepage`
+    })
+  },
+
   getUserInfo: function(e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
