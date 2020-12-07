@@ -35,7 +35,7 @@ Page({
   this.setData({budget})
 
   wx.request({ 
-    url: `https://heji.wogengapp.cn/api/v1/trips/23/budgets`,
+    url: `http://localhost:3000/api/v1/trips/23/budgets`,
     method: 'POST',
     data: budget,
     success(res) {
