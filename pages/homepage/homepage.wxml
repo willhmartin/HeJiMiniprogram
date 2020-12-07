@@ -1,5 +1,6 @@
 
-<view class="container">
+
+<view class="container"> 
   <button id="return-to-trips" bindtap="goToTrips">My Trips</button>
   <view class="title">Today in {{activities.trip.location}}</view>
   <view class="icon-container">

@@ -14,19 +14,19 @@ Page({
   //事件处理函数
   bindViewTap: function() {
     wx.switchTo({
-      url: '../logs/logs'
+      url: '../logs/logs' 
     })
   },
   onLoad: function (options) {
     let page = this
-    console.log(options)
-    const user_id = options.id
+    console.log('LINE 22--', options)
+    const user_id = options.user_id
     wx.request({
 
       url: `http://localhost:3000/api/v1/users/${user_id}/trips`,
-
+      // url: `http://localhost:3000/api/v1/users/${user_id}/trips`,
       method: 'GET',
-      success(res) {
+      success(res) { 
         console.log('LINE 30--', res)
         const trips = res.data
         page.setData({trips})
@@ -40,9 +40,11 @@ Page({
     console.log(event.currentTarget)
     const id_for_trip = event.currentTarget.dataset.id
     console.log(id_for_trip)
+    console.log("------------")
     globalData.tripID.push(id_for_trip)
+    globalData.tempTripId = id_for_trip
     wx.switchTab({
-      url: `/pages/homepage/homepage`
+      url: `/pages/homepage/homepage` //this is the 'options' we access on homepage.js
     })
   },
 

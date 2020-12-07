@@ -1,6 +1,6 @@
 <view class="header-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.picsum.photos/id/299/5498/3615.jpg?hmac=NqSpUzSsD7mgU34riF8xDMZkcSQY345kONcjjOqqjBA);">
   <view id="banner-title">My Budget.</view>
-</view>
+
 
 <view class="background"> 
   <!-- <view class="container"> -->
@@ -16,6 +16,7 @@
     <view class="payments">Payments</view>
 
   <view class="card-grid">
+    <view class="payment-section">
 
     <view class="card-overview" style="margin-bottom: 30rpx;" wx:for="{{payments}}" wx:for-item="payment">
 
@@ -38,5 +39,6 @@
     <view class="submit-payment">Submit a Payment</view>
   <button id="btn-create" bindtap="goToPayment"><text class="plus">+</text></button>
 <!-- </view> -->
- 
+  </view>
+ </view>
 

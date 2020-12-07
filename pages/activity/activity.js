@@ -26,14 +26,10 @@ Page({
   onLoad: function (options) {
     let page = this
     wx.request({
-
-
-      url: "http://localhost:3000/api/v1/trips/1",
-
-
+      url: "http://localhost:3000/api/v1/trips/29",
       method: 'GET',
       success(res) {
-        console.log('works?', res)
+        console.log('LINE 36--', res)
         const activities = res.data
         page.setData({activities})
       }

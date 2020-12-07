@@ -6,7 +6,7 @@ Page({
   /**
    * Page initial data
    */
-  data: {
+  data: { 
 
   },
   titleInput: function(e) {
@@ -32,7 +32,7 @@ Page({
   },
    
   formSubmit: function(e) {
-    console.log('LINE35 ', e.detail.value)
+    console.log('LINE 35-- ', e.detail.value)
     const holiday = {
       title: this.data.name,
       location: this.data.location,
@@ -40,20 +40,21 @@ Page({
       end_date: this.data.endDate
   }
   console.log(holiday)
-  globalData.holidays.push(holiday)
-  this.setData({holiday})
+  // globalData.holidays.push(holiday)
+  // this.setData({holiday})
   wx.request({
 
-    url: `http://localhost:3000/api/v1/users/3/trips`,
+    url: `http://localhost:3000/api/v1/users/${globalData.userId}/trips`,
 
     method: 'POST',
     data: holiday,
     success(res) {
-      console.log('works?', res)
-      const id = res.data.user_id;
-      console.log(id)
+      console.log('LINE 52--', res)
+      const user_id = res.data.user_id;
+      // const trip_id = res.data.id
+      console.log('LINE 54--', user_id)
       wx.navigateTo({
-        url: `/pages/trips/trips?id=${id}`
+        url: `/pages/trips/trips?user_id=${user_id}` //need to go to trips of specific user???
       })
     }
   })

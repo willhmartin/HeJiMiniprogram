@@ -42,8 +42,6 @@
   color: black;
   text-align: center;
 }
-/* #update-button {
-} */
 .avatar-large {
   width: 100px;
   height: 100px;
@@ -72,11 +70,24 @@
   font-size: 40px;
   color: black;
 }
+.payment-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+  height: 80vh;
+  flex-direction: column;
+  /* margin: 15px; */
+  margin-top: 0;
+  border-color: white;
+  /* background: #228CDB; */
+}
 .payments {
   padding-bottom: 8px;
   margin-top: 50px;
   color: black;
   font-size: 20px;
+  text-align: center;
 }
 .hour-div {
   display: flex;

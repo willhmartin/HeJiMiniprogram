@@ -115,15 +115,9 @@
           "scene": null
         },
         {
-          "name": "homepage",
-          "pathName": "pages/homepage/homepage",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "login page",
+          "name": "Login Page",
           "pathName": "pages/login/login",
-          "query": "guest_id=12&trip_id=24",
+          "query": "",
           "scene": null
         }
       ]
