@@ -32,7 +32,7 @@ Page({
   },
    
   formSubmit: function(e) {
-    console.log('form triggers a submit event, carrying the following data: ', e.detail.value)
+    console.log('LINE35 ', e.detail.value)
     const holiday = {
       title: this.data.name,
       location: this.data.location,
@@ -43,7 +43,9 @@ Page({
   globalData.holidays.push(holiday)
   this.setData({holiday})
   wx.request({
-    url: `https://heji.wogengapp.cn/api/v1/users/3/trips`,
+
+    url: `http://localhost:3000/api/v1/users/3/trips`,
+
     method: 'POST',
     data: holiday,
     success(res) {
