@@ -43,7 +43,7 @@ Page({
   globalData.holidays.push(holiday)
   this.setData({holiday})
   wx.request({
-    url: `https://heji.wogengapp.cn/api/v1/users/3/trips`,
+    url: `http://localhost:3000/api/v1/users/3/trips`,
     method: 'POST',
     data: holiday,
     success(res) {
