@@ -42,7 +42,7 @@ Page({
     console.log(id_for_trip)
     console.log("------------")
     globalData.tripID.push(id_for_trip)
-    globalData.tempTripId = id_for_trip
+    globalData.tempTripId = id_for_trip //can't pass options because of switchTab
     wx.switchTab({
       url: `/pages/homepage/homepage` //this is the 'options' we access on homepage.js
     })

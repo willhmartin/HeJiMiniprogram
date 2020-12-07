@@ -40,7 +40,6 @@ Page({
     method: 'POST',
     data: holiday,
     success(res) {
-      console.log('LINE 52--', res)
       const user_id = res.data.user_id;
       // const trip_id = res.data.id
       console.log('LINE 54--', user_id)

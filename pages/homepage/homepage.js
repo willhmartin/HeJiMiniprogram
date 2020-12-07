@@ -11,7 +11,7 @@ Page({
    * Page initial data
    */
   data: {
-    tempTripId: 49,
+    tripID: 49,
     userId: 75
   },
 
@@ -20,17 +20,16 @@ Page({
    */
   onLoad: function (options) {
     let page = this
-    console.log('LINE 21--', globalData.tempTripId)
-
+    page.getAuth()
+    console.log('LINE 21--', globalData.tripID, options.tripId)
+    
+    // console.log('LINE 21--', globalData.tempTripId)
     wx.request({
 
-      url: `http://localhost:3000/api/v1/trips/${page.data.tempTripId}?user_id=${page.data.userId}`,
+      // url: `http://localhost:3000/api/v1/trips/${page.data.tripID}`,
+      url: `http://localhost:3000/api/v1/trips/${this.data.tripID}?user_id=${this.data.userId}`,
 
-
-      // url: `http://localhost:3000/api/v1/trips/${globalData.tempTripId}?user_id=${globalData.userId}`,
-
-
-      // url: `http://localhost:3000/api/v1/trips/${app.globalData.tripID[0]}`,
+      // url: `http://localhost:3000/api/v1/trips/${app.globalData.tripID[0]}?user_id=${this.data.userId}`,
 
       method: 'GET',
       success(res) {
@@ -43,11 +42,65 @@ Page({
         const utc = new Date().toJSON().slice(0,10);
         console.log(utc)
         page.setData({
-          dateNow: globalData.currentDate
+          dateNow: globalData.currentDate,
+          is_guest: res.data.is_guest
         })
         page.setData({activities})
         globalData.currentDate.push(utc)
       } 
+    })
+  },
+
+  getUserInfo: function(e){
+    if (e.detail.userInfo != undefined){
+      globalData.hasUserInfo = true
+      globalData.userInfo = e.detail.userInfo
+      this.setData({
+        hasUserInfo: true,
+        userInfo: e.detail.userInfo
+      })
+      this.createGuest()
+    }
+    
+  },
+
+  createGuest: function(){
+    let userId = globalData.userId
+    let tripId = this.data.tripID
+    wx.request({
+      url: `http://localhost:3000/api/v1/users/${this.data.userId}/guests`,
+      method: 'POST',
+      data: {trip_id: tripId, name: this.data.userInfo.nickName, user_id: this.data.userId},
+      success(res){
+        console.log("checkoing post guest", res)
+        this.setData({
+          is_guest: true
+        })
+      }
+    })
+  },
+
+  getAuth: function(){
+    let page = this
+    wx.getSetting({
+      success(res){
+        console.log("checking from login", res, res.authSetting['scope.userInfo'])
+        let auth = res.authSetting
+        if(auth['scope.userInfo']){
+          globalData.hasUserInfo = true
+          wx.getUserInfo({
+            success: res=>{
+              console.log("chekcing get wx.getuserInfo", res.userInfo)
+              page.setData({
+                userInfo: res.userInfo
+              })
+            }
+          })
+          page.setData({
+            hasUserInfo: true
+          })
+        }
+      }
     })
   },
 
