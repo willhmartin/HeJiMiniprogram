@@ -1,6 +1,9 @@
+<view class="header-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.picsum.photos/id/124/3504/2336.jpg?hmac=B1Avp6or9Df8vpnN4kQsGNfD66j8hH3gLtootCoTw4M);">
+  <view id="banner-title">Set Your Budget.</view>
+</view>
+
 <view class="background">
   <view class="container"> 
-  <view class='header'>Set Your Budget</view>
   
   <view class='form-container'>
       <view class="form">
@@ -12,7 +15,7 @@
 </view>
   <view class="btn-area">
         <button id="sub" class="btn-submit" bindtap="submit">Submit</button>
-        <button id="reset" class="btn-reset" bindtap="reset">Reset</button>
+        <!-- <button id="reset" class="btn-reset" bindtap="reset">Reset</button> -->
       </view> 
     
   </view>

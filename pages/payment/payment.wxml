@@ -1,44 +1,60 @@
+<view class="header-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.picsum.photos/id/218/4752/3168.jpg?hmac=Orn41GOM38rjA-HLzG_hpWi1sfLgnsAAvpiB-uwjvf0);">
+  <view id="banner-title">Create Payment.</view>
+</view>
+
 <view class="background">
-  <view class="container">
+  <!-- <view class="container" style="padding: 0 30rpx;"> -->
+
 <!-- header -->
-    <view class='header'>Submit a Payment</view>
+<!-- <view class='header'>Enter Payment Details Here</view> -->
 <!-- form -->
-<view class="form-box">
+<view class="card-grid">
   <view class="form">
-    <view class="section">
-      <view class="section__title">Amount</view>
+
+   <view class="section">
+    <view class="section__title">Amount
       <input type="number" bindinput="bindAmountInput" placeholder="Enter Amount Here"/>
-
-  <view class="section__title">Split By Group?</view>
-    <radio-group class="radio-group" bindchange="radioChange">
-      <label class="radio" wx:for="{{items}}">
-        <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
-      </label>
-    </radio-group>
-
-      <view class="section__title">Category</view>
-      <input  bindinput="bindCatInput" placeholder="Enter Category Here"/>
-
-      <view class="section__title">Note</view>
-      <input  bindinput="bindNoteInput" placeholder="Note (Optional)"/>
-      
-      <view class="option">
-        <picker mode="date" value="{{date}}" start="2020-12-01" end="2025-12-01" bindchange="setDate">
-          <view class="picker">
-            Date  {{date}} 
-          </view>
-        </picker>
-      </view>
     </view>
   </view>
-</view>
 
-<!-- background and container end -->
-
-  <view class="btn-area">
-    <button id="sub" class="btn-submit" bindtap="submit">Submit</button>
-    <button id="reset" class="btn-reset" bindtap="reset">Reset</button>
-  </view> 
-
+  <view class="section">
+    <view class="section__title">Split By Group?
+      <radio-group class="radio-group" bindchange="radioChange">
+       <label class="radio" wx:for="{{items}}">
+        <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+        </label>
+      </radio-group>
+    </view>
   </view>
-</view>
+
+  <view class="section">
+    <view class="section__title">Category
+      <input  bindinput="bindCatInput" placeholder="Enter Category Here"/>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section__title">Note
+      <input  bindinput="bindNoteInput" placeholder="Note (Optional)"/>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section__title">
+      <picker mode="date" value="{{date}}" start="2020-12-01" end="2025-12-01" bindchange="setDate">
+        <view class="picker">
+            Date  {{date}} 
+        </view>
+      </picker>
+    </view>
+  </view>
+
+    <view class="btn-area">
+      <button id="sub" class="btn-submit" bindtap="submit">Submit</button>
+      <!-- <button id="reset" class="btn-reset" bindtap="reset">Reset</button> -->
+    </view> 
+    </view>
+  </view>
+<!-- background and container end -->
+  </view>
+<!-- </view> -->
