@@ -22,9 +22,11 @@ Page({
 
     wx.request({
 
+
       url: `http://localhost:3000/api/v1/trips/28`,
 
       // url: `http://localhost:3000/api/v1/trips/${app.globalData.tripID[0]}`,
+
 
       method: 'GET',
       success(res) {
