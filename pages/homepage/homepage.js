@@ -43,7 +43,7 @@ Page({
         console.log(utc)
         page.setData({
           dateNow: globalData.currentDate,
-          // is_guest: res.data.is_guest
+          is_guest: res.data.is_guest
         })
         page.setData({activities})
         globalData.currentDate.push(utc)
@@ -73,9 +73,11 @@ Page({
       data: {trip_id: tripId, name: this.data.userInfo.nickName, user_id: this.data.userId},
       success(res){
         console.log("LINE 75- CHECKING POST", res)
+        const guest_id = res.data.id
+        console.log('LINE 77--', guest_id)
         this.setData({
-          is_guest: false
-          // is_guest: true
+          // is_guest: false
+          is_guest: true
         })
       }
     })
@@ -110,7 +112,7 @@ Page({
    */
   goToTrips: function() {
     wx.navigateTo({
-      url: `/pages/trips/trips`
+      url: `/pages/trips/trips?guest_id=${guest_id}`
     })
   },
 
