@@ -4,6 +4,7 @@
 
 
 
+
 <view class="userinfo">
  
  <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="login-btn">Log In</button>
