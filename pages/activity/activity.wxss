@@ -1,10 +1,29 @@
+.header-image {
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  display: flex-inline;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+#banner-title {
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  padding-top: 100px;
+  padding-left: 10px;
+  /* position: absolute;
+  bottom: 8px;
+  left: 16px; */
+}
 
-.activity-page {
+/* .activity-page {
   background: url("https://lc-MaWCTEhx.cn-n1.lcfile.com/b872c43f3b46a9bb9d67.png/sky.png");
   flex-direction: column;
   display: flex;
   height: 100vh;
-}
+} */
 
 .header {
   font-family: 'Nunito Sans', sans-serif;

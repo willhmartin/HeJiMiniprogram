@@ -1,0 +1,56 @@
+<!-- banner image -->
+<view class="header-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://lc-MaWCTEhx.cn-n1.lcfile.com/0f0a85f3cd0da7c27a20.jpg/southafrica.jpg);">
+  <view id="banner-title">Create an Activity</view>
+
+  
+<view class="background">
+    <view class="form">
+      <!-- Location --> 
+      <view class="section">
+        <view class="card-title">Location</view>
+        <input bindinput="input" value="{{location}}" data-name="location" maxlength="20" placeholder="" class="user-input"/>
+      </view>
+
+      <!-- Time -->
+      <view class="section">
+        <view class="card-title">Time</view>
+        <input  bindinput="input" value="{{time}}" data-name="time" maxlength="20" placeholder="" class="user-input"/>
+      </view>
+
+       <!-- content --> 
+       <view class="section">
+        <view class="card-title">Content</view>
+        <input  bindinput="input" value="{{content}}" data-name="content" maxlength="20" placeholder="" class="user-input"/>
+      </view>
+
+    <!-- start date -->
+      <view id="date" class="section">
+          <view class="card-title">Date</view>
+          <picker mode="date" value="{{selectedDate}}" start="2015-09-01" end="2021-09-01" bindchange="setStartDate" class="user-input">
+            <view class="picker">
+              {{selectedDate ? selectedDate : 'Select'}}
+            </view>
+          </picker>
+      </view>
+
+      <!-- transportation --> 
+      <view class="section">
+        <view class="card-title">transportation</view>
+        <input  bindinput="input" value="{{transportation}}" data-name="transportation" maxlength="20" placeholder="" class="user-input"/>
+      </view>
+
+       <!-- lodging --> 
+       <view class="section">
+        <view class="card-title">lodging</view>
+        <input  bindinput="input" value="{{lodging}}" data-name="lodging" maxlength="20" placeholder="" class="user-input"/>
+      </view>
+    </view>
+
+    <!-- btn -->
+      <view class="btn-area">
+        <button bindtap="goToActivity" id="sub" class="btn-submit">Submit</button>
+        <button bindtap="reset" id="reset" class="btn-reset" >Reset</button>
+      </view> 
+
+    </view>                                                                                      
+  </view>

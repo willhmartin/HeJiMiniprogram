@@ -1,4 +1,4 @@
-.buffer {
+a.buffer {
   height: 30px;
 } 
 .header-image {
@@ -10,17 +10,6 @@
   align-items: center;
   margin: 0;
 }
-.user-input {
-  background-color: #eeeeee;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  margin-right: 20px;
-  margin-left: 20px;
-  font-weight: lighter;
-  font-size: 15px;
-  color: #393e46;
-}
-
 #banner-title {
   color: white;
   font-size: 30px;
@@ -112,4 +101,14 @@
 }
 .placeholder {
   font-weight: lighter;
+}
+.user-input {
+  background-color: #eeeeee;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  margin-left: 20px;
+  font-weight: lighter;
+  font-size: 15px;
+  color: #393e46;
 }
