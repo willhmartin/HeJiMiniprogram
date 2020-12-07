@@ -26,7 +26,11 @@ Page({
 
       url: `http://localhost:3000/api/v1/trips/${page.data.tempTripId}?user_id=${page.data.userId}`,
 
+<<<<<<< HEAD
       // url: `http://localhost:3000/api/v1/trips/${globalData.tempTripId}?user_id=${globalData.userId}`,
+=======
+      url: `http://localhost:3000/api/v1/trips/${globalData.tripID}`,
+>>>>>>> e049648f6a873ff09ef1e1f9d39248e4b002ab3a
 
       // url: `http://localhost:3000/api/v1/trips/${app.globalData.tripID[0]}`,
 
