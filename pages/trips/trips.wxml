@@ -14,8 +14,12 @@
 
 <!-- <view class="title-card" wx:if="{{user.id_admin}}"> -->
   
-  <view class="container">
-    <view class="title">Your Upcoming Trips</view>
+<view class="header-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://lc-MaWCTEhx.cn-n1.lcfile.com/d6556074a4bfbaf299c3.jpg/Tree.jpg);">
+  <view id="banner-title">Upcoming Trips</view>
+
+<view class="background">
+  <view class="form">
+    <!-- <view class="title">Your Upcoming Trips</view> -->
     <view class="holiday-overview"  wx:for="{{trips}}" wx:for-item="trip">
       <view class="holiday-card" bindtap="goToTrip" data-id="{{trip.id}}">
         <view class="title">{{trip.title}}</view>
@@ -25,4 +29,57 @@
       </view>
     </view>
     <button id="btn-create" bindtap="goToCreate"><text class="plus">+</text></button>
+  </view>
 </view>
+</view>
+<!-- --------------------------------------------------- -->
+<view class="card-grid">
+  <view class="form">
+
+   <view class="section">
+    <view class="section__title">Amount
+      <input type="number" bindinput="bindAmountInput" placeholder="Enter Amount Here"/>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section__title">Split By Group?
+      <radio-group class="radio-group" bindchange="radioChange">
+       <label class="radio" wx:for="{{items}}">
+        <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+        </label>
+      </radio-group>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section__title">Category
+      <input  bindinput="bindCatInput" placeholder="Enter Category Here"/>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section__title">Note
+      <input  bindinput="bindNoteInput" placeholder="Note (Optional)"/>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section__title">
+      <picker mode="date" value="{{date}}" start="2020-12-01" end="2025-12-01" bindchange="setDate">
+        <view class="picker">
+            Date  {{date}} 
+        </view>
+      </picker>
+    </view>
+  </view>
+
+    <view class="btn-area">
+      <button id="sub" class="btn-submit" bindtap="submit">Submit</button>
+      <!-- <button id="reset" class="btn-reset" bindtap="reset">Reset</button> -->
+    </view> 
+    </view>
+  </view>
+<!-- background and container end -->
+
+<!-- </view> -->

@@ -1,8 +1,29 @@
+/* banner */
+.header-image {
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  display: flex-inline;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+#banner-title {
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  padding-top: 100px;
+  padding-left: 10px;
+  /* position: absolute;
+  bottom: 8px;
+  left: 16px; */
+}
+
+
 .container {
   padding: 70rpx 0;
   height: 100vh;
   background-color: #3B7EC9;
-  background: url("https://lc-MaWCTEhx.cn-n1.lcfile.com/b872c43f3b46a9bb9d67.png/sky.png");
   position: relative;
 }
 
