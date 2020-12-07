@@ -3,6 +3,7 @@ var bmap = require('../bmap-wx.js');
 
 const app = getApp()
 const globalData = getApp().globalData
+console.log('LINE 6--,', globalData)
 Page({
 
   /**
@@ -17,14 +18,19 @@ Page({
    */
   onLoad: function (options) {
     let page = this
+    console.log('LINE 21--', options)
 
     wx.request({
 
-      url: `http://localhost:3000/api/v1/trips/${app.globalData.tripID[0]}`,
+
+      url: `http://localhost:3000/api/v1/trips/28`,
+
+      // url: `http://localhost:3000/api/v1/trips/${app.globalData.tripID[0]}`,
+
 
       method: 'GET',
       success(res) {
-        console.log('works?', res)
+        console.log('LINE 28--', res)
         const activities = res.data
         console.log(activities.weather.list[0].weather[0].icon)
         console.log(activities)

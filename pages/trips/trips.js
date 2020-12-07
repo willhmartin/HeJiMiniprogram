@@ -27,7 +27,7 @@ Page({
 
       method: 'GET',
       success(res) {
-        console.log('works', res)
+        console.log('LINE 30--', res)
         const trips = res.data
         page.setData({trips})
       }

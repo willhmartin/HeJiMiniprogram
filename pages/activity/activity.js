@@ -27,7 +27,9 @@ Page({
     let page = this
     wx.request({
 
+
       url: "http://localhost:3000/api/v1/trips/1",
+
 
       method: 'GET',
       success(res) {

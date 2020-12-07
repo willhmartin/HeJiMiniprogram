@@ -2,8 +2,8 @@
   <view id="banner-title">My Budget.</view>
 </view>
 
-<view class="background">
-  <view class="container">
+<view class="background"> 
+  <!-- <view class="container"> -->
     <!-- <button id="update-budget" bindtap=""><text class="budget-btn">Update</text></button> -->
     <!-- image -->
     <image class="avatar-large" alt="avatar-large" mode="aspectFill" src="{{user.avatar}}"></image>
@@ -37,6 +37,6 @@
     </view>
     <view class="submit-payment">Submit a Payment</view>
   <button id="btn-create" bindtap="goToPayment"><text class="plus">+</text></button>
-</view>
+<!-- </view> -->
  
 

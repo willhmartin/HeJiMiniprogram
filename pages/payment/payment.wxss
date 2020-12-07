@@ -1,6 +1,6 @@
 .buffer {
   height: 30px;
-}
+} 
 .header-image {
   background-size: cover;
   background-position: center;
