@@ -36,7 +36,12 @@ Page({
       
     })
   },
-  
+  goToActivity: function () {
+    console.log('clicked')
+    wx.navigateTo({
+      url: '/pages/activities/activities',
+    })
+  },
   /**
    * Lifecycle function--Called when page is initially rendered
    */

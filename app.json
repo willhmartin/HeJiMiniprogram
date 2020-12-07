@@ -9,7 +9,8 @@
     "pages/logs/logs",
     "pages/mybudget/mybudget",
     "pages/trips/trips",
-    "pages/payment/payment"
+    "pages/payment/payment",
+    "pages/activities/activities"
   ],
   "window":{
     "backgroundTextStyle":"light",
