@@ -77,14 +77,21 @@ Page({
   },
 
   createGuest: function(){
+
+    let page = this
     let userId = wx.getStorageSync('user')
     wx.request({
       url: `${globalData.host}users/${userId}/guests`,
+     
+               
       method: 'POST',
       data: {trip_id: this.data.trip.id, name: this.data.userInfo.nickName, user_id: userId},
       success(res){
         const guest_id = res.data.id
-        this.setData({
+        
+
+        page.setData({
+          guest_id: res.data.id,          
           is_guest: true
         })
       }
@@ -104,10 +111,12 @@ Page({
       success(res) {
         console.log(res)
          page.setData({
-           trip: res.data.trip,
+          trip: res.data.trip,
           is_guest: res.data.is_guest,
-          activities: res.data.activities
+          activities: res.data.activities,
+          guest_id: res.data.guest_id
         })
+        getApp().globalData.guestId = res.data.guest_id
       } 
     })
   },

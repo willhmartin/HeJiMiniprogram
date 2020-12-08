@@ -46,9 +46,9 @@ Page({
 
   goToTrip: function (event) {
     const id_for_trip = event.currentTarget.dataset.id
-    globalData.tempTripId = id_for_trip //can't pass options because of switchTab
+    globalData.tempTripId = id_for_trip // can't pass options because of switchTab
     wx.switchTab({
-      url: `/pages/homepage/homepage` //this is the 'options' we access on homepage.js
+      url: `/pages/homepage/homepage` // this is the 'options' we access on homepage.js
     })
   },
   
