@@ -14,7 +14,7 @@
       <!-- location -->
       <view class="section">
         <view class="card-title">Location</view>
-        <input  bindtap="setLocation" maxlength="20" placeholder="Enter a city or a country" class="user-input"/>
+        <input  bindinput="locationInput" maxlength="20" placeholder="Enter a city or a country" class="user-input"/>
 
       </view>
 
@@ -41,7 +41,7 @@
 
     <!-- btn -->
       <view class="btn-area">
-        <button bindtap="formSubmit" id="sub" class="btn-submit" form-type="submit">Submit</button>
+        <button bindtap="formSubmit" class="btn-submit" form-type="submit">Submit</button>
         <!-- <button bindtap="formReset" id="reset" class="btn-reset" form-type="reset">Reset</button> -->
       </view> 
 
