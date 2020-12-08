@@ -31,13 +31,9 @@
   background-color: #ED6A5A;
   box-shadow: 2px 0px 23px -2px rgba(0,0,0,0.46);
 }
-
-
-
 .p {
   font-size: 15px;
 }
-
 .section {
   width: 340px;
   opacity: 0.9;
@@ -53,7 +49,6 @@
   position: relative;
   overflow: hidden;
 }
-
 .border {
   position: absolute;
   left: 0;

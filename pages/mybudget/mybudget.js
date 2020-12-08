@@ -19,7 +19,7 @@ Page({
     let page = this
     console.log(options)
       wx.request({
-        url: `https://heji.wogengapp/cn/api/v1/trips/23/budgets/${options.id}`,
+        url: `http://localhost:3000/api/v1/trips/23/budgets/${options.id}`,
         method: 'GET',
         success(res) {
           console.log('LINE 25---', res)
@@ -44,7 +44,7 @@ Page({
     let page = this
 
     wx.request({
-      url: `localhost:3000/api/v1/trips/23/payments`,
+      url: `http://localhost:3000/api/v1/trips/23/payments`,
       method: 'GET',
       success(res) {
         console.log('LINE 50---', res)

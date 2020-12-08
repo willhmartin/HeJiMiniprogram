@@ -54,7 +54,7 @@ Page({
    */
   goToTrips: function() {
     wx.navigateTo({
-      url: `/pages/trips/trips?id=${globalData.userId}`
+      url: `/pages/trips/trips?user_id=${globalData.userId}`
     })
   },
 

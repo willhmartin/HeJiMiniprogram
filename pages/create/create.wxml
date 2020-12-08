@@ -1,10 +1,10 @@
 <!-- banner image -->
 <view class="header-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://lc-MaWCTEhx.cn-n1.lcfile.com/0f0a85f3cd0da7c27a20.jpg/southafrica.jpg);">
-  <view id="banner-title">Create Trips</view>
+  <view id="banner-title">Create a Trip.</view>
 
   
 <view class="background">
-    <view class="form">
+    <view class="form"> 
       <!-- title --> 
       <view class="section">
         <view class="card-title">Title</view>
