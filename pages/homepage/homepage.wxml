@@ -4,7 +4,7 @@
   <!-- "Join Trip" if new guest START-->
   <view class="guestinfo">
  
-    <button wx:if="{{!is_guest && !getUserInfo}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="join-btn">Join Trip</button>
+    <button wx:if="{{!is_guest && !hasUserInfo}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="join-btn">Join Trip</button>
     
     <block wx:else>
      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{guestInfo.avatarUrl}}" mode="cover"></image>

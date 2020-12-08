@@ -1,5 +1,6 @@
 // pages/homepage/homepage.js
 var bmap = require('../bmap-wx.js'); 
+import event from '../../utils/event'
 
 const app = getApp()
 const globalData = getApp().globalData
@@ -14,16 +15,45 @@ Page({
     
   },
 
-  /**
-   * Lifecycle function--Called when page load
-   */
   onLoad: function (options) {
-   
+    this.setData({
+      hasUserInfo: wx.getStorageSync('hasUserInfo')
+    })
+    // let page = this
+    // console.log('LINE 21--', options)
+
+    // wx.request({
+
+
+    //   url: `http://localhost:3000/api/v1/trips/${globalData.tripID}`,
+
+    //   // url: `http://localhost:3000/api/v1/trips/${app.globalData.tripID[0]}`,
+
+
+    //   method: 'GET',
+    //   success(res) {
+    //     console.log('LINE 28--', res)
+    //     const activities = res.data
+    //     console.log(activities.weather.list[0].weather[0].icon)
+    //     console.log(activities)
+        
+        
+    //     const utc = new Date().toJSON().slice(0,10);
+    //     console.log(utc)
+    //     page.setData({
+    //       dateNow: globalData.currentDate
+    //     })
+    //     page.setData({activities})
+    //     globalData.currentDate.push(utc)
+    //   }
+    // })
+
+  },
+  onShow: function(){
+    console.log("checking where im")
+    this.getTripInfo()
   },
 
-  /**
-   * Lifecycle function--Called when page is initially rendered
-   */
   goToTrips: function() {
     wx.navigateTo({
       url: `/pages/trips/trips?user_id=${globalData.userId}`
@@ -36,46 +66,6 @@ Page({
     })
   },
 
-  onReady: function() { 
-
-} ,
-
-  /**
-   * Lifecycle function--Called when page show
-   */
-  onShow: function (options) {
-    let page = this
-    page.getAuth()
-    console.log('LINE 24--', globalData.tripID, options.tripId)
-    
-    // console.log('LINE 21--', globalData.tempTripId)
-    wx.request({
-
-      // url: `http://localhost:3000/api/v1/trips/${page.data.tripID}`,
-      url: `http://localhost:3000/api/v1/trips/${this.data.tripID}?user_id=${this.data.userId}`,
-
-      // url: `http://localhost:3000/api/v1/trips/${app.globalData.tripID[0]}?user_id=${this.data.userId}`,
-
-      method: 'GET',
-      success(res) {
-        console.log('LINE 36--', res)
-        const activities = res.data
-        console.log(activities.weather.list[0].weather[0].icon)
-        console.log(activities)
-        
-        
-        const utc = new Date().toJSON().slice(0,10);
-        console.log(utc)
-        page.setData({
-          dateNow: globalData.currentDate,
-          is_guest: res.data.is_guest
-        })
-        page.setData({activities})
-        globalData.currentDate.push(utc)
-      } 
-    })
-  },
-
   getUserInfo: function(e){
     console.log(e)
     if (e.detail.userInfo != undefined){
@@ -85,25 +75,30 @@ Page({
         hasUserInfo: true,
         userInfo: e.detail.userInfo
       })
+      event.emit("getInfo")
       this.createGuest()
     }
     
   },
 
   createGuest: function(){
-    let page = this
-    let userId = globalData.userId
-    let tripId = globalData.tripID[0]
-    console.log(userId)
-    console.log(tripId)
+
+    let userId = wx.getStorageSync('user')
     wx.request({
-      url: `http://localhost:3000/api/v1/users/${globalData.userId}/guests`,
+      url: `${globalData.host}users/${userId}/guests`,
+
+//     let page = this
+//     let userId = globalData.userId
+//     let tripId = globalData.tripID[0]
+//     console.log(userId)
+//     console.log(tripId)
+//     wx.request({
+//       url: `http://localhost:3000/api/v1/users/${globalData.userId}/guests`,
+
       method: 'POST',
-      data: {trip_id: tripId, name: this.data.userInfo.nickName, user_id: this.data.userId},
+      data: {trip_id: this.data.trip.id, name: this.data.userInfo.nickName, user_id: userId},
       success(res){
-        console.log("LINE 75- CHECKING POST", res)
         const guest_id = res.data.id
-        console.log('LINE 77--', guest_id)
 
         page.setData({
           // is_guest: false
@@ -113,83 +108,26 @@ Page({
     })
   },
 
-  getAuth: function(){
+  getTripInfo: function(){
+    let tripId = globalData.tempTripId
+    let userId = wx.getStorageSync('user')
+    console.log("checking if globalData has tripId", globalData.tempTripId)
+
     let page = this
-    wx.getSetting({
-      success(res){
-        console.log("CHECKING FROM LOGIN", res, res.authSetting['scope.userInfo'])
-        let auth = res.authSetting
-        if(auth['scope.userInfo']){
-          globalData.hasUserInfo = true
-          wx.getUserInfo({
-            success: res=>{
-              console.log("CHECK wx.getuserInfo", res.userInfo)
-              page.setData({
-                userInfo: res.userInfo
-              })
-            }
-          })
-          page.setData({
-            hasUserInfo: true
-          })
-        }
-      }
+    wx.request({
+       url: `${globalData.host}trips/${tripId}`,
+      method: 'GET',
+      data: {user_id: userId},
+      success(res) {
+        console.log(res)
+         page.setData({
+           trip: res.data.trip,
+          is_guest: res.data.is_guest,
+          activities: res.data.activities
+        })
+      } 
     })
   },
 
-  /**
-   * Lifecycle function--Called when page is initially rendered
-   */
-  goToTrips: function() {
-    wx.navigateTo({
-      url: `/pages/trips/trips?guest_id=${guest_id}`
-    })
-  },
-
-  onReady: function() { 
-
-} ,
-
-  /**
-   * Lifecycle function--Called when page show
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page hide
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page unload
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * Page event handler function--Called when user drop down
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * Called when page reach bottom
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * Called when user click on the top right corner to share
-   */
-  onShareAppMessage: function () {
-
-  },
   
 })

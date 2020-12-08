@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/trips/trips",
     "pages/activity/activity",
     "pages/create/create",
     "pages/createbudget/createbudget",
@@ -7,7 +8,6 @@
     "pages/landing/landing",
     "pages/logs/logs",
     "pages/mybudget/mybudget",
-    "pages/trips/trips",
     "pages/payment/payment",
     "pages/activities/activities"
   ],

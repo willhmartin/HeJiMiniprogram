@@ -28,7 +28,6 @@ Page({
       url: `${globalData.host}users/${userId}/trips`,
       method: "GET",
       success: res=>{
-        console.log("checking user's trips", res)
         this.setData({
           trips: res.data, 
           hasTrips: true
@@ -46,13 +45,7 @@ Page({
   },
 
   goToTrip: function (event) {
-    console.log(event.currentTarget)
     const id_for_trip = event.currentTarget.dataset.id
-    console.log(id_for_trip)
-
-    globalData.tripID = []
-
-    globalData.tripID.push(id_for_trip)
     globalData.tempTripId = id_for_trip //can't pass options because of switchTab
     wx.switchTab({
       url: `/pages/homepage/homepage` //this is the 'options' we access on homepage.js

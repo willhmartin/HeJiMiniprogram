@@ -32,20 +32,6 @@ App({
     }
   })
 
-  // wx.getSetting({
-  //   success(res){
-  //     console.log("checking get setting", res, res.authSetting['scope.userInfo'])
-  //     let auth = res.authSetting
-  //     if(auth['scope.userInfo']){
-  //       page.globalData.hasUserInfo = true
-  //       wx.getUserInfo({
-  //         success: res=>{
-  //           page.globalData.userInfo = res.userInfo
-  //         }
-  //       })
-  //     }
-  //   }
-  // })
   event.on('getInfo', page, page.checkScope)
   this.checkScope()
 },
@@ -64,8 +50,8 @@ checkScope: function () {
             // page.sendUserInfo(res.userInfo)
           }
         })
-      } else if (auth['scope.userInfo'] == false) {
-        console.log("i dont have userInfo")
+      } else {
+        wx.setStorageSync('hasUserInfo', false)
         page.globalData.hasUserInfo = false
       }
       wx.hideLoading()
