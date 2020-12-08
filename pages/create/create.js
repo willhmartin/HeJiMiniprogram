@@ -36,71 +36,18 @@ Page({
       end_date: this.data.endDate
   }
   wx.request({
-    url: `http://localhost:3000/api/v1/users/${userId}/trips`,
+    url: `${globalData.host}users/${userId}/trips`,
     method: 'POST',
     data: holiday,
     success(res) {
       const user_id = res.data.user_id;
       // const trip_id = res.data.id
       console.log('LINE 54--', user_id)
-      wx.navigateTo({
-        url: `/pages/trips/trips?user_id=${user_id}` //need to go to trips of specific user???
+      wx.reLaunch({
+        url: `/pages/trips/trips?loadtrips=true` //need to go to trips of specific user???
       })
     }
   })
   },
 
-  setLocation: function() {
-    wx.chooseLocation({
-      success: res => {
-        console.log(res);
-      }
-    })
-  },
-  
-  onReady: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page show
-   */
-  onShow: function () {
-    
-  },
-
-  /**
-   * Lifecycle function--Called when page hide
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page unload
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * Page event handler function--Called when user drop down
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * Called when page reach bottom
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * Called when user click on the top right corner to share
-   */
-  onShareAppMessage: function () {
-
-  }
 })

@@ -13,8 +13,8 @@
 </view> -->
 
 <!-- <view class="title-card" wx:if="{{user.id_admin}}"> -->
-  
-<view class="header-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://lc-MaWCTEhx.cn-n1.lcfile.com/d6556074a4bfbaf299c3.jpg/Tree.jpg);">
+
+<view class="header-image" wx:if="{{hasTrips}}" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://lc-MaWCTEhx.cn-n1.lcfile.com/d6556074a4bfbaf299c3.jpg/Tree.jpg);">
   <view id="banner-title">Upcoming Trips</view>
 
 <view class="background">
@@ -27,3 +27,22 @@
     <button id="btn-create" bindtap="goToCreate">Create New</button>
   </view>
 </view>
+
+<view class="container-landing" wx:if="{{!hasTrips}}">
+  <view class="title-card">
+    <text class="title">Let's Go</text>
+  </view>
+  <!-- <view class="btn-container"> -->
+  <view class="blurb"><span id="copy">
+   <view> Welcome to HeJi</view>
+    From here you can create your dream holiday at the click of a button. Collaborate with your friends and make sure everyone gets the holiday they deserve. Hit the "+" button to get started.</span>
+  </view>
+  
+  <view class="userinfo">
+    <button  wx:if="{{!hasUserInfo}}" open-type="getUserInfo" id="login-btn" bindgetuserinfo="getUserInfo"><text class="plus">+</text></button>
+    <block wx:else>
+     <button bindtap="goToCreate" id="login-btn" ><text class="plus">+</text></button>
+   </block>
+  </view>
+</view>
+

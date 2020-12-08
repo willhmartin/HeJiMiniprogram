@@ -14,7 +14,7 @@
       <!-- location -->
       <view class="section">
         <view class="card-title">Location</view>
-        <input  bindtap="setLocation" maxlength="20" placeholder="" class="user-input"/>
+        <input  bindinput="locationInput" maxlength="20" placeholder="" class="user-input"/>
       </view>
 
     <!-- start date -->
