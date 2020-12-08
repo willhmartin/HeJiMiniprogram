@@ -7,7 +7,7 @@ Page({
     // budgetId: 1
   },
   goToPayment: function () {
-    console.log('CLICKED--10')
+    console.log('CLICKED--10') 
     wx.navigateTo({
       url: '/pages/payment/payment',
     })
@@ -16,18 +16,13 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    let page = this
-    console.log(options)
-      wx.request({
-        url: `http://localhost:3000/api/v1/trips/23/budgets/${options.id}`,
-        method: 'GET',
-        success(res) {
-          console.log('LINE 25---', res)
-          const budget = res.data
-          console.log(budget)
-          page.setData({budget})
-        }
-      })
+    
+
+      // if (page.data.budget === null) {
+      //   wx.navigateTo({
+      //     url: '/pages/createbudget/createbudget', ## think of user and trip
+      //   })
+      // }
   },
   
   /**
@@ -41,29 +36,47 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-    let page = this
-
-    wx.request({
-      url: `http://localhost:3000/api/v1/trips/23/payments`,
-      method: 'GET',
-      success(res) {
-        console.log('LINE 50---', res)
-        const payments = res.data.payments
-        console.log(payments)
-        page.setData({
-          payments: payments, 
-          total_payment: res.data.total_amount 
-          // total_payment defined in payments controller / setting local data here to call in wxml
-        })
-      }
-    }),
+    console.log(globalData)
+    let page = this 
+      wx.request({
+        url: `http://localhost:3000/api/v1/trips/${globalData.tempTripId}/my_budget?guest_id=${globalData.guestId}`,
+        method: 'GET',
+        success(res) {
+          if (!res.data.budget) {
+            wx.navigateTo({
+              url: '/pages/createbudget/createbudget',
+            })
+          } else {
+            console.log('fetched budget', res)
+          }
+          // code to run if there is a budget
+          // console.log('LINE 25---', res)
+          // const budget = res.data
+          // console.log(budget)
+          // page.setData({budget})
+        }
+      })
+    // wx.request({
+    //   url: `http://localhost:3000/api/v1/trips/${globalData.tripID}/payments`,
+    //   method: 'GET',
+    //   success(res) {
+    //     console.log('LINE 56--', res)
+    //     const payments = res.data.payments
+    //     console.log(payments)
+    //     page.setData({
+    //       payments: payments, 
+    //       total_payment: res.data.total_amount 
+    //       // total_payment defined in payments controller / setting local data here to call in wxml
+    //     })
+    //   }
+    // }),
     
-    this.setData({
-      budget: globalData.budget
-    }),
-    this.setData({
-      payment: globalData.payment
-    })
+    // this.setData({
+    //   budget: globalData.budget
+    // }),
+    // this.setData({
+    //   payment: globalData.payment
+    // })
 
     if (app.globalData.userInfo) {
       this.setData({

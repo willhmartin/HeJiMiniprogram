@@ -1,5 +1,6 @@
 // pages/budget/budget.js
 const globalData = getApp().globalData
+
 Page({
 
   data: {
@@ -22,27 +23,41 @@ Page({
       inputValue: ''
     })
   },
+  onLoad: function (options) {
+    let page = this
+    console.log('LINE 28--', options)
+    // const guest_id = options.guest_id
+    // const trip_id = options.trip_id
+    this.setData({ // setting options avail to use in page
+      guest_id: options.guest_id,
+      // trip_id: options.trip_id
+    })
+    
+  },
 
   submit: function(e) {
-    console.log("LINE 27--SUBMIT")
+    console.log("LINE 39--SUBMIT")
     const budget = {
       amount: this.data.inputValue,
-      guest_id: 12,
-      trip_id: 23
+      guest_id: globalData.guestId,
+      // trip_id: 24
+      trip_id: globalData.tempTripId
   }
-  globalData.monies.push(budget)
-  console.log("LINE 34---",budget)
+  console.log(globalData)
+  globalData.myBudget = []
+  globalData.myBudget.push(budget.amount)
+  console.log("LINE 47---",budget)
   this.setData({budget})
-
+  let page = this
   wx.request({ 
-    url: `localhost:3000/v1/trips/23/budgets`,
+    url: `http://localhost:3000/api/v1/trips/${globalData.tempTripId}/budgets`,
     method: 'POST',
     data: budget,
     success(res) {
-      console.log('LINE 42---', res)
+      console.log('LINE 55---', res)
 
-  wx.navigateTo({
-    url: `/pages/mybudget/mybudget?id=${res.data.id}`
+  wx.switchTab({
+    url: `/pages/mybudget/mybudget`
   })
 }
 })
@@ -51,10 +66,7 @@ Page({
   /**
    * Lifecycle function--Called when page load
    */
-  onLoad: function (options) {
-    console.log('options', options)
-  },
-
+  
   /**
    * Lifecycle function--Called when page is initially rendered
    */

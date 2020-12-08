@@ -15,7 +15,6 @@
       <view class="section">
         <view class="card-title">Location</view>
         <input  bindinput="locationInput" maxlength="20" placeholder="Enter a city or a country" class="user-input"/>
-
       </view>
 
     <!-- start date -->
