@@ -3,10 +3,15 @@
     <text class="title">Let's Go</text>
   </view>
   <!-- <view class="btn-container"> -->
-    <view class="blurb"><span id="copy">
-      <view> Welcome to HeJi</view>
-      From here you can create your dream holiday at the click of a button. Collaborate with your friends and make sure everyone gets the holiday they deserve. Hit the "+" button to get started.</span>
+  <view class="blurb"><span id="copy">
+   <view> Welcome to HeJi</view>
+    From here you can create your dream holiday at the click of a button. Collaborate with your friends and make sure everyone gets the holiday they deserve. Hit the "+" button to get started.</span>
   </view>
-    <button id="btn-create" bindtap="goToCreate"><text class="plus">+</text></button>
-  <!-- </view> -->
+  
+  <view class="userinfo">
+    <button  wx:if="{{!hasUserInfo}}" open-type="getUserInfo" id="login-btn" bindgetuserinfo="getUserInfo"><text class="plus">+</text></button>
+    <block wx:else>
+     <button bindtap="goToCreate" id="login-btn" ><text class="plus">+</text></button>
+   </block>
+  </view>
 </view>

@@ -2,38 +2,47 @@
 //获取应用实例
 const app = getApp()
 const globalData = getApp().globalData
+import event from '../../utils/event'
+
 
 
 Page({
   data: {
-    motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo') 
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    hasTrips: false
   },
 
-  bindViewTap: function() {
-    wx.switchTo({
-      url: '../logs/logs' 
-    })
-  },
   onLoad: function (options) {
-    let page = this
-    console.log('LINE 22--', options)
-    const user_id = options.user_id
-    wx.request({
-        
-      url: `http://localhost:3000/api/v1/users/31/trips`,
-      // url: `http://localhost:3000/api/v1/users/${user_id}/trips`,
-      method: 'GET',
-      success(res) { 
-        console.log('LINE 30--', res)
-        const trips = res.data
-        page.setData({trips})
-      }
+    event.on("hasTrips", this, this.loadTrips)
+    console.log("checking options", options)
+    if(options.loadtrips == "true") {
+      this.getTrips()
+    }
+  },
 
+  getTrips: function(){
+    let userId = wx.getStorageSync('user')
+    wx.request({
+      url: `${globalData.host}users/${userId}/trips`,
+      method: "GET",
+      success: res=>{
+        console.log("checking user's trips", res)
+        this.setData({
+          trips: res.data, 
+          hasTrips: true
+        })
+      }
     })
-    
+  },
+
+  loadTrips: function(){
+    let trips = wx.getStorageSync('trips')
+    this.setData({
+      trips: trips,
+      hasTrips: true
+    })
   },
 
   goToTrip: function (event) {
@@ -43,21 +52,19 @@ Page({
 
     globalData.tripID = []
 
-
     globalData.tripID.push(id_for_trip)
     globalData.tempTripId = id_for_trip //can't pass options because of switchTab
     wx.switchTab({
       url: `/pages/homepage/homepage` //this is the 'options' we access on homepage.js
     })
   },
-
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
+  
+  getUserInfo: function (e) {
+    const userInfo = e.detail.userInfo
+    if (userInfo != undefined) {
+      this.goToCreate()
+      event.emit("getInfo")
+    }
   },
 
   goToCreate: function () {
