@@ -71,11 +71,19 @@ Page({
     })
   },
 
-  /**
-   * Lifecycle function--Called when page hide
-   */
-  onHide: function () {
+  goToTrip: function (event) {
+    console.log(event.currentTarget)
+    const id_for_trip = event.currentTarget.dataset.id
+    console.log(id_for_trip)
 
+    globalData.tripID = []
+
+
+    globalData.tripID.push(id_for_trip)
+    globalData.tempTripId = id_for_trip //can't pass options because of switchTab
+    wx.switchTab({
+      url: `/pages/activities/activities` //this is the 'options' we access on homepage.js
+    })
   },
 
   /**

@@ -54,7 +54,13 @@ Page({
    */
   goToTrips: function() {
     wx.navigateTo({
-      url: `/pages/trips/trips?id=${globalData.userId}`
+      url: `/pages/trips/trips?user_id=${globalData.userId}`
+    })
+  },
+
+  goToActivities: function(){
+    wx.navigateTo({
+      url: `/pages/activities/activities?tripID=${this.data.tripID}`,
     })
   },
 
@@ -120,6 +126,7 @@ Page({
       data: {trip_id: tripId, name: this.data.userInfo.nickName, user_id: this.data.userId},
       success(res){
         console.log("LINE 75- CHECKING POST", res)
+        const guest_id = res.data.id
         this.setData({
           is_guest: false
           // is_guest: true

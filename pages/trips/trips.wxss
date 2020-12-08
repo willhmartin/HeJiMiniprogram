@@ -1,4 +1,3 @@
-/* banner */
 .header-image {
   background-size: cover;
   background-position: center;
@@ -25,15 +24,8 @@
   margin-bottom: 0;
   padding-top: 30px;
   border-radius: 20px;
-  padding: 40rpx;
+  padding: 16rpx;
   box-sizing: border-box;
-}
-
-.container {
-  padding: 70rpx 0;
-  height: 100vh;
-  background-color: #3B7EC9;
-  position: relative;
 }
 
 .holiday-card {
@@ -47,7 +39,6 @@
   background-color: #f4f4f4;
   margin: 32rpx 0;
   box-sizing: border-box;
-
 }
 
 .title {
@@ -63,3 +54,11 @@
   background-color: #ED6A5A;
   box-shadow: 2px 0px 23px -2px rgba(0,0,0,0.46);
 }
+
+
+/* .container {
+  padding: 70rpx 0;
+  height: 100vh;
+  background-color: #3B7EC9;
+  position: relative;
+} */

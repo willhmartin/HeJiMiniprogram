@@ -35,13 +35,13 @@
 
       <!-- transportation --> 
       <view class="section">
-        <view class="card-title">transportation</view>
+        <view class="card-title">Transportation</view>
         <input  bindinput="input" value="{{transportation}}" data-name="transportation" maxlength="20" placeholder="" class="user-input"/>
       </view>
 
        <!-- lodging --> 
        <view class="section">
-        <view class="card-title">lodging</view>
+        <view class="card-title">Lodging</view>
         <input  bindinput="input" value="{{lodging}}" data-name="lodging" maxlength="20" placeholder="" class="user-input"/>
       </view>
     </view>
@@ -49,7 +49,6 @@
     <!-- btn -->
       <view class="btn-area">
         <button bindtap="goToActivity" id="sub" class="btn-submit">Submit</button>
-        <button bindtap="reset" id="reset" class="btn-reset" >Reset</button>
       </view> 
 
     </view>                                                                                      

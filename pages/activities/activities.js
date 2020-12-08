@@ -17,7 +17,7 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+    console.log("checking options", options)
   },
 
   setStartDate: function(e){
@@ -36,6 +36,10 @@ Page({
      lodging: this.data.lodging,
      date: this.data.selectedDate
    }
+   console.log("checking")
+   wx.request({
+     url: `http://localhost:3000/api/v1/trips/${globalData.tripID}`,
+   })
  },
 
  reset: function(){

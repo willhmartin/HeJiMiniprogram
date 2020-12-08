@@ -1,6 +1,3 @@
-a.buffer {
-  height: 30px;
-} 
 .header-image {
   background-size: cover;
   background-position: center;
@@ -10,6 +7,7 @@ a.buffer {
   align-items: center;
   margin: 0;
 }
+
 #banner-title {
   color: white;
   font-size: 30px;
@@ -20,21 +18,11 @@ a.buffer {
   bottom: 8px;
   left: 16px; */
 }
-.container {
-  justify-content: center;
-  /* border-top-left-radius: 50px;
-  border-top-right-radius: 50px; */ 
+
+.card-title {
+  margin-bottom: 16rpx;
 }
-.header {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 30px;
-  padding-right: 30px;
-  font-family: 'Roboto';
-  font-weight: bolder;
-  text-align: center;
-  font-size: 15px;
-}
+
 .background {
   width: 100%;
   height: 100vh;
@@ -44,24 +32,7 @@ a.buffer {
   padding-top: 30px;
   border-radius: 20px;
 }
-.placeholder {
-  font-weight: light;
-}
-.title {
-  color: black;
-  /* background: #F7C326; */
-  /* width: 193px; */
-  /* height: 66px; */
-  /* left: 91px; */
-  margin-top: 40px;
-  font-size: 60px;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 10px;
-  font-family: Lobster;
-  border-radius: 50px;
-  text-shadow: 2px 2px 4px gray;
-}
+
 .section {
   width: 350px;
   /* max-width: 100%; */
@@ -74,34 +45,26 @@ a.buffer {
   border-radius: 10px;
   padding: 20px 5px;
   padding-bottom: 50px;
+  margin-bottom: 20px;
 }
 .form {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-grow: 1;
-  height: 80vh;
   flex-direction: column;
-  /* margin: 15px; */
   margin-top: 0;
   border-color: white;
   /* background: #228CDB; */
 }
-.section__title {
-  font-size: 20px;
-}
-/* .btn-area {
-  margin-top: 5px;
-} */
+
 #sub {
   color: white;
   background-color: #ED6A5A;
   /* background-color: #297DFA; */
   margin-top: 15px;
 }
-.placeholder {
-  font-weight: lighter;
-}
+
 .user-input {
   background-color: #eeeeee;
   border-radius: 5px;
@@ -111,4 +74,8 @@ a.buffer {
   font-weight: lighter;
   font-size: 15px;
   color: #393e46;
+}
+
+.btn-submit {
+  margin-bottom: 40rpx;
 }
