@@ -28,7 +28,7 @@ Page({
    
   formSubmit: function(e) {
     let userId = wx.getStorageSync('user')
-    console.log('LINE 35-- ', e.detail.value)
+    console.log('LINE 35-- ', this.data)
     const holiday = {
       title: this.data.name,
       location: this.data.location,
@@ -42,7 +42,7 @@ Page({
     success(res) {
       const user_id = res.data.user_id;
       // const trip_id = res.data.id
-      console.log('LINE 54--', user_id)
+      console.log('LINE 54--', res)
       wx.reLaunch({
         url: `/pages/trips/trips?loadtrips=true` //need to go to trips of specific user???
       })
