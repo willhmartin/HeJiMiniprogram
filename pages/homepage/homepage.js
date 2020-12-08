@@ -11,42 +11,14 @@ Page({
    * Page initial data
    */
   data: {
-    tripID: 49,
-    userId: 75
+    
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    // let page = this
-    // console.log('LINE 21--', options)
-
-    // wx.request({
-
-
-    //   url: `http://localhost:3000/api/v1/trips/${globalData.tripID}`,
-
-    //   // url: `http://localhost:3000/api/v1/trips/${app.globalData.tripID[0]}`,
-
-
-    //   method: 'GET',
-    //   success(res) {
-    //     console.log('LINE 28--', res)
-    //     const activities = res.data
-    //     console.log(activities.weather.list[0].weather[0].icon)
-    //     console.log(activities)
-        
-        
-    //     const utc = new Date().toJSON().slice(0,10);
-    //     console.log(utc)
-    //     page.setData({
-    //       dateNow: globalData.currentDate
-    //     })
-    //     page.setData({activities})
-    //     globalData.currentDate.push(utc)
-    //   }
-    // })
+   
   },
 
   /**
@@ -105,6 +77,7 @@ Page({
   },
 
   getUserInfo: function(e){
+    console.log(e)
     if (e.detail.userInfo != undefined){
       globalData.hasUserInfo = true
       globalData.userInfo = e.detail.userInfo
@@ -118,10 +91,13 @@ Page({
   },
 
   createGuest: function(){
+    let page = this
     let userId = globalData.userId
-    let tripId = this.data.tripID
+    let tripId = globalData.tripID[0]
+    console.log(userId)
+    console.log(tripId)
     wx.request({
-      url: `http://localhost:3000/api/v1/users/${this.data.userId}/guests`,
+      url: `http://localhost:3000/api/v1/users/${globalData.userId}/guests`,
       method: 'POST',
       data: {trip_id: tripId, name: this.data.userInfo.nickName, user_id: this.data.userId},
       success(res){
@@ -129,7 +105,7 @@ Page({
         const guest_id = res.data.id
         console.log('LINE 77--', guest_id)
 
-        this.setData({
+        page.setData({
           // is_guest: false
           is_guest: true
         })
