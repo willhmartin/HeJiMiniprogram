@@ -1,5 +1,5 @@
 <view class="header-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://lc-MaWCTEhx.cn-n1.lcfile.com/1db39e9a4375d467309c.jpg/swiss.jpg);">
-  <view id="banner-title">Create Payment</view>
+  <view id="banner-title">Create Payment.</view>
 
 
 <view class="background">
@@ -41,10 +41,10 @@
 
   <view class="section">
     <view class="section__title">
-      <view class="">Date</view>
+      <view class="">Payment Date</view>
       <picker mode="date" value="{{date}}" start="2020-12-01" end="2025-12-01" bindchange="setDate">
-        <view class="picker">
-            Date  {{date}} 
+        <view class="picker" >
+            Date {{date}} 
         </view>
       </picker>
     </view>
