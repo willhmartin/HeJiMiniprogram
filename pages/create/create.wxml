@@ -14,7 +14,7 @@
       <!-- location -->
       <view class="section">
         <view class="card-title">Location</view>
-        <input  bindtap="setLocation" maxlength="20" placeholder="Enter a city or a country" class="user-input"/>
+        <input  bindinput="locationInput" maxlength="20" placeholder="Enter a city or a country" class="user-input"/>
 
       </view>
 

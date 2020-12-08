@@ -1,7 +1,5 @@
 // pages/activities/activities.js
 Page({
-
- 
   data: {
     // form value
     location: '',
@@ -13,11 +11,11 @@ Page({
     // date
   },
 
-  /**
-   * Lifecycle function--Called when page load
-   */
+
   onLoad: function (options) {
-    console.log("checking options", options)
+    console.log("checking options", options);
+    
+    // this.getActivities();
   },
 
   setStartDate: function(e){
@@ -36,9 +34,17 @@ Page({
      lodging: this.data.lodging,
      date: this.data.selectedDate
    }
-   console.log("checking")
+   console.log("LINE 37--", activity)
+   
+ 
    wx.request({
-     url: `http://localhost:3000/api/v1/trips/${globalData.tripID}`,
+     url: `http://localhost:3000/api/v1/trips/${globalData.tripID}/activities`,
+     method: 'POST',
+     success: (res) => {
+      console.log('works?', res)
+      const activities = res.data
+      this.setData({activities})
+    }
    })
  },
 
@@ -68,6 +74,5 @@ Page({
     url: '/pages/activity/activity',
   })
 },
-
 })
 

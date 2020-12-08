@@ -27,12 +27,7 @@ Page({
   onLoad: function (options) {
     let page = this
     wx.request({
-
-
-
       url: `http://localhost:3000/api/v1/trips/${globalData.tripID}`,
-
-
       method: 'GET',
       success(res) {
         console.log('LINE 36--', res)

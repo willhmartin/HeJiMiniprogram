@@ -48,7 +48,7 @@
 
     <!-- btn -->
       <view class="btn-area">
-        <button bindtap="goToActivity" id="sub" class="btn-submit">Submit</button>
+        <button bindtap="submit" id="sub" class="btn-submit">Submit</button>
       </view> 
 
     </view>                                                                                      
