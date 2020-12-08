@@ -17,11 +17,49 @@ Page({
   
 
   onLoad: function (options) {
+    let page = this
+    console.log("checking profile")
+    wx.getSetting({
+      success(res){
+        console.log("checking from login", res, res.authSetting['scope.userInfo'])
+        let auth = res.authSetting
+        if(auth['scope.userInfo']){
+          globalData.hasUserInfo = true
+          page.setData({
+            hasUserInfo: true
+          })
+        }
+      }
+    })
+  },
+
+  getUserInfo: function (e) {
+    console.log('clicked')
+    const userDetails = e.detail.userInfo
+    console.log(e.detail.userInfo)
+     const user = {
+      name: userDetails.nickName,
+      
+    }
+    console.log(user)
+    wx.request({
+      url: `http://localhost:3000/api/v1/users/${app.globalData.userId}`,
+      method: 'PUT',
+      data: user,
+      success(res) {
+        console.log('works?', res)
+      }
+    })
+
+    wx.navigateTo({
+      url: '/pages/create/create',
+    })
 
   },
+
   goToCreate: function () {
     console.log('clicked')
-    wx.navigateTo({
+       wx.navigateTo({
       url: '/pages/create/create',
     })
   },

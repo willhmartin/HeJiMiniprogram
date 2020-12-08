@@ -63,7 +63,7 @@ Page({
       data: payment,
       success(res) {
         console.log('LINE 62---', res)
-        wx.navigateTo({
+        wx.switchTab({
           url: `/pages/mybudget/mybudget?id=${res.data.id}`
         })
       }

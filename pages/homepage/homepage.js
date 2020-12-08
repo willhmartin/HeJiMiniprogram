@@ -96,7 +96,7 @@ Page({
         console.log(utc)
         page.setData({
           dateNow: globalData.currentDate,
-          // is_guest: res.data.is_guest
+          is_guest: res.data.is_guest
         })
         page.setData({activities})
         globalData.currentDate.push(utc)
@@ -127,9 +127,11 @@ Page({
       success(res){
         console.log("LINE 75- CHECKING POST", res)
         const guest_id = res.data.id
+        console.log('LINE 77--', guest_id)
+
         this.setData({
-          is_guest: false
-          // is_guest: true
+          // is_guest: false
+          is_guest: true
         })
       }
     })
@@ -157,6 +159,26 @@ Page({
         }
       }
     })
+  },
+
+  /**
+   * Lifecycle function--Called when page is initially rendered
+   */
+  goToTrips: function() {
+    wx.navigateTo({
+      url: `/pages/trips/trips?guest_id=${guest_id}`
+    })
+  },
+
+  onReady: function() { 
+
+} ,
+
+  /**
+   * Lifecycle function--Called when page show
+   */
+  onShow: function () {
+
   },
 
   /**
