@@ -13,28 +13,27 @@
   font-weight: bold;
   padding-top: 100px;
   padding-left: 10px;
-  /* position: absolute;
-  bottom: 8px;
-  left: 16px; */
+}
+.background {
+  width: 100%;
+  background-color: white;
+  align-items: center; 
+  margin-bottom: 0;
+  padding-top: 30px;
+  border-radius: 20px;
+  padding: 40rpx;
+  box-sizing: border-box;
 }
 
-/* .activity-page {
-  background: url("https://lc-MaWCTEhx.cn-n1.lcfile.com/b872c43f3b46a9bb9d67.png/sky.png");
-  flex-direction: column;
-  display: flex;
-  height: 100vh;
-} */
-
-.header {
-  font-family: 'Nunito Sans', sans-serif;
+#btn-submit {
   color: white;
-  font-size: 50rpx;
-  font-weight: bold;
-  text-align: left;
-  width: 350px;
-  padding: 70rpx 30rpx;
-
+  margin-top: 72rpx;
+  background-color: #ED6A5A;
+  box-shadow: 2px 0px 23px -2px rgba(0,0,0,0.46);
 }
+
+
+
 .p {
   font-size: 15px;
 }
@@ -69,16 +68,23 @@
   font-weight: bolder;
 }
 
- .btn {
+ /* .btn {
   position: absolute;
   left: 0;
   top: 0;
   height: 100%;
   width: 45px;
   background-color:#f6f6f6;
-} 
+}  */
 
-.viewport {
+/* .btn-create {
+  color: white;
+  margin-top: 72rpx;
+  background-color: #ED6A5A;
+  box-shadow: 2px 0px 23px -2px rgba(0,0,0,0.46);
+} */
+
+/* .viewport {
   margin: 5px 10px;
-} 
+}  */
 

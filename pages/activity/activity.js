@@ -61,18 +61,13 @@ Page({
   onShow: function () {
     let page = this
     wx.request({
-
-
       url: `http://localhost:3000/api/v1/trips/${globalData.tripID}`,
-
-
       method: 'GET',
       success(res) {
         console.log('works?', res)
         const activities = res.data
         page.setData({activities})
       }
-      
     })
   },
 
