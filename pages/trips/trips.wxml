@@ -15,7 +15,7 @@
 <!-- <view class="title-card" wx:if="{{user.id_admin}}"> -->
   
 <view class="header-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://lc-MaWCTEhx.cn-n1.lcfile.com/d6556074a4bfbaf299c3.jpg/Tree.jpg);">
-  <view id="banner-title">Upcoming Trips</view>
+  <view id="banner-title">Upcoming Trips.</view>
 
 <view class="background">
       <view wx:for="{{trips}}" wx:for-item="trip" class="holiday-card" bindtap="goToTrip" data-id="{{trip.id}}">

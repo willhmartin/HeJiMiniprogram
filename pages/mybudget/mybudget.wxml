@@ -3,7 +3,7 @@
 
 
 <view class="background"> 
-  <!-- <view class="container"> -->
+  <!-- <view class="container"> --> 
     <!-- <button id="update-budget" bindtap=""><text class="budget-btn">Update</text></button> -->
     <!-- image -->
     <image class="avatar-large" alt="avatar-large" mode="aspectFill" src="{{user.avatar}}"></image>
@@ -13,7 +13,7 @@
 
   <!-- <view class="title">${{budget.amount}}</view> -->
 </view>
-    <view class="payments">Payments</view>
+    <view class="transactions">Transactions</view>
 
   <view class="card-grid">
     <view class="payment-section">
