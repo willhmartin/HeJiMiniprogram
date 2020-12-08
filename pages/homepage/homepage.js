@@ -12,8 +12,7 @@ Page({
    * Page initial data
    */
   data: {
-    tripID: 49,
-    userId: 75
+    
   },
 
   onLoad: function (options) {
@@ -48,6 +47,7 @@ Page({
     //     globalData.currentDate.push(utc)
     //   }
     // })
+
   },
   onShow: function(){
     console.log("checking where im")
@@ -67,6 +67,7 @@ Page({
   },
 
   getUserInfo: function(e){
+    console.log(e)
     if (e.detail.userInfo != undefined){
       globalData.hasUserInfo = true
       globalData.userInfo = e.detail.userInfo
@@ -81,15 +82,25 @@ Page({
   },
 
   createGuest: function(){
+
     let userId = wx.getStorageSync('user')
     wx.request({
-      url: `${globalData.host}${userId}/guests`,
+      url: `${globalData.host}users/${userId}/guests`,
+
+//     let page = this
+//     let userId = globalData.userId
+//     let tripId = globalData.tripID[0]
+//     console.log(userId)
+//     console.log(tripId)
+//     wx.request({
+//       url: `http://localhost:3000/api/v1/users/${globalData.userId}/guests`,
+
       method: 'POST',
       data: {trip_id: this.data.trip.id, name: this.data.userInfo.nickName, user_id: userId},
       success(res){
         const guest_id = res.data.id
 
-        this.setData({
+        page.setData({
           // is_guest: false
           is_guest: true
         })
