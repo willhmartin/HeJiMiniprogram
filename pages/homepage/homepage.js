@@ -50,8 +50,8 @@ Page({
   },
 
   goToTrips: function() {
-    wx.navigateTo({
-      url: `/pages/trips/trips?user_id=${globalData.userId}`
+    wx.reLaunch({
+      url: `/pages/trips/trips?loadtrips=true` //need to go to trips of specifi
     })
   },
 

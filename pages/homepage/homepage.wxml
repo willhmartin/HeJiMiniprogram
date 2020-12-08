@@ -13,9 +13,6 @@
 
  </view>
 
- <view wx:if="{{is_guest}}">
-  <button bindtap="goToActivities">Add activity</button>
- </view>
   <!-- "Join Trip" if new guest END-->
   <button id="return-to-trips" bindtap="goToTrips">My Trips</button>
   <view class="title">Today in {{activities.trip.location}}</view>
