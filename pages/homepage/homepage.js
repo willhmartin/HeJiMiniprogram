@@ -58,6 +58,12 @@ Page({
     })
   },
 
+  goToActivities: function(){
+    wx.navigateTo({
+      url: `/pages/activities/activities?tripID=${this.data.tripID}`,
+    })
+  },
+
   onReady: function() { 
 
 } ,
@@ -122,6 +128,7 @@ Page({
         console.log("LINE 75- CHECKING POST", res)
         const guest_id = res.data.id
         console.log('LINE 77--', guest_id)
+
         this.setData({
           // is_guest: false
           is_guest: true

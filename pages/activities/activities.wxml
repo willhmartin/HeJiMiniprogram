@@ -49,7 +49,6 @@
     <!-- btn -->
       <view class="btn-area">
         <button bindtap="goToActivity" id="sub" class="btn-submit">Submit</button>
-        <button bindtap="reset" id="reset" class="btn-reset" >Reset</button>
       </view> 
 
     </view>                                                                                      
