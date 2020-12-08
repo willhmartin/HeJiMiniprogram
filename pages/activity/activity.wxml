@@ -5,7 +5,7 @@
 
 <view class="background">
   <!-- activity card -->
-  <view class="activity-container" wx:for="{{activities.activities}}" wx:for-item="activity" wx:key="index" bindtap="goToTrip">
+  <view class="activity-container" wx:for="{{activities}}" wx:for-item="activity" wx:key="index" bindtap="goToTrip">
     <view wx:if="{{activity.date != activities.activities[index-1].date}}">{{activity.date}}</view>
     <view class="section">
 
@@ -25,7 +25,7 @@
   </view>
 </view>
 
-<button bindtap="goToActivity" id="btn-submit">Create new</button>
+<button bindtap="goToActivities" wx:if="{{is_guest}}" id="btn-submit">Create new</button>
 
 
 

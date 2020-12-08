@@ -14,8 +14,9 @@ Page({
 
   onLoad: function (options) {
     console.log("checking options", options);
-    
-    // this.getActivities();
+    this.setData({
+      tripId: options.tripID
+    })
   },
 
   setStartDate: function(e){
@@ -24,6 +25,7 @@ Page({
       selectedDate: e.detail.value
     })
   },
+
  submit: function(e) {
    console.log('LINE 43---', e.detail.value)
    const activity = {
@@ -32,18 +34,17 @@ Page({
      content: this.data.content,
      transportation: this.data.transportation,
      lodging: this.data.lodging,
-     date: this.data.selectedDate
+     date: this.data.selectedDate,
+     user_id: wx.getStorageSync('user')
    }
-   console.log("LINE 37--", activity)
-   
- 
    wx.request({
-     url: `http://localhost:3000/api/v1/trips/${globalData.tripID}/activities`,
+     url: `http://localhost:3000/api/v1/trips/${this.data.tripId}/activities`,
      method: 'POST',
+     data: activity,
      success: (res) => {
-      console.log('works?', res)
-      const activities = res.data
-      this.setData({activities})
+      wx.switchTab({
+        url: '/pages/activity/activity',
+      })
     }
    })
  },

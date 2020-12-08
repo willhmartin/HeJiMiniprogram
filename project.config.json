@@ -117,7 +117,7 @@
         {
           "name": "Activities",
           "pathName": "pages/activities/activities",
-          "query": "",
+          "query": "tripID=50",
           "scene": null
         }
       ]

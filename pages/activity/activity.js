@@ -4,10 +4,6 @@ const AV = require('../../utils/av-weapp-min.js');
 const globalData = getApp().globalData
 
 Page({
-
-  /**
-   * Page initial data
-   */
   data: {
     steps: [
       {
@@ -20,92 +16,36 @@ Page({
       }
     ],
   },
-
-  /**
-   * Lifecycle function--Called when page load
-   */
-  onLoad: function (options) {
-    let page = this
-    wx.request({
-      url: `http://localhost:3000/api/v1/trips/${globalData.tripID}`,
-      method: 'GET',
-      success(res) {
-        console.log('LINE 36--', res)
-        const activities = res.data
-        page.setData({activities})
-      }
-      
-    })
-  },
-  goToActivity: function () {
-    console.log('clicked')
+  
+  goToActivities: function(){
     wx.navigateTo({
-      url: '/pages/activities/activities',
+      url: `/pages/activities/activities?tripID=${this.data.trip.id}`,
     })
   },
-  /**
-   * Lifecycle function--Called when page is initially rendered
-   */
-  onReady: function () {
 
+  onShow: function(){
+    this.getTripInfo()
   },
 
-  /**
-   * Lifecycle function--Called when page show
-   */
-  onShow: function () {
+
+  getTripInfo: function(){
+    let tripId = globalData.tempTripId
+    let userId = wx.getStorageSync('user')
+    console.log("checking if globalData has tripId", globalData.tempTripId)
+
     let page = this
     wx.request({
-      url: `http://localhost:3000/api/v1/trips/${globalData.tripID}`,
+       url: `${globalData.host}trips/${tripId}`,
       method: 'GET',
+      data: {user_id: userId},
       success(res) {
-        console.log('works?', res)
-        const activities = res.data
-        page.setData({activities})
-      }
+        console.log(res)
+         page.setData({
+           trip: res.data.trip,
+          is_guest: res.data.is_guest,
+          activities: res.data.activities
+        })
+      } 
     })
   },
-
-  goToTrip: function (event) {
-    console.log(event.currentTarget)
-    const id_for_trip = event.currentTarget.dataset.id
-    console.log(id_for_trip)
-
-    globalData.tripID = []
-
-
-    globalData.tripID.push(id_for_trip)
-    globalData.tempTripId = id_for_trip //can't pass options because of switchTab
-    wx.switchTab({
-      url: `/pages/activities/activities` //this is the 'options' we access on homepage.js
-    })
-  },
-
-  /**
-   * Lifecycle function--Called when page unload
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * Page event handler function--Called when user drop down
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * Called when page reach bottom
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * Called when user click on the top right corner to share
-   */
-  onShareAppMessage: function () {
-
-  }
 })

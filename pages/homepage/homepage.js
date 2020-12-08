@@ -7,10 +7,6 @@ const globalData = getApp().globalData
 console.log('LINE 6--,', globalData)
 
 Page({
-
-  /**
-   * Page initial data
-   */
   data: {
     
   },
@@ -50,19 +46,18 @@ Page({
 
   },
   onShow: function(){
-    console.log("checking where im")
     this.getTripInfo()
   },
 
   goToTrips: function() {
-    wx.navigateTo({
-      url: `/pages/trips/trips?user_id=${globalData.userId}`
+    wx.reLaunch({
+      url: `/pages/trips/trips?loadtrips=true` //need to go to trips of specifi
     })
   },
 
   goToActivities: function(){
     wx.navigateTo({
-      url: `/pages/activities/activities?tripID=${this.data.tripID}`,
+      url: `/pages/activities/activities?tripID=${this.data.trip.id}`,
     })
   },
 
@@ -82,26 +77,21 @@ Page({
   },
 
   createGuest: function(){
+
     let page = this
     let userId = wx.getStorageSync('user')
     wx.request({
       url: `${globalData.host}users/${userId}/guests`,
-
-   
-//     let userId = globalData.userId
-//     let tripId = globalData.tripID[0]
-//     console.log(userId)
-//     console.log(tripId)
-//     wx.request({
-//       url: `http://localhost:3000/api/v1/users/${globalData.userId}/guests`,
-
+     
+               
       method: 'POST',
       data: {trip_id: this.data.trip.id, name: this.data.userInfo.nickName, user_id: userId},
       success(res){
         const guest_id = res.data.id
+        
 
         page.setData({
-          guest_id: res.data.id,
+          guest_id: res.data.id,          
           is_guest: true
         })
       }
