@@ -48,19 +48,16 @@ Page({
       })
     }
   })
+  },
 
+  setLocation: function() {
+    wx.chooseLocation({
+      success: res => {
+        console.log(res);
+      }
+    })
+  },
   
-  },
-  /**
-   * Lifecycle function--Called when page load
-   */
-  onLoad: function (options) {
-    
-  },
-
-  /**
-   * Lifecycle function--Called when page is initially rendered
-   */
   onReady: function () {
 
   },

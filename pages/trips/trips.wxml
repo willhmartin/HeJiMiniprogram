@@ -18,19 +18,12 @@
   <view id="banner-title">Upcoming Trips</view>
 
 <view class="background">
-  <view class="form">
-    <view class="section">
-    <!-- <view class="title">Your Upcoming Trips</view> -->
-    <view class="holiday-overview"  wx:for="{{trips}}" wx:for-item="trip">
-      <view class="holiday-card" bindtap="goToTrip" data-id="{{trip.id}}">
+      <view wx:for="{{trips}}" wx:for-item="trip" class="holiday-card" bindtap="goToTrip" data-id="{{trip.id}}">
         <view class="title">{{trip.title}}</view>
         <view>📍  {{trip.location}}</view>
         <view>📅Start Date: {{trip.start_date}}</view>
         <view>📅End Date: {{trip.end_date}}</view>
       </view>
-    </view>
-    <button id="btn-create" bindtap="goToCreate"><text class="plus">+</text></button>
+    <button id="btn-create" bindtap="goToCreate">Create New</button>
   </view>
-</view>
-</view>
 </view>

@@ -115,20 +115,9 @@
           "scene": null
         },
         {
-          "name": "activities",
+          "name": "Activities",
           "pathName": "pages/activities/activities",
           "query": "",
-          "scene": null
-        },
-        {
-          "name": "activities",
-          "pathName": "pages/activities/activities",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "activities",
-          "pathName": "pages/activities/activities",
           "scene": null
         }
       ]

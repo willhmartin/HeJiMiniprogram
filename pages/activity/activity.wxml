@@ -3,7 +3,7 @@
   <view id="banner-title">Your Activity</view>
   <view class="p">{{activity.date}}</view>
 
-
+<view class="background">
   <!-- activity card -->
   <view class="activity-container" wx:for="{{activities.activities}}" wx:for-item="activity" wx:key="index">
     <view wx:if="{{activity.date != activities.activities[index-1].date}}">{{activity.date}}</view>
@@ -20,11 +20,12 @@
           <view >{{activity.time}}</view>
       </view>
       
-
+      </view>
     </view>
   </view>
 </view>
-<button bindtap="goToActivity" id="sub" class="btn-submit">Create new</button>
+
+<button bindtap="goToActivity" id="btn-submit">Create new</button>
 
 
 
