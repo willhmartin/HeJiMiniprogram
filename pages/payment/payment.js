@@ -58,7 +58,7 @@ Page({
     const trip_id = this.data.trip_id
     // add ?guest_id=${group_payment} to the url in the post request
     wx.request({ 
-      url: `http://localhost:3000/api/v1/trips/${trip_id}/payments?guest_id=${group_payment}`,
+      url: `${globalData.host}trips/${trip_id}/payments?guest_id=${group_payment}`,
       method: 'POST',
       data: payment,
       success(res) {

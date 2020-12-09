@@ -51,7 +51,7 @@ Page({
   this.setData({budget})
   let page = this
   wx.request({ 
-    url: `http://localhost:3000/api/v1/trips/${globalData.tempTripId}/budgets`,
+    url: `${globalData.host}trips/${globalData.tempTripId}/budgets`,
     method: 'POST',
     data: budget,
     success(res) {

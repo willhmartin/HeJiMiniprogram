@@ -43,7 +43,7 @@ Page({
     }
     console.log(user)
     wx.request({
-      url: `http://localhost:3000/api/v1/users/${app.globalData.userId}`,
+      url: `${globalData.host}users/${app.globalData.userId}`,
       method: 'PUT',
       data: user,
       success(res) {
