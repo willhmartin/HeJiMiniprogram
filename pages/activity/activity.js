@@ -39,11 +39,12 @@ Page({
       method: 'GET',
       data: {user_id: userId},
       success(res) {
-        console.log(res)
+        console.log(res.data.activities)
+        const activityList = res.data.activities
          page.setData({
            trip: res.data.trip,
           is_guest: res.data.is_guest,
-          activities: res.data.activities
+          activityList: res.data.activities
         })
       } 
     })

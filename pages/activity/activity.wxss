@@ -34,6 +34,7 @@
 .p {
   font-size: 15px;
   color:black;
+
 }
 .section {
   width: 340px;
