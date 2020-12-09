@@ -24,7 +24,7 @@ Page({
         console.log("checking from login", res, res.authSetting['scope.userInfo'])
         let auth = res.authSetting
         if(auth['scope.userInfo']){
-          globalData.hasUserInfo = true
+          // globalData.hasUserInfo = true
           page.setData({
             hasUserInfo: true
           })

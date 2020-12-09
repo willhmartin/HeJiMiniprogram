@@ -1,11 +1,12 @@
-<view class="container">
+<view class="container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://lc-MaWCTEhx.cn-n1.lcfile.com/eb3887ea1b319a531419.jpg/nyc%20copy.jpg);">
+
   <view class="title-card">
     <text class="title">Let's Go</text> 
   </view>
   <!-- <view class="btn-container"> -->
-  <view class="blurb"><span id="copy">
+  <view class="blurb">
    <view> Welcome to HeJi</view>
-    From here you can create your dream holiday at the click of a button. Collaborate with your friends and make sure everyone gets the holiday they deserve. Hit the "+" button to get started.</span>
+    From here you can create your dream holiday at the click of a button. Collaborate with your friends and make sure everyone gets the holiday they deserve. Hit the "+" button to get started.
   </view>
   
   <view class="userinfo">
