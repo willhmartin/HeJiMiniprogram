@@ -6,39 +6,46 @@
   <!-- <view class="container"> --> 
     <!-- <button id="update-budget" bindtap=""><text class="budget-btn">Update</text></button> -->
     <!-- image -->
-    <image class="avatar-large" alt="avatar-large" mode="aspectFill" src="{{user.avatar}}"></image>
+    <image class="avatar-large" alt="avatar-large" mode="aspectFill" wx:if="{{hasUserInfo}}" src="{{userInfo.avatarUrl}}"></image>
 <!-- data-id="{{service}}" -->
-<view class='total-budget'>
-  <view class="title">${{budget.amount - total_payment}}</view>
+  <block wx:if="{{isGuest}}">
+        
+      <view wx:if="{{hasBudget}}" class='total-budget'>
+            <view class="title">${{displayBudget.budget.amount || newBudget}}</view>
+            <view class="transactions" >Transactions</view>
+      <view class="card-grid">
+        <view class="payment-section">
+        <view class="card-overview" style="margin-bottom: 30rpx;" wx:for="{{payments}}" wx:for-item="payment">
+          <view class="card-product" bindtap="onClick" data-id="{{payment.id}}">
+            <view class="card-image">
+              <image src="{{user.avatar}}" style="height: 100%; width: 100%;" mode="aspectFill" />
+            </view> 
+            <view class="card-product-infos">
+              <view id="p">{{payment.date}}</view>
+              <view id="h1">{{payment.category}}</view>
+              <view class="h2">{{payment.amount}}</view>
+              <view id="p">{{payment.content}}</view>
+            </view>
 
-  <!-- <view class="title">${{budget.amount}}</view> -->
-</view>
-    <view class="transactions">Transactions</view>
-
-  <view class="card-grid">
-    <view class="payment-section">
-
-    <view class="card-overview" style="margin-bottom: 30rpx;" wx:for="{{payments}}" wx:for-item="payment">
-
-      <view class="card-product" bindtap="onClick" data-id="{{payment.id}}">
-         <view class="card-image">
-          <image src="{{user.avatar}}" style="height: 100%; width: 100%;" mode="aspectFill" />
-</view> 
-        <view class="card-product-infos">
-          <view id="p">{{payment.date}}</view>
-          <view id="h1">{{payment.category}}</view>
-          <view class="h2">{{payment.amount}}</view>
-          <view id="p">{{payment.content}}</view>
+          </view>
+          <!-- </view> -->
+            </view>
+            </view>
         </view>
+        <view class="submit-payment">Submit a Payment</view>
+      <button id="btn-create" bindtap="goToPayment"><text class="plus">+</text></button>
+          </view>
 
+          <!-- HAS NO BUDGET -->
+      <view wx:else>
+        <input value="{{inputValue}}" bindinput="bindKeyInput" type="number" placeholder="Enter Yout Budget Here"/>
+        <button bindtap="createBudget">Create Budget</button>
       </view>
-      <!-- </view> -->
-        </view>
-        </view>
-    </view>
-    <view class="submit-payment">Submit a Payment</view>
-  <button id="btn-create" bindtap="goToPayment"><text class="plus">+</text></button>
-<!-- </view> -->
+   
+    </block>
+    <block wx:else> 
+      <view>You have to be a guest in order to set budget</view>
+    </block>
   </view>
  </view>
 
