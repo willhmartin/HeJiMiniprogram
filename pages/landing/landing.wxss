@@ -22,7 +22,6 @@
 }
 
 .title {
-  font-family: 'Nunito Sans', sans-serif;
   color: white;
   font-size: 65px;
   font-weight: bold;
@@ -49,7 +48,6 @@
 
 .plus {
   height: 74px;
-  font-family:'Nunito Sans', sans-serif;
   color: white;
 }
 

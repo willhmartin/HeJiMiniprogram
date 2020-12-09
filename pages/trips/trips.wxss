@@ -98,6 +98,7 @@
 
 .blurb {
   color: white;
+  margin: 200px 20px;
   background-color: rgba(90, 89, 89, 0.6);
   /* opacity: 0.8; */
   padding: 10px 10px;
@@ -110,4 +111,16 @@
 
 #copy {
   opacity: 1 !important;
+}
+#login-btn {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  margin: 0 auto;
+  background: #ED6A5A;
+  margin-bottom: 40px;
 }

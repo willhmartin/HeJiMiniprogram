@@ -22,10 +22,10 @@
       
       </view>
     </view>
+      <button bindtap="goToActivities" wx:if="{{is_guest}}" id="btn-submit">Create new</button>
   </view>
 </view>
 
-<button bindtap="goToActivities" wx:if="{{is_guest}}" id="btn-submit">Create new</button>
 
 
 
