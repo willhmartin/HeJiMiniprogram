@@ -48,6 +48,8 @@ checkScope: function () {
             page.globalData.hasUserInfo = true
             page.globalData.userInfo = res.userInfo
             // page.sendUserInfo(res.userInfo)
+            wx.setStorageSync('hasUserInfo', true)
+            wx.setStorageSync('userInfo', res.userInfo)
           }
         })
       } else {
@@ -80,6 +82,11 @@ sendUserInfo: function (e) {
     currentDate: [new Date().toJSON().slice(0,10)],
     holidays: [],
     payments: [],
-    tripID: []
+    tripID: [],
+
+    // for storing temp data
+    tempIsGuest: false,
+    tempGuestId: 0,
+    tempTripId: 0
   }
 })

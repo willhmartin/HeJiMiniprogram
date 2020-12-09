@@ -13,7 +13,8 @@ Page({
 
   onLoad: function (options) {
     this.setData({
-      hasUserInfo: wx.getStorageSync('hasUserInfo')
+      hasUserInfo: wx.getStorageSync('hasUserInfo'),
+      userInfo: wx.getStorageSync('userInfo')
     })
 
   },
@@ -53,20 +54,18 @@ Page({
     let page = this
     let userId = wx.getStorageSync('user')
     wx.request({
-      url: `${globalData.host}users/${userId}/guests`,
-     
-               
+      url: `${globalData.host}users/${userId}/guests`,  
       method: 'POST',
       data: {trip_id: this.data.trip.id, name: this.data.userInfo.nickName, user_id: userId},
       success(res){
         console.log(res)
         const guest_id = res.data.id
-        
-
         page.setData({
           guest_id: res.data.id,          
           is_guest: true
         })
+        globalData.tempIsGuest = true
+        globalData.tempGuestId = guest_id
       }
     })
   },
@@ -83,13 +82,24 @@ Page({
       data: {user_id: userId},
       success(res) {
         console.log(res)
-         page.setData({
-          trip: res.data.trip,
-          is_guest: res.data.is_guest,
-          activities: res.data.activities,
-          guest_id: res.data.guest_id
-        })
-        getApp().globalData.guestId = res.data.guest_id
+        let is_guest = res.data.is_guest 
+        if (is_guest){
+          page.setData({
+            trip: res.data.trip,
+            is_guest: res.data.is_guest,
+            activities: res.data.activities,
+            guest_id: res.data.guest_id
+          })
+          globalData.tempIsGuest = true
+          globalData.tempGuestId = res.data.guest_id
+        } else {
+          page.setData({
+            trip: res.data.trip,
+            is_guest: res.data.is_guest,
+            activities: res.data.activities
+          })
+          globalData.tempIsGuest = false
+        }
       } 
     })
   },

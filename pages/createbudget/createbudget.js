@@ -25,7 +25,11 @@ Page({
   },
   onLoad: function (options) {
     let page = this
-    console.log('LINE 28--', options)
+
+    console.log('LINE 28--', options.guest_id)
+    // const guest_id = options.guest_id
+    // const trip_id = options.trip_id
+
     this.setData({ // setting options avail to use in page
       guest_id: options.guest_id,
       // trip_id: options.trip_id
@@ -33,7 +37,7 @@ Page({
     
   },
 
-  submit: function(e) {
+  createBudget: function(e) {
     console.log("LINE 39--SUBMIT")
     const budget = {
       amount: this.data.inputValue,

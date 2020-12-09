@@ -5,6 +5,7 @@ const globalData = getApp().globalData
 Page({
   data: {
     // budgetId: 1
+    hasBudget: false
   },
   goToPayment: function () {
     console.log('CLICKED--10') 
@@ -15,94 +16,126 @@ Page({
   /**
    * Lifecycle function--Called when page load
    */
-  onLoad: function (options) {
-    
-  },
-  
-  /**
-   * Lifecycle function--Called when page is initially rendered
-   */
-  onReady: function () {
+
+  onShow: function (options) {
+    console.log("checking 123123")
+    this.setData({
+      hasUserInfo: wx.getStorageSync('hasUserInfo'),
+      userInfo: wx.getStorageSync('userInfo'),
+    })
+    let isGuest= globalData.tempIsGuest
+    if (isGuest){
+      this.setData({
+        isGuest: true,
+        guestId: globalData.tempGuestId,
+        TripId: globalData.tempTripId
+      })
+      this.getBudget()
+    } else {
+      this.setData({
+        isGuest: false
+      })
+    }
+      // if (page.data.budget === null) {
+      //   wx.navigateTo({
+      //     url: '/pages/createbudget/createbudget', ## think of user and trip
+      //   })
+      // }
 
   },
-
   /**
    * Lifecycle function--Called when page show
    */
-  onShow: function () {
-    console.log(globalData)
-    let page = this 
-      wx.request({
-        url: `http://localhost:3000/api/v1/trips/${globalData.tempTripId}/my_budget?guest_id=${globalData.guestId}`,
-        method: 'GET',
-        success(res) {
-          if (!res.data.budget) {
-            wx.navigateTo({
-              url: '/pages/createbudget/createbudget',
-            })
-          } else {
-            console.log('fetched budget', res)
-          }
-        
-        }
-      })
 
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
+
+  bindKeyInput: function(e) {
+    console.log("LINE 49", e.detail.value)
+    this.setData({
+      inputValue: e.detail.value
+    })
+  },
+
+
+  createBudget: function(e) {
+    console.log("LINE 39--SUBMIT", e.detail.value)
+    const budget = {
+      amount: this.data.inputValue,
+      guest_id: globalData.tempGuestId,
+      // trip_id: 24
+      trip_id: globalData.tempTripId
+  }
+  console.log(globalData)
+  globalData.myBudget = []
+  globalData.myBudget.push(budget.amount)
+  console.log("LINE 47---",budget)
+  this.setData({budget})
+  let page = this
+  wx.request({ 
+    url: `http://localhost:3000/api/v1/trips/${globalData.tempTripId}/budgets`,
+    method: 'POST',
+    data: budget,
+    success(res) {
+    console.log('LINE 55---', res)
+    page.setData({
+      newBudget: res.data.amount,
+      hasBudget: true
+    })
+  }
+     
+})
+  },
+
+
+
+
+
+  getBudget: function(){
+    let page = this 
+    wx.request({
+      url: `http://localhost:3000/api/v1/trips/${page.data.TripId}/my_budget?guest_id=${page.data.guestId}`,
+      method: 'GET',
+      success(res) {
+        console.log("checking get budget!!!", res)
+        if (!res.data.budget) {
+          page.setData({
+            hasBudget: false
+          })
+        } else {
+          console.log('fetched budget', res)
+          page.setData({
+            hasBudget: true
           })
         }
-      })
-    }
-  },
+        // code to run if there is a budget
+        console.log('LINE 25---', res)
+        const displayBudget = res.data
+        console.log(displayBudget)
+        page.setData({displayBudget})
+      }
+    })
+  // wx.request({
+  //   url: `http://localhost:3000/api/v1/trips/${globalData.tripID}/payments`,
+  //   method: 'GET',
+  //   success(res) {
+  //     console.log('LINE 56--', res)
+  //     const payments = res.data.payments
+  //     console.log(payments)
+  //     page.setData({
+  //       payments: payments, 
+  //       total_payment: res.data.total_amount 
+  //       // total_payment defined in payments controller / setting local data here to call in wxml
+  //     })
+  //   }
+  // }),
   
-  onHide: function () {
-
+  // this.setData({
+  //   budget: globalData.budget
+  // }),
+  // this.setData({
+  //   payment: globalData.payment
+  // })
   },
 
-  /**
-   * Lifecycle function--Called when page unload
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * Page event handler function--Called when user drop down
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * Called when page reach bottom
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * Called when user click on the top right corner to share
-   */
   onShareAppMessage: function () {
 
   }

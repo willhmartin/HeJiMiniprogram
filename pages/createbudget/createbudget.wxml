@@ -8,7 +8,7 @@
       <view class="form">
         <view class="section">
           <view class="section__title">Trip Budget</view>
-          <input value="{{inputValue}}" bindinput="bindKeyInput" class="user-input" placeholder="Enter Amount Here"/>
+          <input value="{{inputValue}}" bindinput="bindKeyInput" type="number" placeholder="Enter Yout Budget Here"/>
           </view>
     </view>
 </view>
