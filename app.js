@@ -3,14 +3,12 @@ import event from 'utils/event'
 App({
   onLaunch: function () {
     let page = this
-    const host = 'http://localhost:3000/'
-    console.log('beginning login')
     wx.login({
       success: (res) => {
         console.log(res)
       // insert next code here
       wx.request({
-        url: host + 'login',
+        url: page.globalData.hostForLogin + 'login',
         method: 'post',
         data: {
           code: res.code
@@ -73,8 +71,10 @@ sendUserInfo: function (e) {
 
   globalData: {
     // host
-    host: 'http://localhost:3000/api/v1/',
-    // host: 'https://heji.wogengapp.cn/api/v1/',
+    // host: 'http://localhost:3000/api/v1/',
+    host: 'https://heji.wogengapp.cn/api/v1/',
+    // host: 'http://localhost:3000/',
+    hostForLogin: 'https://heji.wogengapp.cn/',
     hasUserInfo: [],
     userInfo: null,
     trips: [],
