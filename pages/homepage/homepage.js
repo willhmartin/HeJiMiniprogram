@@ -87,6 +87,7 @@ Page({
       method: 'POST',
       data: {trip_id: this.data.trip.id, name: this.data.userInfo.nickName, user_id: userId},
       success(res){
+        console.log(res)
         const guest_id = res.data.id
         
 
