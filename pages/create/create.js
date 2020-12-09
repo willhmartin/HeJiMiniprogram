@@ -1,4 +1,5 @@
 // pages/create/create.js
+import event from '../../utils/event'
 const globalData = getApp().globalData
 Page({ 
 

@@ -71,7 +71,7 @@ Page({
   this.setData({budget})
   let page = this
   wx.request({ 
-    url: `http://localhost:3000/api/v1/trips/${globalData.tempTripId}/budgets`,
+    url: `${globalData.host}trips/${globalData.tempTripId}/budgets`,
     method: 'POST',
     data: budget,
     success(res) {
@@ -92,7 +92,7 @@ Page({
   getBudget: function(){
     let page = this 
     wx.request({
-      url: `http://localhost:3000/api/v1/trips/${page.data.TripId}/my_budget?guest_id=${page.data.guestId}`,
+      url: `${globalData.host}trips/${page.data.TripId}/my_budget?guest_id=${page.data.guestId}`,
       method: 'GET',
       success(res) {
         console.log("checking get budget!!!", res)
@@ -114,7 +114,7 @@ Page({
       }
     })
   // wx.request({
-  //   url: `http://localhost:3000/api/v1/trips/${globalData.tripID}/payments`,
+  //   url: `${globalData.host}trips/${globalData.tripID}/payments`,
   //   method: 'GET',
   //   success(res) {
   //     console.log('LINE 56--', res)

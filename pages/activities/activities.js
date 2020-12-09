@@ -1,4 +1,5 @@
 // pages/activities/activities.js
+const globalData = getApp().globalData
 Page({
   data: {
     // form value
@@ -38,7 +39,7 @@ Page({
      user_id: wx.getStorageSync('user')
    }
    wx.request({
-     url: `http://localhost:3000/api/v1/trips/${this.data.tripId}/activities`,
+     url: `${globalData.host}trips/${this.data.tripId}/activities`,
      method: 'POST',
      data: activity,
      success: (res) => {
