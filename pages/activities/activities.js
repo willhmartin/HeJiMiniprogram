@@ -1,5 +1,6 @@
 // pages/activities/activities.js
 const globalData = getApp().globalData
+
 Page({
   data: {
     // form value
