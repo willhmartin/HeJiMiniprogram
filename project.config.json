@@ -109,12 +109,6 @@
           "scene": null
         },
         {
-          "name": "Login Page",
-          "pathName": "pages/login/login",
-          "query": "",
-          "scene": null
-        },
-        {
           "name": "Activities",
           "pathName": "pages/activities/activities",
           "query": "tripID=50",

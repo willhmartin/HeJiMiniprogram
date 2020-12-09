@@ -7,13 +7,11 @@
   padding-top: 30px;
   border-radius: 20px;
 }
-.container {
+/* .container {
   justify-content: center;
-  /* padding-top: 40px; */
   margin-bottom: 20px;
-  /* padding-bottom: 10px; */
   padding: 0;
-}
+} */
 .header-image {
   background-size: cover;
   background-position: center;
@@ -146,7 +144,7 @@
   padding: 16px;
   text-align: center; 
 }
-.card-overview {
+.card-overview { 
   display: absolute;
   padding: 0, 5px;
   margin: 4px, 4px;

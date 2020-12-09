@@ -44,7 +44,7 @@ Page({
       // const trip_id = res.data.id
       console.log('LINE 54--', res)
       wx.reLaunch({
-        url: `/pages/trips/trips?loadtrips=true` //need to go to trips of specific user???
+        url: `/pages/trips/trips?loadtrips=true` 
       })
     }
   })

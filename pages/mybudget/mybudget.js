@@ -16,6 +16,7 @@ Page({
   /**
    * Lifecycle function--Called when page load
    */
+
   onShow: function (options) {
     console.log("checking 123123")
     this.setData({
@@ -40,10 +41,12 @@ Page({
       //     url: '/pages/createbudget/createbudget', ## think of user and trip
       //   })
       // }
+
   },
   /**
    * Lifecycle function--Called when page show
    */
+
 
   bindKeyInput: function(e) {
     console.log("LINE 49", e.detail.value)

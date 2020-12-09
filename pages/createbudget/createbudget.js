@@ -25,9 +25,11 @@ Page({
   },
   onLoad: function (options) {
     let page = this
+
     console.log('LINE 28--', options.guest_id)
     // const guest_id = options.guest_id
     // const trip_id = options.trip_id
+
     this.setData({ // setting options avail to use in page
       guest_id: options.guest_id,
       // trip_id: options.trip_id
@@ -40,7 +42,6 @@ Page({
     const budget = {
       amount: this.data.inputValue,
       guest_id: globalData.guestId,
-      // trip_id: 24
       trip_id: globalData.tempTripId
   }
   console.log(globalData)
