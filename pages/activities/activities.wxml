@@ -1,6 +1,6 @@
 <!-- banner image -->
 <view class="header-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://lc-MaWCTEhx.cn-n1.lcfile.com/0f0a85f3cd0da7c27a20.jpg/southafrica.jpg);">
-  <view id="banner-title">Create an Activity.</view>
+  <view id="banner-title">Create an Activity</view>
 
    
 <view class="background">
@@ -14,7 +14,11 @@
       <!-- Time -->
       <view class="section">
         <view class="card-title">Time</view>
-        <input  bindinput="input" value="{{time}}" data-name="time" maxlength="20" placeholder="" class="user-input"/>
+          <picker mode="time" value="{{time}}" start="00:00" end="24:00" bindchange="setTime" class="user-input">
+            <view class="picker">
+            {{time ? time : 'Select'}}
+            </view>
+          </picker>
       </view>
 
        <!-- content --> 
