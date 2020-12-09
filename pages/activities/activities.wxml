@@ -27,7 +27,7 @@
         <input  bindinput="input" value="{{content}}" data-name="content" maxlength="20" placeholder="" class="user-input"/>
       </view>
 
-    <!-- start date -->
+    <!-- start date --> 
       <view id="date" class="section">
           <view class="card-title">Date</view>
           <picker mode="date" value="{{selectedDate}}" start="2015-09-01" end="2021-09-01" bindchange="setStartDate" class="user-input">
