@@ -8,8 +8,7 @@
   <view class="activity-container" wx:for="{{activityList}}" wx:for-item="activity" wx:key="index" bindtap="goToTrip">
     <view class="activity-date" wx:if="{{activity.date != activities.activities[index-1].date}}">{{activity.date}}</view>
     <view class="section">
-
-      <view class="border"></view>  
+      <!-- <view class="border"></view>   -->
       <!-- <view class="btn">
         <view class="upvote"></view>
         <view class="downvote"></view>
@@ -18,11 +17,13 @@
           <view >{{activity.content}}</view>
           <view >📍 {{activity.location}}</view>
           <view >🕐 {{activity.time}}</view>
-      </view>
-      
-      </view>
+        </view>
+      </view> <!-- view class section end -->
+
     </view>
       <button bindtap="goToActivities" wx:if="{{is_guest}}" id="btn-submit">Create new</button>
+
+<!-- header-image and background end -->
   </view>
 </view>
 
