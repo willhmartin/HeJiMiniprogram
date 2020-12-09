@@ -1,20 +1,35 @@
-.container { 
-  
-  padding: 70rpx 0;
-  height: 100vh;
-  background-color: #3B7EC9;
-  background: url("https://lc-MaWCTEhx.cn-n1.lcfile.com/b872c43f3b46a9bb9d67.png/sky.png");
-  position: relative;
+.header-image {
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  display: flex-inline;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
 }
-
+.background { 
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  align-items: center; 
+  margin-bottom: 0;
+  padding-top: 30px;
+  border-radius: 20px;
+}
+#banner-title {
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  padding-top: 150px;
+  padding-left: 10px;
+}
 #return-to-trips {
   position: absolute;
   top: 0px;
   left: 0px;
-  background-color: #EBC71B;
+  background: #2C7DFE;
   color: white;
   margin-bottom: 15rpx;
-  background: linear-gradient(180deg, #BA9BA0, #CD8A56);
   box-shadow: 2px 0px 23px -2px rgba(0,0,0,0.46);
   -webkit-box-shadow: 2px 0px 23px -2px rgba(0,0,0,0.46);
   -moz-box-shadow: 2px 0px 23px -2px rgba(0,0,0,0.46);
@@ -27,10 +42,11 @@
 
 }
 .title {
-  font-family: 'Indie Flower';
-  color: white;
+  color: black;
   font-size: 80rpx;
   font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
 }
 
 .card-title {
@@ -39,12 +55,12 @@
 }
 
 .text {
-  font-family: 'Indie Flower';
-  color: white;
+  color: black;
   font-size: 60rpx;
   font-weight: bold;
+  text-align: center;
+  margin-top: 40px;
 }
-
 
 .activity-card {
   padding: 5px 5px;
@@ -85,4 +101,8 @@
   justify-content: space-evenly;
   top: 65px;
   left: -6px;
+}
+.join-btn {
+  background: #ED6A5A;
+  color: white;
 }

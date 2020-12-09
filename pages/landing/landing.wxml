@@ -1,6 +1,6 @@
 <view class="container">
   <view class="title-card">
-    <text class="title">Let's Go</text>
+    <text class="title">Let's Go</text> 
   </view>
   <!-- <view class="btn-container"> -->
   <view class="blurb"><span id="copy">

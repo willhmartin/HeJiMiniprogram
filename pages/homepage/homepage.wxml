@@ -1,39 +1,40 @@
+<view class="header-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.picsum.photos/id/299/5498/3615.jpg?hmac=NqSpUzSsD7mgU34riF8xDMZkcSQY345kONcjjOqqjBA);">
+  <view id="banner-title"></view>
 
-<view class="container"> 
+<view class="background">  
 
   <!-- "Join Trip" if new guest START-->
   <view class="guestinfo">
- 
     <button wx:if="{{!is_guest && !hasUserInfo}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="join-btn">Join Trip</button>
-    
+
     <block wx:else>
      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{guestInfo.avatarUrl}}" mode="cover"></image>
      <text class="guestinfo-nickname">{{guestInfo.nickName}}</text>
    </block>
-
  </view>
-
   <!-- "Join Trip" if new guest END-->
+  
   <button id="return-to-trips" bindtap="goToTrips">My Trips</button>
-  <view class="title">Today in {{activities.trip.location}}</view>
-  <view class="icon-container">
-    <image class="icon" src="https://openweathermap.org/img/w/{{activities.weather.list[0].weather[0].icon}}.png"></image>
-    <image class="icon" src="https://openweathermap.org/img/w/{{activities.weather.list[7].weather[0].icon}}.png"></image>
-    <image class="icon" src="https://openweathermap.org/img/w/{{activities.weather.list[14].weather[0].icon}}.png"></image>
-    <image class="icon" src="https://openweathermap.org/img/w/{{activities.weather.list[21].weather[0].icon}}.png"></image>
-    <image class="icon" src="https://openweathermap.org/img/w/{{activities.weather.list[28].weather[0].icon}}.png"></image>
+    <view class="title">Today in {{activities.trip.location}}</view>
+    <view class="icon-container">
+      <!-- <image class="icon" src="https://openweathermap.org/img/w/{{activities.weather.list[0].weather[0].icon}}.png"></image>
+      <image class="icon" src="https://openweathermap.org/img/w/{{activities.weather.list[7].weather[0].icon}}.png"></image>
+      <image class="icon" src="https://openweathermap.org/img/w/{{activities.weather.list[14].weather[0].icon}}.png"></image>
+      <image class="icon" src="https://openweathermap.org/img/w/{{activities.weather.list[21].weather[0].icon}}.png"></image>
+      <image class="icon" src="https://openweathermap.org/img/w/{{activities.weather.list[28].weather[0].icon}}.png"></image> -->
+   
     <view class="days">
-    <view>Mon</view>
-    <view>Tues</view>
-    <view>Wed</view>
-    <view>Thurs</view>
-    <view>Fri</view>
-  </view>
+      <view>Mon</view>
+      <view>Tues</view>
+      <view>Wed</view>
+      <view>Thurs</view>
+      <view>Fri</view>
+    </view>
   </view>
   
-  <view class="countdown" ></view>
+<view class="countdown" ></view>
   <view class="text">Today's Itinerary</view>
-  <view class="all-activities"  wx:if="{{activity.date !== dateNow}}">
+    <view class="all-activities"  wx:if="{{activity.date !== dateNow}}">
     <view class="activity-container" wx:for="{{activities.activities}}" wx:for-item="activity">
       <view class="activity-card" bindtap="onClick" data-id="{{service.id}}">
         <view class="card-title">{{activity.content}}</view>
@@ -44,22 +45,19 @@
     </view>
   <view class="text" wx:if="{{trip2.start_date > dateNow}}">Not long until the holiday</view>
 </view>
+
+<!-- header-image and container end -->
+  </view>
 </view>
 
 <!-- <view class="weather"> 
   <text>{{weatherData}}</text> 
 </view> -->
 
-
-
-
 <!-- if current_date < trip.start_date
-
-render countdown
-
+  render countdown
 else
-render all activities where activity_date === current_date -->
+  render all activities where activity_date === current_date -->
 
 <!-- wx:if="{{start_date < Date.new}} -->
-
 <!-- getApp().globalData.trips[0].start_date > getApp().globalData.currentDate[0] -->
