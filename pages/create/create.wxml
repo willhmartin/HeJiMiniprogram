@@ -40,7 +40,7 @@
 
     <!-- btn -->
       <view class="btn-area">
-        <button bindtap="formSubmit" class="btn-submit" form-type="submit">Submit</button>
+        <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="btn-submit" >Submit</button>
         <!-- <button bindtap="formReset" id="reset" class="btn-reset" form-type="reset">Reset</button> -->
       </view> 
 

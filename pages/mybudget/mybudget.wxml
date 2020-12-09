@@ -38,13 +38,13 @@
 
           <!-- HAS NO BUDGET -->
       <view wx:else>
-        <input value="{{inputValue}}" bindinput="bindKeyInput" type="number" placeholder="Enter Yout Budget Here"/>
+        <input value="{{inputValue}}" bindinput="bindKeyInput" type="number" class="enter-budget" placeholder="Enter Your Budget Here"/>
         <button bindtap="createBudget">Create Budget</button>
       </view>
    
     </block>
     <block wx:else> 
-      <view>You have to be a guest in order to set budget</view>
+      <view class="enter-budget">You have to be a guest in order to set budget</view>
     </block>
   </view>
  </view>

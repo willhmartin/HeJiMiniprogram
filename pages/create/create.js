@@ -3,6 +3,19 @@ const globalData = getApp().globalData
 Page({ 
 
   data: {},
+  onLoad: function(){
+    this.setData({
+      hasUserInfo: wx.getStorageSync('hasUserInfo')
+    })
+  },
+
+  getUserInfo: function (e) {
+    const userInfo = e.detail.userInfo
+    if (userInfo != undefined) {
+      this.formSubmit()
+      event.emit("getInfo")
+    }
+  },
 
   titleInput: function(e) {
     this.setData({

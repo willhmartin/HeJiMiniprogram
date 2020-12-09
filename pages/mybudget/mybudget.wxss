@@ -149,3 +149,6 @@
   padding: 0, 5px;
   margin: 4px, 4px;
  }
+ .enter-budget {
+   text-align: center;
+ }
