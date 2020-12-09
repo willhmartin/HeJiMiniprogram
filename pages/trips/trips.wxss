@@ -73,7 +73,7 @@
 }
 
 #btn-create {
-  border-radius: 50%;
+  /* border-radius: 50%;
   width: 50px;
   height: 50px;
   display: flex;
@@ -82,8 +82,13 @@
   font-size: 50px;
   margin: 0 auto;
   background:  #ED6A5A;
-    /*color: linear-gradient(180deg, #BA9BA0, #CD8A56)
-*/}
+    /*color: linear-gradient(180deg, #BA9BA0, #CD8A56) */
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 15rpx;
+  background-color: #ED6A5A;
+  box-shadow: 2px 0px 23px -2px rgba(0,0,0,0.46);
+}
 
 .plus {
   height: 74px;
