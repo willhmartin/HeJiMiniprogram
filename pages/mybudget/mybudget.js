@@ -5,13 +5,22 @@ const globalData = getApp().globalData
 Page({
   data: {
     // budgetId: 1
-    hasBudget: false
+    hasBudget: false,
+    items: [
+      {name: true, value: 'Yes'},
+      {name: false, value: 'No'}
+    ]
   },
   goToPayment: function () {
     console.log('CLICKED--10') 
-    wx.navigateTo({
-      url: '/pages/payment/payment',
+    // wx.navigateTo({
+    //   url: '/pages/payment/payment',
+    // })
+    this.setData({
+      makingPayment: true
     })
+    
+    console.log(this.makingPayment)
   },
   /**
    * Lifecycle function--Called when page load
@@ -22,7 +31,10 @@ Page({
     this.setData({
       hasUserInfo: wx.getStorageSync('hasUserInfo'),
       userInfo: wx.getStorageSync('userInfo'),
+      payment: false
     })
+    const makingPayment = this.data.payment
+    this.setData({makingPayment})
     let isGuest= globalData.tempIsGuest
     if (isGuest){
       this.setData({
@@ -138,5 +150,75 @@ Page({
 
   onShareAppMessage: function () {
 
+  },
+
+// Payment rendering functions
+bindButtonTap: function(e) {
+  this.setData({
+    focus: true
+  })
+},
+bindAmountInput: function(e) {
+  this.setData({
+    inputValue1: e.detail.value
+  })
+},
+radioChange: function(e) {
+  this.setData({inputValue4: e.detail.value})
+  console.log('LINE 23---', e.detail.value)
+
+},
+bindCatInput: function(e) {
+  console.log("CHECKING", e)
+  this.setData({
+    inputValue2: e.detail.value
+  })
+},
+bindNoteInput: function(e) {
+  console.log("CHECKING", e)
+  this.setData({
+    inputValue3: e.detail.value
+  })
+},
+setDate: function(e) {
+  console.log('LINE 38---', e)
+  this.setData({
+    date: e.detail.value
+  })
+},
+submit: function(e) {
+  console.log('LINE 43---', e.detail.value)
+  const payment = {
+    amount: this.data.inputValue1,
+    split: this.data.inputValue4,
+    category: this.data.inputValue2,
+    content: this.data.inputValue3,
+    date: this.data.date,
+}
+console.log('LINE 52---', payment)
+globalData.payments.push(payment)
+console.log(payment, "Checking globalData", globalData)
+this.setData({payment})
+let group_payment = this.data.inputValue4 == "true" ? "none" : this.data.guestId
+const trip_id = this.data.TripId
+console.log(this.data.TripId)
+// add ?guest_id=${group_payment} to the url in the post request
+wx.request({ 
+  url: `${globalData.host}trips/${trip_id}/payments?guest_id=${group_payment}`,
+  method: 'POST',
+  data: payment,
+  success(res) {
+    console.log('LINE 62---', res)
+    
   }
+})
+this.setData({
+  makingPayment: false
+})
+// wx.reLaunch({
+//   url: "/pages/mybudget/mybudget"
+// })
+  this.getBudget()
+}
+
 })

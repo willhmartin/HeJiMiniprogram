@@ -152,3 +152,136 @@
  .enter-budget {
    text-align: center;
  }
+
+
+ /* Payment rendering  */
+
+ .buffer {
+  height: 30px;
+} 
+.header-image {
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  display: flex-inline;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+.user-input {
+  background-color: #eeeeee;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  margin-left: 20px;
+  font-weight: lighter;
+  font-size: 15px;
+  color: #393e46;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+.picker {
+  background-color: #eeeeee;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  margin-left: 20px;
+  font-weight: lighter;
+  font-size: 15px;
+  color: #393e46;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#banner-title {
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  padding-top: 100px;
+  padding-left: 10px;
+  /* position: absolute;
+  bottom: 8px;
+  left: 16px; */
+}
+.container {
+  justify-content: center;
+  /* border-top-left-radius: 50px;
+  border-top-right-radius: 50px; */ 
+}
+.header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-family: 'Roboto';
+  font-weight: bolder;
+  text-align: center;
+  font-size: 15px;
+}
+.background {
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  align-items: center; 
+  margin-bottom: 0;
+  padding-top: 30px;
+  border-radius: 20px;
+}
+.placeholder {
+  font-weight: light;
+}
+.title {
+  color: black;
+  /* background: #F7C326; */
+  /* width: 193px; */
+  /* height: 66px; */
+  /* left: 91px; */
+  margin-top: 40px;
+  font-size: 60px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+  font-family: Lobster;
+  border-radius: 50px;
+  text-shadow: 2px 2px 4px gray;
+}
+.section {
+  width: 390px;
+  /* max-width: 100%; */
+  height: 60rpx;
+  opacity: 0.9;
+  box-shadow: 7px 5px 16px 6px rgba(25,92,130,0.25);  
+  background-color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 20px 5px;
+  padding-bottom: 50px;
+}
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+  height: 80vh;
+  flex-direction: column;
+  /* margin: 15px; */
+  margin-top: 0;
+  border-color: white;
+  /* background: #228CDB; */
+}
+.section__title {
+  font-size: 20px;
+}
+/* .btn-area {
+  margin-top: 5px;
+} */
+#sub {
+  color: white;
+  background-color: #ED6A5A;
+  /* background-color: #297DFA; */
+  margin-top: 15px;
+}
+.placeholder {
+  font-weight: lighter;
+}
