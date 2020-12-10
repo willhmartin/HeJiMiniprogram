@@ -35,7 +35,7 @@
             </view>
         </view>
         <view class="submit-payment">Submit a Payment</view>
-      <button id="btn-create" bindtap="goToPayment"><text class="plus">+</text></button>
+      <button id="btn-create" bindtap="goToPayment"><text class="plus">Create Payment</text></button>
           </view>
 
           <!-- HAS NO BUDGET -->
@@ -101,7 +101,7 @@
         </view>
       </picker>
     </view>
-  </view>
+  </view> 
 
     <view class="btn-area">
       <button id="sub" class="btn-submit" bindtap="submit">Submit</button>

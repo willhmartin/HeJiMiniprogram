@@ -38,7 +38,7 @@ Page({
     let isGuest= globalData.tempIsGuest
     if (isGuest){
       this.setData({
-        isGuest: true,
+        isGuest: true, 
         guestId: globalData.tempGuestId,
         TripId: globalData.tempTripId
       })
