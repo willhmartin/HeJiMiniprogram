@@ -17,7 +17,7 @@
         <view class="card-overview" style="margin-bottom: 30rpx;" wx:for="{{displayBudget.payments}}" wx:for-item="payment">
           <view class="card-product" bindtap="onClick" data-id="{{payment.id}}">
             <view class="card-image">
-              <image src="{{userInfo.avatarUrl}}" style="height: 100%; width: 100%;" mode="aspectFill" />
+              <image src="/images/yuan.png" mode="aspectFill" />
             </view> 
             <view class="card-product-infos">
               <view id="card-header">{{payment.category}}</view>
