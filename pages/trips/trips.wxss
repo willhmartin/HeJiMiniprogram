@@ -29,7 +29,7 @@
 }
 
 .holiday-card {
-  color: black;
+  color: black; 
   font-size: 30rpx;
   padding: 10rpx 10rpx;
   border-radius: 5px;
@@ -39,10 +39,9 @@
   background-color: #f4f4f4;
   margin: 32rpx 0;
   box-sizing: border-box;
-}
+} 
 
 .title {
-  font-family: 'Nunito Sans', sans-serif;
   color: black;
   font-size: 48rpx;
   font-weight: bold;

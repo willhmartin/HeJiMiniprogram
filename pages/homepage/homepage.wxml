@@ -3,6 +3,7 @@
 
 <view class="background">  
 
+  <!-- <button open-type="share">Share Trip</button> -->
   <!-- "Join Trip" if new guest START-->
   <view class="guestinfo">
 

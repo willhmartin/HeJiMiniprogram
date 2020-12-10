@@ -61,12 +61,6 @@
     "miniprogram": {
       "list": [
         {
-          "name": "Landing Page",
-          "pathName": "pages/landing/landing",
-          "query": "",
-          "scene": null
-        },
-        {
           "name": "Create Page",
           "pathName": "pages/create/create",
           "query": "",
@@ -75,13 +69,13 @@
         {
           "name": "Trips Page",
           "pathName": "pages/trips/trips",
-          "query": "",
+          "query": "fromshare=true&tripid=84",
           "scene": null
         },
         {
           "name": "Homepage",
           "pathName": "pages/homepage/homepage",
-          "query": "",
+          "query": "fromshare=true&tripid=84",
           "scene": null
         },
         {

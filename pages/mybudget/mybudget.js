@@ -121,7 +121,7 @@ Page({
         // code to run if there is a budget
         console.log('LINE 25---', res)
         const displayBudget = res.data
-        console.log(displayBudget)
+        console.log(displayBudget.payments)
         page.setData({displayBudget})
       }
     })
