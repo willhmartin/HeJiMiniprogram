@@ -1,7 +1,7 @@
 <view class="header-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://lc-MaWCTEhx.cn-n1.lcfile.com/301abd676aec5a31f6c7.jpg/desert.jpg);">
   <view id="banner-title"></view>
 
-<view class="background">  
+<view class="background">   
 
   <!-- <button open-type="share">Share Trip</button> -->
   <!-- "Join Trip" if new guest START-->
@@ -29,15 +29,16 @@
     <image class="icon" src="https://openweathermap.org/img/w/{{weatherResult[2].weather[0].icon}}.png"></image>
     <image class="icon" src="https://openweathermap.org/img/w/{{weatherResult[3].weather[0].icon}}.png"></image>
     <image class="icon" src="https://openweathermap.org/img/w/{{weatherResult[4].weather[0].icon}}.png"></image>
+  </view>
 
     <view class="days">
-      <view>Mon</view>
-      <view>Tues</view>
-      <view>Wed</view>
-      <view>Thurs</view>
-      <view>Fri</view>
+      <view id='p'>Mon</view>
+      <view id='p'>Tues</view>
+      <view id='p'>Wed</view>
+      <view id='p'>Thurs</view>
+      <view id='p'>Fri</view>
     </view>
-  </view>
+  
   
 <view class="countdown" ></view>
   <view class="text">Today's Itinerary</view>
