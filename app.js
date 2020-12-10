@@ -84,6 +84,7 @@ sendUserInfo: function (e) {
     holidays: [],
     payments: [],
     tripID: [],
+    makingPayment: false,
 
     // for storing temp data
     tempIsGuest: false,
