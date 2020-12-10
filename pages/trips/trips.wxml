@@ -36,7 +36,7 @@
   
   <!-- <view class="btn-container"> -->
   <view class="blurb"><span id="copy">
-   <view> Welcome to HeJi</view>
+   <view class="blurb-title"> Welcome to HeJi</view>
     From here you can create your dream holiday at the click of a button. Collaborate with your friends and make sure everyone gets the holiday they deserve. Hit the "+" button to get started.</span>
   </view>
   

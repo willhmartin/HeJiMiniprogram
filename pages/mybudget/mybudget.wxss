@@ -47,7 +47,7 @@
 }
 .total-budget {
   color:black;
-  padding: 20px 20px;
+  /* padding: 20px 20px; */
   font-weight: light;
   text-align: center;
   margin: 0 15px 0 15px;
@@ -100,28 +100,36 @@
   height: 74px;
   color: white;
 }
-/* .card-product {
+.card-product {
   overflow: hidden;
   height: 120px;
-  max-width: 100%;
+  width: 385px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
-  align-items: center;
   border-radius: 10px;
   color: black;
-} */
+}
 .card-image {
-  height: 100%;
-  width: 300rpx;
-  flex-shrink: 0;
-  flex-grow: 0;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-image image {
+  height: 40px;
+  width: 40px;
 }
 .card-product .card-product-infos {
   width: 100%;
-  padding-bottom: 18px;
-  text-align: center; 
+  /* padding-bottom: 18px; */
+  text-align: left; 
   color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 #card-header {
   color: black;
@@ -129,10 +137,10 @@
   font-weight: bold;
 }
 .card-overview { 
-  /* display: absolute;
+  display: absolute;
   padding: 0, 5px;
-  margin: 4px, 4px; */
-  color: black; 
+  margin: 4px, 4px;
+  /* color: black; 
   font-size: 30rpx;
   padding: 10rpx 10rpx;
   border-radius: 5px;
@@ -141,7 +149,7 @@
   box-shadow: 7px 5px 16px 6px rgba(25,92,130,0.25);
   background-color: #f4f4f4;
   margin: 32rpx 0;
-  box-sizing: border-box; 
+  box-sizing: border-box;  */
  }
  .enter-budget {
    text-align: center;
