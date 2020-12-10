@@ -41,16 +41,17 @@
   
 <view class="countdown" ></view>
   <view class="text">Today's Itinerary</view>
-    <view class="all-activities"  wx:if="{{activity.date === dateNow}}">
-    <view class="activity-container" wx:for="{{activities.activities}}" wx:for-item="activity">
-      <view class="activity-card" bindtap="onClick" data-id="{{service.id}}">
+  <view class="all-activities"  >
+    <view class="activity-container" wx:for="{{activities}}" wx:for-item="activity">
+      
+      <view class="activity-card" wx:if="{{activity.date == dateNow}}" bindtap="onClick" data-id="{{service.id}}">
         <view class="card-title">{{activity.content}}</view>
         <view class="location">{{activity.location}}</view>
         <view class="location">{{activity.time}}</view>
         <!-- <image class="icon" src="https://openweathermap.org/img/w/{{activity.weather[0].icon}}.png"></image> -->
       </view>
     </view>
-  <view class="text" wx:if="{{trip2.start_date > dateNow}}">Not long until the holiday</view>
+    <view class="text" wx:if="{{trip.start_date > dateNow}}">Only {{diff}} days until the holiday!</view>
 </view>
 
 <!-- header-image and container end -->

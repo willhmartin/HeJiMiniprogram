@@ -81,6 +81,10 @@
   padding: 7px 30px;
 }
 
+.location {
+  color:black
+}
+
 .icon {
   width: 60px;
   height: 60px;

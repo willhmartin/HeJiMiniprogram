@@ -21,6 +21,7 @@ Page({
     if (options.fromshare=="true"){
       let tripId = options.tripid
       globalData.tempTripId = tripId
+     
       this.setData({
         tripId: tripId
       })
@@ -100,7 +101,9 @@ Page({
             is_guest: res.data.is_guest,
             activities: res.data.activities,
             guest_id: res.data.guest_id,
-            weatherResult: res.data.weather
+            weatherResult: res.data.weather,
+            dateNow: globalData.currentDate,
+            diff: res.data.from_today
           })
           globalData.tempIsGuest = true
           globalData.tempGuestId = res.data.guest_id
