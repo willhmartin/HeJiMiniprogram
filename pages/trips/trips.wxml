@@ -28,6 +28,7 @@
         <view>📅Start Date: {{trip.start_date}}</view>
         <view>📅End Date: {{trip.end_date}}</view>
       </view>
+      
     <button id="btn-create" bindtap="goToCreate">Create New</button>
   </view>
 </view>
