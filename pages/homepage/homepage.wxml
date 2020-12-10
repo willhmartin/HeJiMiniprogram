@@ -23,19 +23,19 @@
 
   <view class="title">Today in {{trip.location}}</view>
   <view class="icon-container">
-    <!-- <image class="icon" src="https://openweathermap.org/img/w/{{activities.weather.list[0].weather[0].icon}}.png"></image>
+    <image class="icon" src="https://openweathermap.org/img/w/{{activities.weather.list[0].weather[0].icon}}.png"></image>
     <image class="icon" src="https://openweathermap.org/img/w/{{activities.weather.list[7].weather[0].icon}}.png"></image>
     <image class="icon" src="https://openweathermap.org/img/w/{{activities.weather.list[14].weather[0].icon}}.png"></image>
     <image class="icon" src="https://openweathermap.org/img/w/{{activities.weather.list[21].weather[0].icon}}.png"></image>
-    <image class="icon" src="https://openweathermap.org/img/w/{{activities.weather.list[28].weather[0].icon}}.png"></image> -->
+    <image class="icon" src="https://openweathermap.org/img/w/{{activities.weather.list[28].weather[0].icon}}.png"></image>
 
-    <!-- <view class="days">
+    <view class="days">
       <view>Mon</view>
       <view>Tues</view>
       <view>Wed</view>
       <view>Thurs</view>
       <view>Fri</view>
-    </view> -->
+    </view>
   </view>
   
 <view class="countdown" ></view>
