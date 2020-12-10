@@ -61,12 +61,6 @@
     "miniprogram": {
       "list": [
         {
-          "name": "Landing Page",
-          "pathName": "pages/landing/landing",
-          "query": "",
-          "scene": null
-        },
-        {
           "name": "Create Page",
           "pathName": "pages/create/create",
           "query": "",
