@@ -23,12 +23,12 @@
   <button id="return-to-trips" bindtap="goToTrips">My Trips</button>
 
   <view class="title">Today in {{trip.location}}</view>
-  <view class="icon-container">
-    <image class="icon" src="https://openweathermap.org/img/w/{{activities.weather.list[0].weather[0].icon}}.png"></image>
-    <image class="icon" src="https://openweathermap.org/img/w/{{activities.weather.list[7].weather[0].icon}}.png"></image>
-    <image class="icon" src="https://openweathermap.org/img/w/{{activities.weather.list[14].weather[0].icon}}.png"></image>
-    <image class="icon" src="https://openweathermap.org/img/w/{{activities.weather.list[21].weather[0].icon}}.png"></image>
-    <image class="icon" src="https://openweathermap.org/img/w/{{activities.weather.list[28].weather[0].icon}}.png"></image>
+  <view wx:if="{{weatherResult}}" class="icon-container">
+    <image class="icon" src="https://openweathermap.org/img/w/{{weatherResult[0].weather[0].icon}}.png"></image>
+    <image class="icon" src="https://openweathermap.org/img/w/{{weatherResult[1].weather[0].icon}}.png"></image>
+    <image class="icon" src="https://openweathermap.org/img/w/{{weatherResult[2].weather[0].icon}}.png"></image>
+    <image class="icon" src="https://openweathermap.org/img/w/{{weatherResult[3].weather[0].icon}}.png"></image>
+    <image class="icon" src="https://openweathermap.org/img/w/{{weatherResult[4].weather[0].icon}}.png"></image>
 
     <view class="days">
       <view>Mon</view>
@@ -41,7 +41,7 @@
   
 <view class="countdown" ></view>
   <view class="text">Today's Itinerary</view>
-    <view class="all-activities"  wx:if="{{activity.date !== dateNow}}">
+    <view class="all-activities"  wx:if="{{activity.date === dateNow}}">
     <view class="activity-container" wx:for="{{activities.activities}}" wx:for-item="activity">
       <view class="activity-card" bindtap="onClick" data-id="{{service.id}}">
         <view class="card-title">{{activity.content}}</view>
