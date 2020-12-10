@@ -88,7 +88,7 @@
   text-shadow: 2px 2px 4px gray;
 }
 .section {
-  width: 390px;
+  width: 350px;
   /* max-width: 100%; */
   height: 60rpx;
   opacity: 0.9;
@@ -103,6 +103,8 @@
 .form {
   display: flex;
   align-items: center;
+  margin-right: 24rpx;
+  margin-left: 24rpx;
   justify-content: space-between;
   flex-grow: 1;
   height: 80vh;
