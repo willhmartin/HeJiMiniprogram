@@ -43,8 +43,10 @@
   color:black;
  
 }
-/* .section {
-  width: 340px;
+
+.section {
+  /* width: 340px; */
+
   opacity: 0.9;
   font-family: 'Nunito Sans', sans-serif;
   box-shadow: 7px 5px 16px 6px rgba(25,92,130,0.25);
