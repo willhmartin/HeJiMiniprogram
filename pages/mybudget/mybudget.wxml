@@ -5,7 +5,10 @@
 
 <view class="background"> 
     <!-- image -->
-    <image class="avatar-large" alt="avatar-large" mode="aspectFill" wx:if="{{hasUserInfo}}" src="{{userInfo.avatarUrl}}"></image>
+    <view class= "avatar-large">
+      <image class="avatar-large" alt="avatar-large" mode="aspectFill" wx:if="{{hasUserInfo}}" src="{{userInfo.avatarUrl}}"></image>
+  </view>
+
 <!-- data-id="{{service}}" -->
   <block wx:if="{{isGuest}}">
       <view wx:if="{{hasBudget}}" class='total-budget'>
