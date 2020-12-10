@@ -28,6 +28,13 @@ Page({
     })
   },
 
+  setTime: function(e) {
+    console.log(e)
+    this.setData({
+      time: e.detail.value
+    }) 
+  },
+
  submit: function(e) {
    console.log('LINE 43---', e.detail.value)
    const activity = {
