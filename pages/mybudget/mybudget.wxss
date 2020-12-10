@@ -7,11 +7,6 @@
   padding-top: 30px;
   border-radius: 20px;
 }
-/* .container {
-  justify-content: center;
-  margin-bottom: 20px;
-  padding: 0;
-} */
 .header-image {
   background-size: cover;
   background-position: center;
@@ -41,8 +36,8 @@
   text-align: center;
 }
 .avatar-large {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   display: block;
   margin: 20px auto 0px auto;
   border-radius: 50%;
@@ -52,22 +47,29 @@
 }
 .total-budget {
   color:black;
-  padding: 20px 20px;
+  /* padding: 20px 20px; */
   font-weight: light;
   text-align: center;
   margin: 0 15px 0 15px;
 }
 .payment-section {
-  display: flex;
+  /* display: flex;
   align-items: center;
   justify-content: space-between;
   flex-grow: 1;
-  /* height: 80vh; */
   flex-direction: column;
-  /* margin: 15px; */
   margin-top: 0;
-  border-color: white;
-  /* background: #228CDB; */
+  border-color: white; */
+  
+  overflow: hidden;
+  height: 120px;
+  max-width: 100%;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  color: black;
 }
 .transactions {
   padding-bottom: 8px;
@@ -95,46 +97,63 @@
 }
 .plus {
   padding-bottom: 3px;
-}
-.submit-payment {
-  text-align: center;
-  color: white;
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-.plus {
   height: 74px;
   color: white;
 }
 .card-product {
   overflow: hidden;
   height: 120px;
-  max-width: 100%;
+  width: 385px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
-  align-items: center;
   border-radius: 10px;
+  color: black;
 }
 .card-image {
-  height: 100%;
-  width: 300rpx;
-  flex-shrink: 0;
-  flex-grow: 0;
-  /* object-fit: cover; */
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-image image {
+  height: 40px;
+  width: 40px;
 }
 .card-product .card-product-infos {
   width: 100%;
-  padding: 16px;
-  text-align: center; 
+  /* padding-bottom: 18px; */
+  text-align: left; 
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#card-header {
+  color: black;
+  font-size: 35rpx;
+  font-weight: bold;
 }
 .card-overview { 
   display: absolute;
   padding: 0, 5px;
   margin: 4px, 4px;
+  /* color: black; 
+  font-size: 30rpx;
+  padding: 10rpx 10rpx;
+  border-radius: 5px;
+  width: 100%;
+  padding: 32rpx;
+  box-shadow: 7px 5px 16px 6px rgba(25,92,130,0.25);
+  background-color: #f4f4f4;
+  margin: 32rpx 0;
+  box-sizing: border-box;  */
  }
  .enter-budget {
    text-align: center;
+
    background-color: #eeeeee;
    border-radius: 5px;
    margin-bottom: 10px;
@@ -144,6 +163,7 @@
    font-size: 15px;
    padding: 5rpx 5rpx;
    color: #393e46;
+
  }
 
  /* Payment rendering  */
@@ -221,6 +241,7 @@
 }
 .placeholder {
   font-weight: light;
+  color: black;
 }
 .title {
   color: black;
@@ -247,6 +268,7 @@
   border-radius: 10px;
   padding: 20px 5px;
   padding-bottom: 50px;
+  color: black;
 }
 .form {
   display: flex;

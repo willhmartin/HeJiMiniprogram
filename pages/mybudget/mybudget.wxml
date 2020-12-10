@@ -3,60 +3,60 @@
 
   <view id="banner-title">My Budget</view>
 
-
- 
 <view class="background"> 
-  <!-- <view class="container"> --> 
-    <!-- <button id="update-budget" bindtap=""><text class="budget-btn">Update</text></button> -->
     <!-- image -->
-    <image class="avatar-large" alt="avatar-large" mode="aspectFill" wx:if="{{hasUserInfo}}" src="{{userInfo.avatarUrl}}"></image>
+    <view class= "avatar-large">
+      <image class="avatar-large" alt="avatar-large" mode="aspectFill" wx:if="{{hasUserInfo}}" src="{{userInfo.avatarUrl}}"></image>
+  </view>
+
 <!-- data-id="{{service}}" -->
   <block wx:if="{{isGuest}}">
-        
       <view wx:if="{{hasBudget}}" class='total-budget'>
-            <view class="title">${{displayBudget.budget.amount || newBudget}}</view>
+            <view class="title">¥{{displayBudget.budget.amount || newBudget}}</view>
             <view class="transactions" >Transactions</view>
-      <view class="card-grid">
-        <view class="payment-section">
-        <view class="card-overview" style="margin-bottom: 30rpx;" wx:for="{{payments}}" wx:for-item="payment">
+ 
+    <view class="card-grid">
+      <!-- <view class="payment-section"> -->
+        <view class="card-overview" style="margin-bottom: 30rpx;" wx:for="{{displayBudget.payments}}" wx:for-item="payment">
           <view class="card-product" bindtap="onClick" data-id="{{payment.id}}">
             <view class="card-image">
-              <image src="{{user.avatar}}" style="height: 100%; width: 100%;" mode="aspectFill" />
+              <image src="/images/yuan.png" mode="aspectFill" />
             </view> 
             <view class="card-product-infos">
-              <view id="p">{{payment.date}}</view>
-              <view id="h1">{{payment.category}}</view>
-              <view class="h2">{{payment.amount}}</view>
-              <view id="p">{{payment.content}}</view>
-            </view>
 
-          </view>
-          <!-- </view> -->
-            </view>
-            </view>
-        </view>
-        <view class="submit-payment">Submit a Payment</view>
-      <button id="btn-create" bindtap="goToPayment"><text class="plus">Create Payment</text></button>
-          </view>
+              <view id="card-header">{{payment.category}}</view>
+              <view >¥{{payment.amount}}</view>
+              <view >{{payment.content}}</view>
+              <view >{{payment.date}}</view>
+            </view> <!-- card-product-infos  -->
+           </view>  <!--card-product -->
+        </view> <!--card-overview --> 
+   <!--payment-section -->
+     </view> <!--card-grid -->
+  <button id="btn-create" bindtap="goToPayment"><text class="plus">Create Payment</text></button>
+</view> <!--total-budget -->
 
-          <!-- HAS NO BUDGET -->
-      <view wx:else>
-        <input value="{{inputValue}}" bindinput="bindKeyInput" type="number" class="enter-budget" placeholder="Enter Your Budget Here"/>
-        <button bindtap="createBudget" class="create-budget" id="letter-p">Create Budget</button>
-      </view>
-   
-    </block>
-    <block wx:else> 
-      <view class="enter-budget">You have to be a guest in order to set budget</view>
-    </block>
+          <!-- HAS NO BUDGET --> 
+  <view wx:else>
+    <input value="{{inputValue}}" bindinput="bindKeyInput" type="number" class="enter-budget" placeholder="Enter Your Budget Here"/>
+      <button bindtap="createBudget">Create Budget</button>
+
   </view>
- </view>
+</block>
+          <!-- MUST BE GUEST TO CREATE BUDGET -->
+  <block wx:else> 
+    <view class="enter-budget">You have to be a guest to set a budget</view>
+  </block>
+
+  </view> <!-- header-image END-->
+</view> <!-- background END-->
+
+          <!-- PAYMENT PAGE -->
 
  <view wx:if="{{makingPayment}}" class="header-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://lc-MaWCTEhx.cn-n1.lcfile.com/1db39e9a4375d467309c.jpg/swiss.jpg);">
   <view id="banner-title">Create Payment.</view>
 
-
-<view class="background">
+  <view class="background">
   <!-- <view class="container" style="padding: 0 30rpx;"> -->
 
 <!-- header -->
@@ -106,11 +106,9 @@
 
     <view class="btn-area">
       <button id="sub" class="btn-submit" bindtap="submit">Submit</button>
-      <!-- <button id="reset" class="btn-reset" bindtap="reset">Reset</button> -->
     </view> 
     </view>
   </view>
 <!-- background and container end -->
   </view>
-<!-- </view> -->
 </view>

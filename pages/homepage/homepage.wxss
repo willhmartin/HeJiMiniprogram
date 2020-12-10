@@ -7,14 +7,15 @@
   align-items: center;
   margin: 0;
 }
-.background { 
+.background {  
   width: 100%;
-  height: 100vh;
   background-color: white;
   align-items: center; 
   margin-bottom: 0;
   padding-top: 30px;
   border-radius: 20px;
+  padding: 16rpx;
+  box-sizing: border-box;
 }
 #banner-title {
   color: white;
@@ -35,11 +36,11 @@
   -moz-box-shadow: 2px 0px 23px -2px rgba(0,0,0,0.46);
 }
 .card-title {
-  font-weight: bold;
-  color: #393e46;
   border-radius: 5px;
   margin-bottom: 5px;
-
+  font-size: 48rpx;
+  font-weight: bold;
+  color: black;
 }
 .title {
   color: black;
@@ -47,6 +48,7 @@
   font-weight: bold;
   text-align: center;
   margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .card-title {
@@ -56,29 +58,27 @@
 
 .text {
   color: black;
-  font-size: 60rpx;
+  font-size: 50rpx;
   font-weight: bold;
   text-align: center;
   margin-top: 40px;
 }
 
-.activity-card {
-  padding: 5px 5px;
-  width: 66vw;
-  height: 60rpx;
-  opacity: 0.9;
-  box-shadow: 7px 5px 16px 6px rgba(25,92,130,0.25);  
-  background-color: #ffffff;
-  text-align: center;
-  font-weight: bold;
-  margin-bottom: 15rpx;
-  border-radius: 10px;
-  padding-bottom: 40px;
+.all-activities {
+  color: black; 
+  font-size: 30rpx;
+  /* padding: 10rpx 10rpx; */
+  border-radius: 5px;
+  width: 100%;
+  padding: 32rpx;
+  box-shadow: 7px 5px 16px 6px rgba(25,92,130,0.25);
+  background-color: #f4f4f4;
+  margin: 32rpx 0;
+  box-sizing: border-box;
 }
 
-.all-activities {
-  background-color: rgba(54, 125, 219, 0.6);
-  padding: 7px 30px;
+.location {
+  color:black
 }
 
 .icon {
@@ -89,19 +89,35 @@
 }
 
 .icon-container {
-  display: flex;
+  /* display: flex;
   align-items: space-evenly;
-  position: relative;
+  position: relative; */
+  display: flex;
+  flex-direction: in-line;
+  justify-content: center;
+  align-items: center;
+}
+.days {
+  /* display: flex;
+  position: relative; */
+  display: flex;
+  flex-direction: in-line;
+  justify-content: center;
+  margin-left: 15px;
+  /* align-items: space-evenly; */
+}
+#p {
+  padding-right: 25px;
 }
 
-.days {
+/* .days {
   position: absolute;
   display: flex;
   width: 300px;
   justify-content: space-evenly;
   top: 65px;
   left: -6px;
-}
+} */
 .join-btn {
   background: #ED6A5A;
   color: white;

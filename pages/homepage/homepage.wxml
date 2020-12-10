@@ -1,8 +1,9 @@
 <view class="header-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://lc-MaWCTEhx.cn-n1.lcfile.com/301abd676aec5a31f6c7.jpg/desert.jpg);">
   <view id="banner-title"></view>
 
-<view class="background">  
+<view class="background">   
 
+  <!-- <button open-type="share">Share Trip</button> -->
   <!-- "Join Trip" if new guest START-->
   <view class="guestinfo">
 
@@ -22,34 +23,36 @@
   <button id="return-to-trips" bindtap="goToTrips">My Trips</button>
 
   <view class="title">Today in {{trip.location}}</view>
-  <view class="icon-container">
-    <image class="icon" src="https://openweathermap.org/img/w/{{activities.weather.list[0].weather[0].icon}}.png"></image>
-    <image class="icon" src="https://openweathermap.org/img/w/{{activities.weather.list[7].weather[0].icon}}.png"></image>
-    <image class="icon" src="https://openweathermap.org/img/w/{{activities.weather.list[14].weather[0].icon}}.png"></image>
-    <image class="icon" src="https://openweathermap.org/img/w/{{activities.weather.list[21].weather[0].icon}}.png"></image>
-    <image class="icon" src="https://openweathermap.org/img/w/{{activities.weather.list[28].weather[0].icon}}.png"></image>
+  <view wx:if="{{weatherResult}}" class="icon-container">
+    <image class="icon" src="https://openweathermap.org/img/w/{{weatherResult[0].weather[0].icon}}.png"></image>
+    <image class="icon" src="https://openweathermap.org/img/w/{{weatherResult[1].weather[0].icon}}.png"></image>
+    <image class="icon" src="https://openweathermap.org/img/w/{{weatherResult[2].weather[0].icon}}.png"></image>
+    <image class="icon" src="https://openweathermap.org/img/w/{{weatherResult[3].weather[0].icon}}.png"></image>
+    <image class="icon" src="https://openweathermap.org/img/w/{{weatherResult[4].weather[0].icon}}.png"></image>
+  </view>
 
     <view class="days">
-      <view>Mon</view>
-      <view>Tues</view>
-      <view>Wed</view>
-      <view>Thurs</view>
-      <view>Fri</view>
+      <view id='p'>Mon</view>
+      <view id='p'>Tues</view>
+      <view id='p'>Wed</view>
+      <view id='p'>Thurs</view>
+      <view id='p'>Fri</view>
     </view>
-  </view>
+  
   
 <view class="countdown" ></view>
   <view class="text">Today's Itinerary</view>
-    <view class="all-activities"  wx:if="{{activity.date !== dateNow}}">
-    <view class="activity-container" wx:for="{{activities.activities}}" wx:for-item="activity">
-      <view class="activity-card" bindtap="onClick" data-id="{{service.id}}">
+  <view class="all-activities"  >
+    <view class="activity-container" wx:for="{{activities}}" wx:for-item="activity">
+      
+      <view class="activity-card" wx:if="{{activity.date == dateNow}}" bindtap="onClick" data-id="{{service.id}}">
         <view class="card-title">{{activity.content}}</view>
-        <view class="location">{{activity.location}}</view>
-        <view class="location">{{activity.time}}</view>
+        <view class="location">📍{{activity.location}}</view>
+        <view class="location">🕐 {{activity.time}}</view>
         <!-- <image class="icon" src="https://openweathermap.org/img/w/{{activity.weather[0].icon}}.png"></image> -->
       </view>
     </view>
-  <view class="text" wx:if="{{trip2.start_date > dateNow}}">Not long until the holiday</view>
+    <view class="text" wx:if="{{trip.start_date > dateNow}}">Only {{diff}} days until the holiday!</view>
 </view>
 
 <!-- header-image and container end -->

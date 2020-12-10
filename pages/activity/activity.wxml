@@ -9,14 +9,18 @@
     <view class="activity-date" wx:if="{{activity.date != activities.activities[index-1].date}}">{{activity.date}}</view>
     <view class="section">
 
+      <!-- <view class="border"></view>   --> 
+      <!-- <view class="btn">
+        <view class="upvote"></view>
+        <view class="downvote"></view>
+      </view> -->
 
       <view class="border"></view>
       <view class="btn">
         <view class="upvote">⬆</view>
         <view class="downvote">⬇</view>
       </view>
-
-
+      
         <view class="p"> 
           <view id="card-title">{{activity.content}}</view>
           <view >📍 {{activity.location}}</view>
