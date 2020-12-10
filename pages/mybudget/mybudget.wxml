@@ -12,7 +12,7 @@
 <!-- data-id="{{service}}" -->
   <block wx:if="{{isGuest}}">
       <view wx:if="{{hasBudget}}" class='total-budget'>
-            <view class="title">${{displayBudget.budget.amount || newBudget}}</view>
+            <view class="title">¥{{displayBudget.budget.amount || newBudget}}</view>
             <view class="transactions" >Transactions</view>
  
     <view class="card-grid">
@@ -24,7 +24,7 @@
             </view> 
             <view class="card-product-infos">
               <view id="card-header">{{payment.category}}</view>
-              <view >${{payment.amount}}</view>
+              <view >¥{{payment.amount}}</view>
               <view >{{payment.content}}</view>
               <view >{{payment.date}}</view>
             </view> <!-- card-product-infos  -->
