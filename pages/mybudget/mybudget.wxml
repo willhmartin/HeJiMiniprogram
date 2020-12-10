@@ -23,6 +23,7 @@
               <image src="/images/yuan.png" mode="aspectFill" />
             </view> 
             <view class="card-product-infos">
+
               <view id="card-header">{{payment.category}}</view>
               <view >¥{{payment.amount}}</view>
               <view >{{payment.content}}</view>
@@ -39,6 +40,7 @@
   <view wx:else>
     <input value="{{inputValue}}" bindinput="bindKeyInput" type="number" class="enter-budget" placeholder="Enter Your Budget Here"/>
       <button bindtap="createBudget">Create Budget</button>
+
   </view>
 </block>
           <!-- MUST BE GUEST TO CREATE BUDGET -->
