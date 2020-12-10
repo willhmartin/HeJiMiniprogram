@@ -12,10 +12,20 @@ Page({
   },
 
   onLoad: function (options) {
+    console.log("onload homepage", options)
     this.setData({
       hasUserInfo: wx.getStorageSync('hasUserInfo'),
       userInfo: wx.getStorageSync('userInfo')
     })
+    // for users coming in from the share card
+    if (options.fromshare=="true"){
+      let tripId = options.tripid
+      globalData.tempTripId = tripId
+      this.setData({
+        tripId: tripId
+      })
+    }
+    // if (options)
 
   },
   onShow: function(){
@@ -71,9 +81,10 @@ Page({
   },
 
   getTripInfo: function(){
+    console.log("checking get tirp info")
+
     let tripId = globalData.tempTripId
     let userId = wx.getStorageSync('user')
-    console.log("checking if globalData has tripId", globalData.tempTripId)
 
     let page = this
     wx.request({
@@ -103,6 +114,21 @@ Page({
       } 
     })
   },
+  onShareAppMessage: function(e){
+    console.log("testing shareing", e)
+    let page = this
+    var shareObj = {
+      title: `Join me for ${page.data.trip.title}`,
+      path: `pages/homepage/homepage?fromshare=true&tripid=${page.data.trip.id}`,
+      imageUrl: '',
+      sucess: function(res){
+        console.log(res)
+      },
+      fail: function(res){}
+      }
+    return shareObj;
+
+    }
 
   
 })

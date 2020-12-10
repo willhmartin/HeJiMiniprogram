@@ -69,13 +69,13 @@
         {
           "name": "Trips Page",
           "pathName": "pages/trips/trips",
-          "query": "",
+          "query": "fromshare=true&tripid=84",
           "scene": null
         },
         {
           "name": "Homepage",
           "pathName": "pages/homepage/homepage",
-          "query": "",
+          "query": "fromshare=true&tripid=84",
           "scene": null
         },
         {
