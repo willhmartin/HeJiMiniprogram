@@ -88,7 +88,8 @@ Page({
             trip: res.data.trip,
             is_guest: res.data.is_guest,
             activities: res.data.activities,
-            guest_id: res.data.guest_id
+            guest_id: res.data.guest_id,
+            weatherResult: res.data.weather
           })
           globalData.tempIsGuest = true
           globalData.tempGuestId = res.data.guest_id
