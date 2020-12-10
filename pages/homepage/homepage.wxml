@@ -47,8 +47,8 @@
       
       <view class="activity-card" wx:if="{{activity.date == dateNow}}" bindtap="onClick" data-id="{{service.id}}">
         <view class="card-title">{{activity.content}}</view>
-        <view class="location">{{activity.location}}</view>
-        <view class="location">{{activity.time}}</view>
+        <view class="location">📍{{activity.location}}</view>
+        <view class="location">🕐 {{activity.time}}</view>
         <!-- <image class="icon" src="https://openweathermap.org/img/w/{{activity.weather[0].icon}}.png"></image> -->
       </view>
     </view>
