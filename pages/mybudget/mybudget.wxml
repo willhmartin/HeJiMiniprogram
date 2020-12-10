@@ -1,7 +1,7 @@
 
 <view wx:if="{{!makingPayment}}" class="header-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.picsum.photos/id/299/5498/3615.jpg?hmac=NqSpUzSsD7mgU34riF8xDMZkcSQY345kONcjjOqqjBA);">
 
-  <view id="banner-title">My Budget.</view>
+  <view id="banner-title">My Budget</view>
 
 
  
@@ -42,7 +42,7 @@
           <!-- HAS NO BUDGET -->
       <view wx:else>
         <input value="{{inputValue}}" bindinput="bindKeyInput" type="number" class="enter-budget" placeholder="Enter Your Budget Here"/>
-        <button bindtap="createBudget">Create Budget</button>
+        <button bindtap="createBudget" class="create-budget" id="letter-p">Create Budget</button>
       </view>
    
     </block>

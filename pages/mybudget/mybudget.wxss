@@ -135,6 +135,15 @@
  }
  .enter-budget {
    text-align: center;
+   background-color: #eeeeee;
+   border-radius: 5px;
+   margin-bottom: 10px;
+   margin-right: 20px;
+   margin-left: 20px;
+   font-weight: lighter;
+   font-size: 15px;
+   padding: 5rpx 5rpx;
+   color: #393e46;
  }
 
  /* Payment rendering  */
@@ -265,4 +274,11 @@
 }
 .placeholder {
   font-weight: lighter;
+}
+
+.create-budget {
+  background-color: #ED6A5A;
+} 
+#letter-p {
+  color: white;
 }

@@ -18,7 +18,7 @@
 
 
         <view class="p"> 
-          <view >{{activity.content}}</view>
+          <view id="card-title">{{activity.content}}</view>
           <view >📍 {{activity.location}}</view>
           <view >🕐 {{activity.time}}</view>
         </view>
