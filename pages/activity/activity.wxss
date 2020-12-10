@@ -59,7 +59,7 @@
   padding: 20rpx 40rpx;
   position: relative;
   overflow: hidden;
-} */
+} 
 .border {
   position: absolute;
   left: 0;
