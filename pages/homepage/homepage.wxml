@@ -42,7 +42,7 @@
     </view>
   </view> 
   
-<view class="countdown" ></view>
+<!-- <view class="countdown" ></view> -->
 
 <view class="itinerary" wx:if="{{trip.start_date == dateNow}}">Today's Itinerary</view>
   <view class="all-activities" wx:for="{{activities}}" wx:for-item="activity">
@@ -56,9 +56,12 @@
     <!-- </view> -->
     
 </view>
-<view class="countdown" wx:if="{{trip.start_date > dateNow}}">Only {{diff}} days until the holiday!</view>
+</view>
+<view class="countdown" wx:if="{{trip.start_date > dateNow}}">
+<view >Only {{diff}} days until the holiday!</view>
+</view>
 <!-- header-image and container end -->
-  </view>
+  
 </view>
 
 <!-- <view class="weather"> 
