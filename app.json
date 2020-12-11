@@ -3,12 +3,9 @@
     "pages/trips/trips",
     "pages/activity/activity",
     "pages/create/create",
-    "pages/createbudget/createbudget",
     "pages/homepage/homepage",
-    "pages/landing/landing",
     "pages/logs/logs",
     "pages/mybudget/mybudget",
-    "pages/payment/payment",
     "pages/activities/activities"
   ],
   "window":{
