@@ -74,7 +74,7 @@ sendUserInfo: function (e) {
     // host
     // host: 'http://localhost:3000/api/v1/',
     host: 'https://heji.wogengapp.cn/api/v1/',
-    hostForLogin: 'http://localhost:3000/',
+    // hostForLogin: 'http://localhost:3000/',
     hostForLogin: 'https://heji.wogengapp.cn/',
     hasUserInfo: [],
     userInfo: null,
