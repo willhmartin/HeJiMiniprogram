@@ -20,7 +20,7 @@
     <!-- start date -->
       <view id="date" class="section">
           <view class="card-title">Start Date</view>
-          <picker mode="date" value="{{date}}" start="2015-09-01" end="2021-09-01" bindchange="setStartDate" class="user-input">
+          <picker mode="date" value="{{date}}" start="2020-12-11" end="2025-12-11" bindchange="setStartDate" class="user-input">
             <view class="picker">
               {{startDate ? startDate : 'Select'}}
             </view>
@@ -30,7 +30,7 @@
       <!-- end date -->
       <view id="date" class="section">
         <view class="card-title">End Date</view>
-          <picker mode="date" value="{{date}}" start="2015-09-01" end="2021-09-01" bindchange="setEndDate" class="user-input">
+          <picker mode="date" value="{{date}}" start="2020-12-11" end="2025-12-11" bindchange="setEndDate" class="user-input">
             <view class="picker">
               {{endDate ? endDate : 'Select'}}
             </view>

@@ -5,7 +5,7 @@
 
   <!-- <button open-type="share">Share Trip</button> -->
   <!-- "Join Trip" if new guest START-->
-  <view class="guestinfo">
+  <view class="guestinfo"> 
 
  
     <button wx:if="{{!is_guest}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="join-btn">Join Trip</button>
@@ -41,10 +41,10 @@
   
   
 <view class="countdown" ></view>
-  <view class="text">Today's Itinerary</view>
-  <view class="all-activities"  >
+
+<view class="itinerary" wx:if="{{trip.start_date == dateNow}}">Today's Itinerary</view>
+  <view class="all-activities">
     <view class="activity-container" wx:for="{{activities}}" wx:for-item="activity">
-      
       <view class="activity-card" wx:if="{{activity.date == dateNow}}" bindtap="onClick" data-id="{{service.id}}">
         <view class="card-title">{{activity.content}}</view>
         <view class="location">📍{{activity.location}}</view>
@@ -52,7 +52,7 @@
         <!-- <image class="icon" src="https://openweathermap.org/img/w/{{activity.weather[0].icon}}.png"></image> -->
       </view>
     </view>
-    <view class="text" wx:if="{{trip.start_date > dateNow}}">Only {{diff}} days until the holiday!</view>
+    <view class="countdown" wx:if="{{trip.start_date > dateNow}}">Only {{diff}} days until the holiday!</view>
 </view>
 
 <!-- header-image and container end -->

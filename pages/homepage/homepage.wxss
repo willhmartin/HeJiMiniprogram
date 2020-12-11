@@ -61,7 +61,14 @@
   font-size: 50rpx;
   font-weight: bold;
   text-align: center;
-  margin-top: 40px;
+  /* margin-top: 40px; */
+}
+.countdown {
+  color: black;
+  font-size: 50rpx;
+  font-weight: bold;
+  text-align: center;
+  /* margin-top: 40px; */
 }
 
 .all-activities {
@@ -75,6 +82,15 @@
   background-color: #f4f4f4;
   margin: 32rpx 0;
   box-sizing: border-box;
+}
+.itinerary {
+  padding-bottom: 8px;
+  margin-top: 50px;
+  color: black;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
 }
 
 .location {

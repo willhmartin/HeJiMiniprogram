@@ -44,7 +44,7 @@
   <view class="section">
     <view class="section__title">
       <view class="">Payment Date</view>
-      <picker mode="date" value="{{date}}" start="2020-12-01" end="2025-12-01" bindchange="setDate">
+      <picker mode="date" value="{{date}}" start="2020-12-11" end="2025-12-11" bindchange="setDate">
         <view class="picker" >
             Date {{date}} 
         </view>
