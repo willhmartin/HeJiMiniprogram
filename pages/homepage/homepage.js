@@ -8,10 +8,11 @@ console.log('LINE 6--,', globalData)
 
 Page({
   data: {
-    
+    noWeather: false
   },
 
   onLoad: function (options) {
+    
     console.log("onload homepage", options)
     this.setData({
       hasUserInfo: wx.getStorageSync('hasUserInfo'),
@@ -25,9 +26,10 @@ Page({
       this.setData({
         tripId: tripId
       })
+      
     }
     // if (options)
-
+    this.getWeather()
   },
   onShow: function(){
     this.getTripInfo()
@@ -88,6 +90,7 @@ Page({
     let userId = wx.getStorageSync('user')
 
     let page = this
+    
     wx.request({
        url: `${globalData.host}trips/${tripId}`,
       method: 'GET',
@@ -118,6 +121,34 @@ Page({
       } 
     })
   },
+
+  getWeather: function() {
+    let page = this
+    let tripId = globalData.tempTripId
+
+    console.log("getting weather")
+    let trip_id = tripId
+    wx.request({
+      url: `${globalData.host}weather`,
+      method: "GET",
+      data: {trip_id: trip_id},
+      success(res) {
+        if(res.data.error == "404 Not Found"){
+          page.setData({
+            noWeather: true
+          })
+        } else {
+          page.setData({
+            noWeather: false,
+            weather: res.data.weather
+          })
+        }
+        
+      }
+    })
+  },
+
+
   onShareAppMessage: function(e){
     console.log("testing shareing", e)
     let page = this
