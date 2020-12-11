@@ -28,7 +28,7 @@
   background-color: white;
   align-items: center; 
   margin-bottom: 0;
-  padding-top: 30px;
+  padding-top: 15px;
   border-radius: 20px;
 }
 
@@ -73,24 +73,12 @@
   height: 100%;
   width: 10rpx;
 }
-/* .activity-container { */
-  /* margin-left: 15px;
-  color: white;
-  font-weight: bolder; */
-  /* color: black;
-  font-size: 30rpx;
-  padding: 10rpx 10rpx;
-  border-radius: 5px;
-  width: 100%;
-  padding: 32rpx;
-  box-shadow: 7px 5px 16px 6px rgba(25,92,130,0.25);
-  background-color: #f4f4f4;
-  margin: 32rpx 0;
-  box-sizing: border-box;
-} */
+/* .activity-container { 
+  margin-top: 20px;
+}  */
 .activity-date{
   padding-bottom: 8px;
-  margin-top: 50px;
+  margin-top: 10px;
   color: black;
   font-size: 20px;
   text-align: center;

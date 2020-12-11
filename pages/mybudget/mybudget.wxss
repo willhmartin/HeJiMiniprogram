@@ -257,7 +257,7 @@
   border-radius: 50px;
 }
 .section {
-  width: 100%;
+  width: 390px;
   max-width: 100%;
   margin-bottom: 32rpx;
   height: 60rpx;

@@ -38,13 +38,13 @@
 .card-title {
   border-radius: 5px;
   margin-bottom: 5px;
-  font-size: 48rpx;
+  font-size: 54rpx;
   font-weight: bold;
   color: black;
 }
 .title {
   color: black;
-  font-size: 80rpx;
+  font-size: 70rpx;
   font-weight: bold;
   text-align: center;
   margin-top: 10px;
@@ -93,8 +93,9 @@
   font-size: 25px;
 }
 
-.location {
-  color:black
+.time {
+  color:black;
+  margin-bottom: 10px;
 }
 
 .icon {
