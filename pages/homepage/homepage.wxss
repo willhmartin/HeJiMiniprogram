@@ -64,13 +64,13 @@
   text-align: center;
   /* margin-top: 40px; */
 }
-.countdown {
+/* .countdown {
   color: black;
   font-size: 50rpx;
   font-weight: bold;
-  text-align: center;
-  /* margin-top: 40px; */
-}
+  text-align: center; 
+
+}*/
 
 .all-activities {
   color: black; 
@@ -97,6 +97,21 @@
 .time {
   color:black;
   margin-bottom: 10px;
+}
+.countdown {
+  color: black; 
+  /* padding: 10rpx 10rpx; */
+  border-radius: 5px;
+  width: 100%;
+  padding: 32rpx;
+  box-shadow: 7px 5px 16px 6px rgba(25,92,130,0.25);
+  background-color: #f4f4f4;
+  margin: 32rpx 0;
+  box-sizing: border-box;
+  color: black;
+  font-size: 50rpx;
+  font-weight: bold;
+  text-align: center; 
 }
 
 .icon {
