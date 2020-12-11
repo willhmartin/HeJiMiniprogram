@@ -187,21 +187,22 @@ setDate: function(e) {
   })
 },
 submit: function(e) {
+  let page = this
   console.log('LINE 43---', e.detail.value)
   const payment = {
-    amount: this.data.inputValue1,
-    split: this.data.inputValue4,
-    category: this.data.inputValue2,
-    content: this.data.inputValue3,
-    date: this.data.date,
+    amount: page.data.inputValue1,
+    split: page.data.inputValue4,
+    category: page.data.inputValue2,
+    content: page.data.inputValue3,
+    date: page.data.date,
 }
 console.log('LINE 52---', payment)
 globalData.payments.push(payment)
 console.log(payment, "Checking globalData", globalData)
-this.setData({payment})
-let group_payment = this.data.inputValue4 == "true" ? "none" : this.data.guestId
-const trip_id = this.data.TripId
-console.log(this.data.TripId)
+page.setData({payment})
+let group_payment = page.data.inputValue4 == "true" ? "none" : this.data.guestId
+const trip_id = page.data.TripId
+console.log(page.data.TripId)
 // add ?guest_id=${group_payment} to the url in the post request
 wx.request({ 
   url: `${globalData.host}trips/${trip_id}/payments?guest_id=${group_payment}`,
@@ -209,16 +210,16 @@ wx.request({
   data: payment,
   success(res) {
     console.log('LINE 62---', res)
-    
+    page.setData({
+      makingPayment: false
+    })
+    // wx.reLaunch({
+    //   url: "/pages/mybudget/mybudget"
+    // })
+      page.getBudget()
   }
 })
-this.setData({
-  makingPayment: false
-})
-// wx.reLaunch({
-//   url: "/pages/mybudget/mybudget"
-// })
-  this.getBudget()
+
 }
 
 })

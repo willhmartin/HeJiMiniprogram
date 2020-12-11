@@ -47,7 +47,7 @@
 <view class="itinerary" wx:if="{{trip.start_date == dateNow}}">Today's Itinerary</view>
   <view class="all-activities" wx:for="{{activities}}" wx:for-item="activity">
     <!-- <view class="activity-container" wx:for="{{activities}}" wx:for-item="activity"> -->
-      <view class="activity-card" wx:if="{{activity.date == dateNow}}" bindtap="onClick" data-id="{{service.id}}">
+      <view wx:if="{{activity.date == dateNow}}" class="activity-card"  bindtap="onClick" data-id="{{service.id}}">
         <view class="card-title">{{activity.content}}</view>
         <view class="location">📍{{activity.location}}</view>
         <view class="time">🕐 {{activity.time}}</view>
