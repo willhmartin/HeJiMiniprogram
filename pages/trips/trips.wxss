@@ -60,7 +60,7 @@
   padding: 70rpx 0;
   height: 100vh;
   background-color: #3B7EC9;
-  background: url("http://lc-MaWCTEhx.cn-n1.lcfile.com/eb3887ea1b319a531419.jpg/nyc%20copy.jpg");
+  background: url("http://lc-MaWCTEhx.cn-n1.lcfile.com/95fae7bbf0e9c22d1e10.jpg/background.jpg");
   background-position: center bottom;
   background-size: cover;
 }
@@ -98,22 +98,25 @@
 .blurb {
   color: white;
   margin: 200px 20px;
-  background-color: rgba(90, 89, 89, 0.6);
+  background-color: rgba(90, 90, 90, 0.8);
   /* opacity: 0.8; */
   padding: 10px 10px;
   width: 85vw;
+  font-size: 18px;
   margin-bottom: 220px;
   border-radius: 5px;
   text-align: center;
-  font-weight: lighter;
+  font-weight: lighter; 
   font-size: 20px;
 }
 .blurb-title {
   font-weight: bold;
+  font-size: 35px;
 }
 
 #copy {
   opacity: 1 !important;
+  /* background-color: rgba(0,0,0,0.46);  */
 }
 #login-btn {
   border-radius: 50%;
