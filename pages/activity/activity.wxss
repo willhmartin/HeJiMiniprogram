@@ -65,6 +65,7 @@
   padding: 20rpx 40rpx;
   position: relative;
   overflow: hidden;
+  padding-bottom: 0;
 } 
 .border {
   position: absolute;

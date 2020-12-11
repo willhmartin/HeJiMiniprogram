@@ -54,9 +54,9 @@
         <!-- <image class="icon" src="https://openweathermap.org/img/w/{{activity.weather[0].icon}}.png"></image> -->
       </view>
     <!-- </view> -->
-    <view class="countdown" wx:if="{{trip.start_date > dateNow}}">Only {{diff}} days until the holiday!</view>
+    
 </view>
-
+<view class="countdown" wx:if="{{trip.start_date > dateNow}}">Only {{diff}} days until the holiday!</view>
 <!-- header-image and container end -->
   </view>
 </view>
