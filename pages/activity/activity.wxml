@@ -11,8 +11,8 @@
     <view class="section"> 
         <view class="p"> 
           <view id="card-title">{{activity.content}}</view>
-          <view >📍 {{activity.location}}</view>
-          <view >🕐 {{activity.time}}</view>
+          <view class="card-p">📍 {{activity.location}}</view>
+          <view class="card-p">🕐 {{activity.time}}</view>
         </view>
       </view> <!-- view class section end -->
 
