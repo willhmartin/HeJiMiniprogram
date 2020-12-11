@@ -28,7 +28,8 @@
   position: absolute;
   top: 0px;
   left: 0px;
-  background: #2C7DFE;
+  /* background: #2C7DFE; */
+  background: #768CEF;
   color: white;
   margin-bottom: 15rpx;
   box-shadow: 2px 0px 23px -2px rgba(0,0,0,0.46);
@@ -141,27 +142,30 @@
 }
 
 
-.blob {
+/* .blob {
 	background: black;
 	border-radius: 50%;
 	margin: 10px;
 	height: 20px;
-	width: 20px;
-}
+  width: 20px;
+  justify-content: center;
+} */
 
 
 .blob {
-	background: rgb(39, 136, 165);
+	background: #768CEF;
 	border-radius: 15px;
 	margin: 10px;
 	height: 20px;
 	width: 150px;
   color: white;
-  padding: 5px 0px;
+  padding: 8px 8px 8px 8px;
 	box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
 	transform: scale(1);
   animation: pulse 2s infinite;
+  margin-left: 120px;
   text-align: center;
+  font-weight: bold;
 }
 
 @keyframes pulse {
