@@ -39,7 +39,7 @@
 .card-title {
   border-radius: 5px;
   margin-bottom: 5px;
-  font-size: 65rpx;
+  font-size: 50rpx;
   font-weight: bold;
   color: black;
 }
@@ -52,10 +52,10 @@
   margin-bottom: 20px;
 }
 
-.card-title {
+/* .card-title {
   font-size: 35rpx;
   font-weight: bold;
-}
+} */
 
 .text {
   color: black;
