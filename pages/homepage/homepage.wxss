@@ -39,7 +39,7 @@
 .card-title {
   border-radius: 5px;
   margin-bottom: 5px;
-  font-size: 54rpx;
+  font-size: 65rpx;
   font-weight: bold;
   color: black;
 }
@@ -73,16 +73,28 @@
 }*/
 
 .all-activities {
-  color: black; 
+  /* color: black; 
   font-size: 30rpx;
-  /* padding: 10rpx 10rpx; */
   border-radius: 5px;
   width: 100%;
   padding: 32rpx;
   box-shadow: 7px 5px 16px 6px rgba(25,92,130,0.25);
-  background-color: #f4f4f4;
+  background-color: white;
   margin: 32rpx 0;
-  box-sizing: border-box;
+  box-sizing: border-box; */
+  overflow: hidden;
+  height: 120px;
+  width: 385px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  border-radius: 10px;
+  color: black;
+  display: absolute;
+  padding-left: 30px;
+  padding-top: 25px;
+  margin: 4px, 4px;
+
 }
 .itinerary {
   padding-bottom: 8px;
@@ -105,7 +117,7 @@
   width: 100%;
   padding: 32rpx;
   box-shadow: 7px 5px 16px 6px rgba(25,92,130,0.25);
-  background-color: #f4f4f4;
+  background-color: white;
   margin: 32rpx 0;
   box-sizing: border-box;
   color: black;
