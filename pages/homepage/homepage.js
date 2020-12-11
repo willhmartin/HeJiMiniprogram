@@ -104,7 +104,6 @@ Page({
             is_guest: res.data.is_guest,
             activities: res.data.activities,
             guest_id: res.data.guest_id,
-            weatherResult: res.data.weather,
             dateNow: globalData.currentDate,
             diff: res.data.from_today
           })
