@@ -4,9 +4,11 @@ const globalData = getApp().globalData
 Page({ 
 
   data: {},
-  onLoad: function(){
+  onLoad: function(options){
+    
     this.setData({
-      hasUserInfo: wx.getStorageSync('hasUserInfo')
+      hasUserInfo: wx.getStorageSync('hasUserInfo'),
+      failCreate: globalData.failCreate
     })
   },
 
@@ -41,6 +43,10 @@ Page({
   },
    
   formSubmit: function(e) {
+    wx.showLoading({
+      title: 'Loading',
+    })
+    this.setData({ failCreate: false })
     let userId = wx.getStorageSync('user')
     console.log('LINE 35-- ', this.data)
     const holiday = {
@@ -54,13 +60,25 @@ Page({
     method: 'POST',
     data: holiday,
     success(res) {
+      if(res.data.error == "Internal Server Error"){
+        globalData.failCreate = [true];
+        wx.reLaunch({
+          url: `/pages/create/create`,
+         
+        })
+      } else {
+        globalData.failCreate = [false];
       const user_id = res.data.user_id;
       // const trip_id = res.data.id
       console.log('LINE 54--', res)
+      setTimeout(function () {
+        wx.hideLoading()
+      }, 2000)
       wx.reLaunch({
         url: `/pages/trips/trips?loadtrips=true` 
       })
     }
+    },
   })
   },
 
