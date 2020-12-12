@@ -3,7 +3,9 @@
   <view id="banner-title">Create a Trip</view>
 
   
+  
 <view class="background">
+  <view class="error" wx:if="{{failCreate == 'true'}}">You must enter valid trip details</view>
     <view class="form"> 
       <!-- title --> 
       <view class="section">
